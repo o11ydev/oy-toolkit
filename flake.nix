@@ -15,18 +15,6 @@
   let pkgs = import nixpkgs { inherit system; };
   in
   {
-    defaultPackage = pkgs.buildGoModule rec {
-      pname = "o11ytools";
-      version = "0.0.1";
-      subPackages = [
-        "cmd/runtrace"
-        "cmd/o11y-collect-prom-data"
-      ];
-
-      src = ./.;
-
-      vendorSha256 = null;
-    };
     devShell = pkgs.mkShell {
       buildInputs = [
         pkgs.go_1_17

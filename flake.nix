@@ -18,7 +18,10 @@
     defaultPackage = pkgs.buildGoModule rec {
       pname = "o11ytools";
       version = "0.0.1";
-      subPackages = ["./cmd/runtrace"];
+      subPackages = [
+        "cmd/runtrace"
+        "cmd/o11y-collect-prom-data"
+      ];
 
       src = ./.;
 

@@ -15,6 +15,16 @@
   let pkgs = import nixpkgs { inherit system; };
   in
   {
+    defaultPackage = pkgs.buildGoModule rec {
+      pname = "o11ytools";
+      version = "0.0.1";
+      subPackages = ["./cmd/runtrace"];
+
+      src = ./.;
+
+      modSha256 = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+      vendorSha256 = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+    };
     devShell = pkgs.mkShell {
       buildInputs = [
         pkgs.go_1_17

@@ -28,6 +28,8 @@ fmt:
 oy-%: rebuild
 	@echo ">> Building oy-$*"
 	@go build -ldflags "$(PROMLDFLAGS)" ./cmd/oy-$*
+	@echo ">> Running oy-$* --version"
+	@./oy-$* --version
 
 .PHONY: tidy
 tidy:

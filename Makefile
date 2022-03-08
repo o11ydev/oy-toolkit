@@ -2,9 +2,10 @@
 O11Y_NIX_SHELL_ENABLED ?= 0
 
 # Command used to run inside a `nix develop` shell.
+# HOME is needed for `go build`.
 NIX_DEVELOP = nix develop -i --keep HOME -c
 
-# This is true if we are in `nix develop` shell..
+# This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
 .PHONY: build
 build: oy-runtrace

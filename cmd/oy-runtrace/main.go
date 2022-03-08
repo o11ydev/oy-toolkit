@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/o11ydev/tools/util/cmd"
+)
 
 func main() {
-	fmt.Println("runtrace")
+	cmd.InitCmd("oy-runtrace")
 }

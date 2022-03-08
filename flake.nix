@@ -19,6 +19,7 @@
       buildInputs = [
         pkgs.go_1_17
         pkgs.gofumpt
+        pkgs.git
       ];
       # This variable is needed in our Makefile.
       O11Y_NIX_SHELL_ENABLED = "1";

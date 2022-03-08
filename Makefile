@@ -3,7 +3,14 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 
 # Command used to run inside a `nix develop` shell.
 # HOME is needed for `go build`.
-NIX_DEVELOP = nix develop -i --keep HOME -c
+NIX_DEVELOP = nix develop -i --keep HOME
+
+PROMLDFLAGS = \
+	-X github.com/prometheus/common/version.Version=$(shell cat VERSION) \
+	-X github.com/prometheus/common/version.Revision=$(shell git rev-parse --short HEAD) \
+	-X github.com/prometheus/common/version.Branch=$(shell git branch | cut -c 3-) \
+	-X github.com/prometheus/common/version.BuildUser=$(shell whoami) \
+	-X github.com/prometheus/common/version.BuildDate=$(shell date -u '+%Y%m%d-%H:%M:%S%p') \
 
 # This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
@@ -16,11 +23,15 @@ test:
 
 .PHONY: fmt
 fmt:
-	gofumpt -l -w .
+	gofumpt -l -w --extra .
 
 oy-%: rebuild
-	go build ./cmd/oy-$*
+	@echo ">> Building oy-$*"
+	@go build -ldflags "$(PROMLDFLAGS)" ./cmd/oy-$*
 
+.PHONY: tidy
+tidy:
+	go mod tidy
 
 # Shortcut to force running go build each time.
 .PHONY: rebuild
@@ -29,9 +40,12 @@ rebuild:
 # If we are not in a `nix develop` shell, automatically run into it.
 else
 default:
-	@$(NIX_DEVELOP) $(MAKE)
+	@$(NIX_DEVELOP) -c $(MAKE)
 
 %:
-	@$(NIX_DEVELOP) $(MAKE) $*
+	@$(NIX_DEVELOP) -c $(MAKE) $*
+
+shell:
+	@$(NIX_DEVELOP)
 endif
 

@@ -19,6 +19,7 @@
       buildInputs = [
         pkgs.go_1_17
       ];
+      O11Y_NIX_SHELL_ENABLED = "1";
     };
   });
 }

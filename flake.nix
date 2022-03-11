@@ -19,6 +19,7 @@
       buildInputs = [
         pkgs.go_1_17
         pkgs.gofumpt
+        pkgs.golangci-lint
         pkgs.git
       ];
       # This variable is needed in our Makefile.

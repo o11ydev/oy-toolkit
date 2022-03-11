@@ -1,0 +1,24 @@
+run:
+  deadline: 5m
+
+output:
+  sort-results: true
+
+linters:
+  enable:
+    - gofumpt
+    - goimports
+    - revive
+    - depguard
+
+linters-settings:
+  depguard:
+    list-type: blacklist
+    include-go-root: true
+    packages-with-error-message:
+      - sync/atomic: "Use go.uber.org/atomic instead of sync/atomic"
+      - github.com/go-kit/kit/log: "Use github.com/go-kit/log instead of github.com/go-kit/kit/log"
+  goimports:
+    local-prefixes: github.com/o11ydev/o11ytools
+  gofumpt:
+    extra-rules: true

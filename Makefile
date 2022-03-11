@@ -14,6 +14,9 @@ PROMLDFLAGS = \
 
 # This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
+
+all: lint test build
+
 .PHONY: build
 build: oy-runtrace
 
@@ -24,6 +27,10 @@ test:
 .PHONY: fmt
 fmt:
 	gofumpt -l -w --extra .
+
+.PHONY: lint
+lint:
+	golangci-lint run
 
 oy-%: rebuild
 	@echo ">> Building oy-$*"

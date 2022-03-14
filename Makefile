@@ -3,7 +3,7 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 
 # Command used to run inside a `nix develop` shell.
 # HOME is needed for `go build`.
-NIX_DEVELOP = nix develop -i --keep HOME
+NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME
 
 PROMLDFLAGS = \
 	-X github.com/prometheus/common/version.Version=$(shell cat VERSION) \
@@ -14,7 +14,6 @@ PROMLDFLAGS = \
 
 # This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
-
 all: lint test build
 
 .PHONY: build

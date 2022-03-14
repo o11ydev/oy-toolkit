@@ -21,6 +21,7 @@
             name = "oy-toolkit";
             src = ./.;
             vendorSha256 = "sha256-0jqcIE+BZtj7Z7/C0sEPx0acSm0Dv6YxqVGklqmLweA=";
+            subPackages = ["./cmd/oy-runtrace"  "./cmd/oy-expose"];
 
             ldflags = [
               "-X github.com/prometheus/common/version.Version=${builtins.readFile ./VERSION}"

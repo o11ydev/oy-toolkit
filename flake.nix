@@ -17,10 +17,10 @@
       in
       rec {
         packages = import ./packages.nix { inherit pkgs; };
-        defaultPackage = packages.oy-runtrace;
+        defaultPackage = packages.oy-toolkit;
         devShell = pkgs.mkShell rec {
           buildInputs = [
-            pkgs.go_1_17
+            (import ./go.nix { inherit pkgs; })
             pkgs.gofumpt
             pkgs.golangci-lint
             pkgs.git

@@ -33,9 +33,9 @@ lint:
 
 oy-%: rebuild
 	@echo ">> Building oy-$*"
-	@go build -ldflags "$(PROMLDFLAGS)" ./cmd/oy-$*
+	@nix build ".#oy-$*"
 	@echo ">> Running oy-$* --version"
-	@./oy-$* --version
+	@nix run ".#oy-$*" -- --version
 
 .PHONY: tidy
 tidy:

@@ -15,7 +15,6 @@ let
       src = ./.;
       vendorSha256 = "sha256-0jqcIE+BZtj7Z7/C0sEPx0acSm0Dv6YxqVGklqmLweA=";
       subPackages = if name == "oy-toolkit" then [ ] else [ "./cmd/${name}" ];
-      nativeBuildInputs = [ (import ./go.nix { inherit pkgs; }) ];
 
       ldflags = [
         "-X github.com/prometheus/common/version.Version=${builtins.readFile ./VERSION}"

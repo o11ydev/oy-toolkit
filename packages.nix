@@ -24,10 +24,21 @@ let
         "-X github.com/prometheus/common/version.BuildDate=${builtins.readFile (pkgs.runCommand "date" { } ("date -u '+%Y%m%d-%H:%M:%S%p' > $out"))}"
       ];
     };
-in
-lib.recursiveUpdate { oy-toolkit = (basepkg "oy-toolkit"); }
-  (builtins.mapAttrs
+  packageList = (builtins.mapAttrs
     (name: value:
       basepkg name
     )
-    (builtins.readDir ./cmd))
+    (builtins.readDir ./cmd));
+in
+lib.recursiveUpdate { oy-toolkit = (basepkg "oy-toolkit"); }
+  (lib.recursiveUpdate packageList
+    (lib.mapAttrs'
+      (name: value:
+        lib.nameValuePair
+          ("docker-${name}")
+          (pkgs.dockerTools.buildImage {
+            name = name;
+            tag = "latest";
+            contents = builtins.getAttr name packageList;
+          }))
+      (builtins.readDir ./cmd)))

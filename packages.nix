@@ -76,7 +76,7 @@ lib.recursiveUpdate
       };
       menu = {
         main = [
-          { name = "commands"; sub = (builtins.map(x: {name = x; ref="/"+x;}) (builtins.attrNames packageList)); }
+          { name = "tools"; sub = (builtins.map(x: {name = x; ref="/"+x;}) (builtins.attrNames packageList)); }
         ];
       };
       menuFile = pkgs.writeTextFile { name = "menu"; text = builtins.toJSON(menu); };
@@ -90,16 +90,23 @@ lib.recursiveUpdate
         (
           builtins.attrValues (
             builtins.mapAttrs
-              (name: value: ''
+            (name: value: let
+              description = pkgs.writeTextFile { name = "description"; text = (pkgs.lib.removePrefix "# ${name}\n" (builtins.readFile (./cmd + "/${name}/README.md"))); };
+            in
+              ''
               echo --- >> $out/${name}.md
               echo title: ${name} >> $out/${name}.md
               echo --- >> $out/${name}.md
               echo >> $out/${name}.md
+              echo '## Usage' >> $out/${name}.md
+              echo >> $out/${name}.md
               echo '```' >> $out/${name}.md
               ${builtins.getAttr name packageList}/bin/${name} --help &>> $out/${name}.md
               echo '```' >> $out/${name}.md
+              echo '## Description' >> $out/${name}.md
+              cat ${description} >> $out/${name}.md
               echo >> $out/${name}.md
-              echo '## Usage' >> $out/${name}.md
+              echo '## Downloading' >> $out/${name}.md
               echo '{{< tabs "usage" >}}' >> $out/${name}.md
               echo '{{< tab "docker" >}}' >> $out/${name}.md
               echo 'To execute **${name}** with docker, run:' >> $out/${name}.md

@@ -46,7 +46,7 @@ publish:
 	@echo ">> Creating publishing script"
 	@nix build ".#publish-script" -o ./publish.sh
 	@echo ">> Running publishing script"
-	bash -xeu ./publish.sh
+	@bash -eu ./publish.sh
 
 # If we are not in a `nix develop` shell, automatically run into it.
 else

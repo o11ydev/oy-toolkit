@@ -26,6 +26,7 @@
             pkgs.git
             pkgs.nix
             pkgs.skopeo
+            pkgs.hugo
           ];
           # This variable is needed in our Makefile.
           O11Y_NIX_SHELL_ENABLED = "1";

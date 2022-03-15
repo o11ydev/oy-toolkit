@@ -51,7 +51,6 @@ lib.recursiveUpdate
   publish-script = (stdenv.mkDerivation {
     name = "release-script";
     phases = "buildPhase";
-    unpackPhase = "true";
     buildPhase = pkgs.writeShellScript "publish" ''
     '' + (
       pkgs.lib.concatMapStrings (x: "\n" + x)
@@ -66,8 +65,74 @@ lib.recursiveUpdate
               dockerPackageList
           )
         )
-    )
-    ;
+        );
+      }
+  );
+  documentation = (
+    let theme = pkgs.fetchzip{
+        url = "https://github.com/thegeeklab/hugo-geekdoc/releases/download/v0.27.4/hugo-geekdoc.tar.gz";
+        sha256 = "sha256-TtnpqLRaanninztiv85ASEsiO6/ciVmnjS4zotkdCaY=";
+        stripRoot=false;
+      };
+      menu = {
+        main = [
+          { name = "commands"; sub = (builtins.map(x: {name = x; ref="/"+x;}) (builtins.attrNames packageList)); }
+        ];
+      };
+      menuFile = pkgs.writeTextFile { name = "menu"; text = builtins.toJSON(menu); };
+  commandDocs = (stdenv.mkDerivation {
+    name = "commandDocs";
+    phases = "buildPhase";
+    buildPhase = pkgs.writeShellScript "commandDocs" ''
+    mkdir $out
+    '' + (
+      pkgs.lib.concatMapStrings (x: "\n" + x)
+        (
+          builtins.attrValues (
+            builtins.mapAttrs
+              (name: value: ''
+              echo --- >> $out/${name}.md
+              echo title: ${name} >> $out/${name}.md
+              echo --- >> $out/${name}.md
+              echo >> $out/${name}.md
+              echo '```' >> $out/${name}.md
+              ${builtins.getAttr name packageList}/bin/${name} --help &>> $out/${name}.md
+              echo '```' >> $out/${name}.md
+              echo >> $out/${name}.md
+              echo '## Usage' >> $out/${name}.md
+              echo '{{< tabs "usage" >}}' >> $out/${name}.md
+              echo '{{< tab "docker" >}}' >> $out/${name}.md
+              echo 'To execute **${name}** with docker, run:' >> $out/${name}.md
+              echo '```' >> $out/${name}.md
+              echo 'docker run quay.io/o11y/oy-toolkit:${name} --help' >> $out/${name}.md
+              echo '```' >> $out/${name}.md
+              echo '{{< /tab >}}' >> $out/${name}.md
+              echo '{{< tab "nix" >}}' >> $out/${name}.md
+              echo 'To execute **${name}** with nix, run:' >> $out/${name}.md
+              echo '```' >> $out/${name}.md
+              echo 'nix run github:o11ydev/oy-toolkit#${name} -- --help' >> $out/${name}.md
+              echo '```' >> $out/${name}.md
+              echo '{{< /tab >}}' >> $out/${name}.md
+              echo '{{< /tabs >}}' >> $out/${name}.md
+              echo >> $out/${name}.md
+              '')
+              packageList
+          )
+        )
+        );
+      });
+    in
+    stdenv.mkDerivation {
+    name = "documentation";
+    src = ./docs;
+    buildInputs = [ pkgs.hugo ];
+    buildPhase = pkgs.writeShellScript "hugo" ''
+      mkdir -p data/menu
+      cp ${menuFile} data/menu/main.yml
+      cp -r ${commandDocs}/* content
+      cat data/menu/main.yml
+      hugo --theme=${theme} -d $out
+    '';
     installPhase = "true";
   });
 }

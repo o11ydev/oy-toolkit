@@ -47,6 +47,11 @@ publish:
 	@echo ">> Running publishing script"
 	@bash -eu ./publish.sh
 
+.PHONY: publish
+documentation:
+	@echo ">> Generating documentation"
+	@nix build ".#documentation" -o ./documentation
+
 # If we are not in a `nix develop` shell, automatically run into it.
 else
 default:

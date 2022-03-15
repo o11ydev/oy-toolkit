@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>o11y toolkit</title>
-    <link>/</link>
+    <link>https://o11ydev.github.io/oy-toolkit/</link>
     <description>Recent content on o11y toolkit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://o11ydev.github.io/oy-toolkit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>oy-expose</title>
-      <link>/oy-expose/</link>
+      <link>https://o11ydev.github.io/oy-toolkit/oy-expose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/oy-expose/</guid>
+      <guid>https://o11ydev.github.io/oy-toolkit/oy-expose/</guid>
       <description>This toolkit is WIP.
 This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version.</description>
     </item>
     
     <item>
       <title>oy-runtrace</title>
-      <link>/oy-runtrace/</link>
+      <link>https://o11ydev.github.io/oy-toolkit/oy-runtrace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/oy-runtrace/</guid>
+      <guid>https://o11ydev.github.io/oy-toolkit/oy-runtrace/</guid>
       <description>This toolkit is WIP.
 This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-runtrace [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version.</description>
     </item>

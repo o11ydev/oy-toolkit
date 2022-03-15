@@ -6,11 +6,12 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME --keep DOCKER_USERNAME --keep DOCKER_PASSWORD
 
 # Docker settings
-export DOCKER_USERNAME ?= none
+export DOCKER_ORG =? oyy1
 export DOCKER_PASSWORD ?= none
-export DOCKER_REGISTRY = quay.io
-export DOCKER_ORG = oy-toolkit
-export DOCKER_TAG = latest
+export DOCKER_REGISTRY ?= quay.io
+export DOCKER_REPOSITORY ?= oy-toolkit
+export DOCKER_TAG_SUFFIX ?=
+export DOCKER_USERNAME ?= none
 
 # This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
@@ -41,10 +42,11 @@ rebuild:
 
 .PHONY: publish
 publish:
+	@echo $(DOCKER_USERNAME)
 	@echo ">> Creating publishing script"
 	@nix build ".#publish-script" -o ./publish.sh
 	@echo ">> Running publishing script"
-	@bash -eu ./publish.sh
+	bash -xeu ./publish.sh
 
 # If we are not in a `nix develop` shell, automatically run into it.
 else

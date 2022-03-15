@@ -21,8 +21,8 @@ let
         "-X github.com/prometheus/common/version.Version=${builtins.readFile ./VERSION}"
         "-X github.com/prometheus/common/version.Branch=n/a"
         "-X github.com/prometheus/common/version.Revision=n/a"
-        "-X github.com/prometheus/common/version.BuildUser=n/a}"
-        "-X github.com/prometheus/common/version.BuildDate=n/a}"
+        "-X github.com/prometheus/common/version.BuildUser=n/a"
+        "-X github.com/prometheus/common/version.BuildDate=n/a"
       ];
     };
   packageList = (builtins.mapAttrs

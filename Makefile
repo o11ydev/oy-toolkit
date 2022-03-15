@@ -5,23 +5,12 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 # HOME is needed for `go build`.
 NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME
 
-PROMLDFLAGS = \
-	-X github.com/prometheus/common/version.Version=$(shell cat VERSION) \
-	-X github.com/prometheus/common/version.Revision=$(shell git rev-parse --short HEAD) \
-	-X github.com/prometheus/common/version.Branch=$(shell git branch | cut -c 3-) \
-	-X github.com/prometheus/common/version.BuildUser=$(shell whoami) \
-	-X github.com/prometheus/common/version.BuildDate=$(shell date -u '+%Y%m%d-%H:%M:%S%p') \
-
 # This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
-all: lint test build
+all: lint build
 
 .PHONY: build
-build: oy-runtrace
-
-.PHONY: test
-test:
-	go test ./...
+build: oy-toolkit
 
 .PHONY: fmt
 fmt:
@@ -34,8 +23,6 @@ lint:
 oy-%: rebuild
 	@echo ">> Building oy-$*"
 	@nix build ".#oy-$*"
-	@echo ">> Running oy-$* --version"
-	@nix run ".#oy-$*" -- --version
 
 .PHONY: tidy
 tidy:

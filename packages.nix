@@ -30,19 +30,50 @@ let
       basepkg name
     )
     (builtins.readDir ./cmd));
+  dockerPackageList = (lib.mapAttrs'
+    (name: value:
+      lib.nameValuePair
+        ("docker-${name}")
+        (pkgs.dockerTools.buildImage {
+          name = name;
+          tag = "latest";
+          contents = [ pkgs.bashInteractive (builtins.getAttr name packageList) ];
+          config = {
+            Entrypoint = [ "/bin/${name}" ];
+          };
+        }))
+    (builtins.readDir ./cmd));
 in
-lib.recursiveUpdate { oy-toolkit = (basepkg "oy-toolkit"); }
-  (lib.recursiveUpdate packageList
-    (lib.mapAttrs'
-      (name: value:
-        lib.nameValuePair
-          ("docker-${name}")
-          (pkgs.dockerTools.buildImage {
-            name = name;
-            tag = "latest";
-            contents = [ pkgs.bashInteractive (builtins.getAttr name packageList) ];
-            config = {
-              Entrypoint = [ "/bin/${name}" ];
-            };
-          }))
-      (builtins.readDir ./cmd)))
+lib.recursiveUpdate
+  (lib.recursiveUpdate packageList dockerPackageList)
+{
+  oy-toolkit = (basepkg "oy-toolkit");
+  publish-script = (stdenv.mkDerivation {
+    name = "release-script";
+    phases = "buildPhase";
+    unpackPhase = "true";
+    buildPhase = pkgs.writeShellScript "publish" ''
+    echo '#!/usr/bin/env bash -e' > $out
+    echo 'echo ">> Login"'
+    echo 'skopeo login $DOCKER_REGISTRY -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"' >> $out
+  '' + (
+      pkgs.lib.concatMapStrings (x: "\n" + x)
+        (
+          builtins.attrValues (
+            builtins.mapAttrs
+              (name: value: ''
+                echo 'echo ">> ${name}"'
+                echo 'skopeo --insecure-policy copy docker-archive://${builtins.getAttr name dockerPackageList} docker://$DOCKER_REGISTRY/$DOCKER_ORG/${pkgs.lib.removePrefix "docker-" name}:$DOCKER_TAG' >> $out
+              '')
+              dockerPackageList
+          )
+     )
+     )
+        + ''
+    echo 'echo ">> Logout"'
+    echo 'skopeo logout $DOCKER_REGISTRY' >> $out
+        ''
+    ;
+    installPhase = "true";
+  });
+}

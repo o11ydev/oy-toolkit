@@ -98,6 +98,7 @@ lib.recursiveUpdate
               echo title: ${name} >> $out/${name}.md
               echo --- >> $out/${name}.md
               echo >> $out/${name}.md
+              cat ${./docs/tools-top.md} >> $out/${name}.md
               echo '## Usage' >> $out/${name}.md
               echo >> $out/${name}.md
               echo '```' >> $out/${name}.md

@@ -1,7 +1,8 @@
-baseURL = 'https://o11ydev.github.io/oy-toolkit/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'o11y toolkit'
 
 [params]
 
 geekdocMenuBundle = true
+geekdocRepo = "https://github.com/o11ydev/oy-toolkit"

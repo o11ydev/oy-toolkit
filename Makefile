@@ -3,14 +3,14 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 
 # Command used to run inside a `nix develop` shell.
 # HOME is needed for `go build`.
-NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME
+NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME --keep DOCKER_USERNAME --keep DOCKER_PASSWORD
 
 # Docker settings
-export DOCKER_REGISTRY ?= quay.io
-export DOCKER_ORG ?= oy-toolkit
 export DOCKER_USERNAME ?= none
 export DOCKER_PASSWORD ?= none
-export DOCKER_TAG ?= latest
+export DOCKER_REGISTRY = quay.io
+export DOCKER_ORG = oy-toolkit
+export DOCKER_TAG = latest
 
 # This is true if we are in `nix develop` shell.
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)

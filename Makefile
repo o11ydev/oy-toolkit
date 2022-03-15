@@ -3,10 +3,10 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 
 # Command used to run inside a `nix develop` shell.
 # HOME is needed for `go build`.
-NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME --keep DOCKER_USERNAME --keep DOCKER_PASSWORD --keep DOCKER_REGISTRY --keep DOCKER_REPOSITORY --keep DOCKER_TAG_SUFFIX
+NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME --keep DOCKER_USERNAME --keep DOCKER_PASSWORD --keep DOCKER_REGISTRY --keep DOCKER_REPOSITORY --keep DOCKER_TAG_SUFFIX --keep DOCKER_ORG
 
 # Docker settings
-export DOCKER_ORG ?= oyy1
+export DOCKER_ORG ?= o11y
 export DOCKER_PASSWORD ?= none
 export DOCKER_REGISTRY ?= quay.io
 export DOCKER_REPOSITORY ?= oy-toolkit
@@ -42,7 +42,6 @@ rebuild:
 
 .PHONY: publish
 publish:
-	@echo $(DOCKER_USERNAME)
 	@echo ">> Creating publishing script"
 	@nix build ".#publish-script" -o ./publish.sh
 	@echo ">> Running publishing script"

@@ -12,4 +12,4 @@ jobs:
       with:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-    - run: make publish DOCKER_PASSWORD=${{ secrets.GITHUB_TOKEN }}
+    - run: make publish DOCKER_USERNAME=${{ github.actor }} DOCKER_PASSWORD=${{ secrets.GITHUB_TOKEN }}

@@ -39,6 +39,9 @@ lib.recursiveUpdate { oy-toolkit = (basepkg "oy-toolkit"); }
           (pkgs.dockerTools.buildImage {
             name = name;
             tag = "latest";
-            contents = builtins.getAttr name packageList;
+            contents = [ pkgs.bashInteractive (builtins.getAttr name packageList) ];
+            config = {
+              Entrypoint = [ "/bin/${name}" ];
+            };
           }))
       (builtins.readDir ./cmd)))

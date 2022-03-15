@@ -1,6 +1,6 @@
 baseURL = 'https://o11ydev.github.io/oy-toolkit/'
 languageCode = 'en-us'
-title = 'oy-toolkit'
+title = 'o11y toolkit'
 
 [params]
 

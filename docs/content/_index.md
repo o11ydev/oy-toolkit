@@ -1,8 +1,8 @@
 ---
 geekdocDescription: Welcome
-title: "o11y's oy-toolkit"
+title: "o11y toolkit"
 
 ---
 
-The **oy-toolkit** is a set of utilities that help you debugging, augmenting,
+The **o11y toolkit** is a set of utilities that help you debugging, augmenting,
 and manage your observability stacks.

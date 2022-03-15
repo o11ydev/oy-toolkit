@@ -6,8 +6,8 @@ O11Y_NIX_SHELL_ENABLED ?= 0
 NIX_DEVELOP = nix --extra-experimental-features nix-command develop --extra-experimental-features flakes -i --keep HOME
 
 # Docker settings
-export DOCKER_REGISTRY ?= ghrc.io
-export DOCKER_ORG ?= o11ydev
+export DOCKER_REGISTRY ?= quay.io
+export DOCKER_ORG ?= oy-toolkit
 export DOCKER_USERNAME ?= none
 export DOCKER_PASSWORD ?= none
 export DOCKER_TAG ?= latest

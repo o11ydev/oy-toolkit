@@ -32,6 +32,11 @@ tidy:
 .PHONY: rebuild
 rebuild:
 
+.PHONY: publish
+publish:
+	nix build ".#publish-script" -o ./publish.sh
+	bash -eu ./publish.sh
+
 # If we are not in a `nix develop` shell, automatically run into it.
 else
 default:

@@ -8,8 +8,7 @@
 <meta name="generator" content="Hugo 0.92.2" />
 
 
-  <meta name="description" content="usage: oy-expose [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Usage     docker  To execute oy-expose with docker, run:
-docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose with nix, run:" />
+  <meta name="description" content="Usage     usage: oy-expose [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Description     oy-expose reads a metrics file and exposes its content to be scraped by a Prometheus server." />
 
     <title>oy-expose | o11y toolkit</title>
 
@@ -35,8 +34,7 @@ docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose 
     content="oy-expose"
   />
   <meta property="og:site_name" content="o11y toolkit" />
-  <meta property="og:description" content="usage: oy-expose [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Usage     docker  To execute oy-expose with docker, run:
-docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose with nix, run:" />
+  <meta property="og:description" content="Usage     usage: oy-expose [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Description     oy-expose reads a metrics file and exposes its content to be scraped by a Prometheus server." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://o11ydev.github.io/oy-toolkit/oy-expose/" />
 
@@ -45,8 +43,7 @@ docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose 
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="oy-expose" />
-  <meta name="twitter:description" content="usage: oy-expose [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Usage     docker  To execute oy-expose with docker, run:
-docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose with nix, run:" />
+  <meta name="twitter:description" content="Usage     usage: oy-expose [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Description     oy-expose reads a metrics file and exposes its content to be scraped by a Prometheus server." />
 
 
   <script type="application/ld+json">
@@ -57,8 +54,8 @@ docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose 
       "name": "oy-expose",
       "url" : "https://o11ydev.github.io/oy-toolkit/oy-expose/",
       "headline": "oy-expose",
-      "description": "usage: oy-expose [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Usage     docker  To execute oy-expose with docker, run:\ndocker run quay.io\/o11y\/oy-toolkit:oy-expose --help   nix  To execute oy-expose with nix, run:",
-      "wordCount" : "68",
+      "description": "Usage     usage: oy-expose [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Description     oy-expose reads a metrics file and exposes its content to be scraped by a Prometheus server.",
+      "wordCount" : "86",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -289,7 +286,7 @@ docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose 
       <li>
         
         
-          <span class="flex">commands</span>
+          <span class="flex">tools</span>
         
 
         
@@ -467,7 +464,15 @@ docker run quay.io/o11y/oy-toolkit:oy-expose --help   nix  To execute oy-expose 
     class="gdoc-markdown gdoc-markdown__align--left"
   >
     <h1>oy-expose</h1>
-    <pre tabindex="0"><code>usage: oy-expose [&lt;flags&gt;]
+    <div class="gdoc-page__anchorwrap">
+    <h2 id="usage">
+        Usage
+        <a data-clipboard-text="https://o11ydev.github.io/oy-toolkit/oy-expose/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<pre tabindex="0"><code>usage: oy-expose [&lt;flags&gt;]
 
 Flags:
   -h, --help               Show context-sensitive help (also try --help-long and
@@ -478,9 +483,19 @@ Flags:
       --version            Show application version.
 
 </code></pre><div class="gdoc-page__anchorwrap">
-    <h2 id="usage">
-        Usage
-        <a data-clipboard-text="https://o11ydev.github.io/oy-toolkit/oy-expose/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
+    <h2 id="description">
+        Description
+        <a data-clipboard-text="https://o11ydev.github.io/oy-toolkit/oy-expose/#description" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Description" aria-label="Anchor to: Description" href="#description">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p><em>oy-expose</em> reads a metrics file and exposes its content to be scraped by a
+Prometheus server.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="downloading">
+        Downloading
+        <a data-clipboard-text="https://o11ydev.github.io/oy-toolkit/oy-expose/#downloading" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Downloading" aria-label="Anchor to: Downloading" href="#downloading">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>

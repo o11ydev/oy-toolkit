@@ -54,7 +54,7 @@ lib.recursiveUpdate
     unpackPhase = "true";
     buildPhase = pkgs.writeShellScript "publish" ''
     echo '#!/usr/bin/env bash -e' > $out
-    echo 'echo ">> Login"'
+    echo 'echo ">> Login"' >> $out
     echo 'skopeo login $DOCKER_REGISTRY -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"' >> $out
   '' + (
       pkgs.lib.concatMapStrings (x: "\n" + x)
@@ -62,7 +62,7 @@ lib.recursiveUpdate
           builtins.attrValues (
             builtins.mapAttrs
               (name: value: ''
-                echo 'echo ">> ${name}"'
+                echo 'echo ">> ${name}"' >> $out
                 echo 'skopeo --insecure-policy copy docker-archive://${builtins.getAttr name dockerPackageList} docker://$DOCKER_REGISTRY/$DOCKER_ORG/${pkgs.lib.removePrefix "docker-" name}:$DOCKER_TAG' >> $out
               '')
               dockerPackageList
@@ -70,7 +70,7 @@ lib.recursiveUpdate
      )
      )
         + ''
-    echo 'echo ">> Logout"'
+    echo 'echo ">> Logout"' >> $out
     echo 'skopeo logout $DOCKER_REGISTRY' >> $out
         ''
     ;

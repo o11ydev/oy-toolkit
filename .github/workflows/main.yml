@@ -1,0 +1,15 @@
+name: "Publish main"
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.4.0
+    - uses: cachix/install-nix-action@v15
+      with:
+        extra_nix_config: |
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+    - run: make publish DOCKER_PASSWORD=${{ secrets.GITHUB_TOKEN }}

@@ -13,6 +13,7 @@ jobs:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
     - run: make publish DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }} DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}
+    - run: make documentation
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

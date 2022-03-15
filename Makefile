@@ -10,7 +10,7 @@ export DOCKER_ORG ?= oyy1
 export DOCKER_PASSWORD ?= none
 export DOCKER_REGISTRY ?= quay.io
 export DOCKER_REPOSITORY ?= oy-toolkit
-export DOCKER_TAG_SUFFIX ?= ""
+export DOCKER_TAG_SUFFIX ?=
 export DOCKER_USERNAME ?= none
 
 # This is true if we are in `nix develop` shell.

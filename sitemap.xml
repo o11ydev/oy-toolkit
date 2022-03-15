@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
+    <loc>https://o11ydev.github.io/oy-toolkit/categories/</loc>
   </url><url>
-    <loc>/</loc>
+    <loc>https://o11ydev.github.io/oy-toolkit/</loc>
   </url><url>
-    <loc>/oy-expose/</loc>
+    <loc>https://o11ydev.github.io/oy-toolkit/oy-expose/</loc>
   </url><url>
-    <loc>/oy-runtrace/</loc>
+    <loc>https://o11ydev.github.io/oy-toolkit/oy-runtrace/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://o11ydev.github.io/oy-toolkit/tags/</loc>
   </url>
 </urlset>

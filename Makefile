@@ -27,7 +27,7 @@ fmt:
 
 .PHONY: lint
 lint:
-	@golangci-lint run
+	@-golangci-lint run
 	@alejandra -q --check *.nix
 
 oy-%: rebuild

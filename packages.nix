@@ -1,11 +1,7 @@
 {pkgs, ...}:
 with pkgs; let
   basepkg = name:
-    buildGo118Module.override
-    {
-      go = import ./go.nix {inherit pkgs;};
-    }
-    {
+    buildGoModule {
       name = name;
       src = ./.;
       vendorSha256 = "sha256-aQbyeQrbiys0RZ/4VSRAoiURmms4500Nf32jmtvYObY=";

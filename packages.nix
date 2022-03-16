@@ -117,37 +117,12 @@ in
                       name = "description";
                       text = pkgs.lib.removePrefix "# ${name}\n" (builtins.readFile (./cmd + "/${name}/README.md"));
                     };
-                  in ''
-                    echo --- >> $out/${name}.md
-                    echo title: ${name} >> $out/${name}.md
-                    echo --- >> $out/${name}.md
-                    echo >> $out/${name}.md
-                    cat ${./docs/tools-top.md} >> $out/${name}.md
-                    echo '## Usage' >> $out/${name}.md
-                    echo >> $out/${name}.md
-                    echo '```' >> $out/${name}.md
-                    ${builtins.getAttr name packageList}/bin/${name} --help &>> $out/${name}.md
-                    echo '```' >> $out/${name}.md
-                    echo '## Description' >> $out/${name}.md
-                    cat ${description} >> $out/${name}.md
-                    echo >> $out/${name}.md
-                    echo '## Downloading' >> $out/${name}.md
-                    echo '{{< tabs "usage" >}}' >> $out/${name}.md
-                    echo '{{< tab "docker" >}}' >> $out/${name}.md
-                    echo 'To execute **${name}** with docker, run:' >> $out/${name}.md
-                    echo '```' >> $out/${name}.md
-                    echo 'docker run quay.io/o11y/oy-toolkit:${name} --help' >> $out/${name}.md
-                    echo '```' >> $out/${name}.md
-                    echo '{{< /tab >}}' >> $out/${name}.md
-                    echo '{{< tab "nix" >}}' >> $out/${name}.md
-                    echo 'To execute **${name}** with nix, run:' >> $out/${name}.md
-                    echo '```' >> $out/${name}.md
-                    echo 'nix run github:o11ydev/oy-toolkit#${name} -- --help' >> $out/${name}.md
-                    echo '```' >> $out/${name}.md
-                    echo '{{< /tab >}}' >> $out/${name}.md
-                    echo '{{< /tabs >}}' >> $out/${name}.md
-                    echo >> $out/${name}.md
-                  '')
+                  in (import ./tool-documentation.nix {
+                    tool = builtins.getAttr name packageList;
+                    name = name;
+                    description = description;
+                    pkgs = pkgs;
+                  }))
                   packageList
                 )
               )

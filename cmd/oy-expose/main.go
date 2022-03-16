@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-	textFile := kingpin.Arg("metrics-file", "File to read text files with metrics from.").Default("metrics").String()
+	textFile := kingpin.Arg("metrics-file", "File to read metrics from.").Default("metrics").String()
 	logger := cmd.InitCmd("oy-expose")
 
 	collector, err := collectors.NewTextFileCollector(logger, *textFile)

@@ -12,6 +12,11 @@ jobs:
       with:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+    - run: make
+    - uses: actions/upload-artifact@v3
+      with:
+        name: oy-toolkit
+        path: result/bin/
     - run: make publish DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }} DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}
     - run: make documentation
     - name: deploy documentation

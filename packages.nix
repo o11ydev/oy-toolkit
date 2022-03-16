@@ -3,7 +3,9 @@ with pkgs; let
   basepkg = name:
     buildGoModule {
       name = name;
-      src = ./.;
+      src = builtins.filterSource
+      (path: type: lib.hasInfix "/cmd" path || lib.hasInfix "/util" path || lib.hasSuffix "/go.mod" path || lib.hasSuffix "/go.sum" path)
+          ./.;
       vendorSha256 = "sha256-aQbyeQrbiys0RZ/4VSRAoiURmms4500Nf32jmtvYObY=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =

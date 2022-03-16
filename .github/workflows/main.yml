@@ -23,6 +23,7 @@ jobs:
         tag: ${{ github.ref }}
         overwrite: true
         file_glob: true
+        body: "Latest artefacts, built from the main branch."
     - run: make publish DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }} DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}
     - run: make documentation
     - name: deploy documentation

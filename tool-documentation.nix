@@ -27,6 +27,13 @@
 
       {{< tabs "usage" >}}
 
+      {{< tab "linux (wget)" >}}
+      To execute **${name}** within Linux, run:
+      ```
+      wget https://github.com/o11ydev/oy-toolkit/releases/download/main/${name} -O ${name} && chmod +x ${name} && ./${name} --help
+      ```
+      {{< /tab >}}
+
       {{< tab "docker" >}}
       To execute **${name}** with docker, run:
       ```

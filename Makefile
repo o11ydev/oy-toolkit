@@ -23,10 +23,12 @@ build: oy-toolkit
 .PHONY: fmt
 fmt:
 	@gofumpt -l -w --extra .
+	@alejandra -q *.nix
 
 .PHONY: lint
 lint:
 	@golangci-lint run
+	@alejandra -q --check *.nix
 
 oy-%: rebuild
 	@echo ">> Building oy-$*"

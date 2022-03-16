@@ -12,7 +12,7 @@ func InitCmd(name string) log.Logger {
 	promlogConfig := &promlog.Config{}
 	flag.AddFlags(kingpin.CommandLine, promlogConfig)
 	kingpin.Version(version.Print(name))
-	//kingpin.CommandLine.UsageWriter(os.Stdout)
+	// kingpin.CommandLine.UsageWriter(os.Stdout)
 	kingpin.HelpFlag.Short('h')
 	kingpin.Parse()
 	return promlog.New(promlogConfig)

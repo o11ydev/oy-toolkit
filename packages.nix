@@ -3,7 +3,7 @@ with pkgs; let
   basepkg = name:
     buildGo118Module.override
     {
-        go = (import ./go.nix {inherit pkgs;});
+      go = import ./go.nix {inherit pkgs;};
     }
     {
       name = name;

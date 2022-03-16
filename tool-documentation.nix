@@ -10,6 +10,8 @@
     text = ''
       ---
       title: ${name}
+      geekdocRepo = "https://github.com/o11ydev/oy-toolkit"
+      geekdocEditPath = "edit/main/cmd/${name}/README.md"
       ---
 
       ${builtins.readFile ./docs/tools-top.md}

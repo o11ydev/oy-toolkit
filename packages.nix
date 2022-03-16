@@ -139,6 +139,7 @@ in
             cp -r ${commandDocs}/* content
             cat data/menu/main.yml
             hugo --theme=${theme} -d $out
+            echo o11y.tools > $out/CNAME
           '';
           installPhase = "true";
         }

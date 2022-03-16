@@ -49,10 +49,15 @@ publish:
 	@echo ">> Running publishing script"
 	@bash -eu ./publish.sh
 
-.PHONY: publish
+.PHONY: documentation
 documentation:
 	@echo ">> Generating documentation"
 	@nix build ".#documentation" -o ./documentation
+
+.PHONY: vendorhash
+vendorhash:
+	@go mod vendor
+	@nix hash path vendor
 
 # If we are not in a `nix develop` shell, automatically run into it.
 else

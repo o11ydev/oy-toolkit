@@ -13,10 +13,16 @@ jobs:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
     - run: make
-    - uses: actions/upload-artifact@v3
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
       with:
-        name: oy-toolkit
-        path: result/bin/
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: result/bin/*
+        prerelease: true
+        release_name: latest
+        tag: ${{ github.ref }}
+        overwrite: true
+        file_glob: true
     - run: make publish DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }} DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}
     - run: make documentation
     - name: deploy documentation

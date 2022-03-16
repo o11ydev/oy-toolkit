@@ -58,7 +58,7 @@ This toolkit is currently in early development. The tools here do not have stabl
       "url" : "https://o11y.tools/oy-runtrace/",
       "headline": "oy-runtrace",
       "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-runtrace [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version.",
-      "wordCount" : "108",
+      "wordCount" : "127",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -525,6 +525,22 @@ endpoint.</p>
       checked="checked"
     />
     <label for="tabs-usage-0" class="gdoc-tabs__label">
+      linux (wget)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-runtrace</strong> within Linux, run:</p>
+<pre tabindex="0"><code>wget https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-runtrace -O oy-runtrace &amp;&amp; chmod +x oy-runtrace &amp;&amp; ./oy-runtrace --help
+</code></pre>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-1"
+      
+    />
+    <label for="tabs-usage-1" class="gdoc-tabs__label">
       docker
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
@@ -537,10 +553,10 @@ endpoint.</p>
       type="radio"
       class="gdoc-tabs__control hidden"
       name="tabs-usage"
-      id="tabs-usage-1"
+      id="tabs-usage-2"
       
     />
-    <label for="tabs-usage-1" class="gdoc-tabs__label">
+    <label for="tabs-usage-2" class="gdoc-tabs__label">
       nix
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">

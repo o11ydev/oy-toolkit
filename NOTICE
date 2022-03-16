@@ -1,2 +1,5 @@
-This repository contains code from third party products.
-We keep the relevant copyright notices in the files themselves.
+This repository contains code from third party products, including:
+
+- Prometheus
+  https://github.com/prometheus
+  License: apache-2.0

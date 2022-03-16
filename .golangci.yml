@@ -10,6 +10,7 @@ linters:
     - goimports
     - revive
     - depguard
+    - goheader
 
 linters-settings:
   depguard:
@@ -22,3 +23,9 @@ linters-settings:
     local-prefixes: github.com/o11ydev/o11ytools
   gofumpt:
     extra-rules: true
+  goheader:
+    template-path: .golangci.goheader.license
+    regexp:
+      YEAR: 202[2-9]
+  errcheck:
+    exclude: scripts/errcheck_excludes.txt

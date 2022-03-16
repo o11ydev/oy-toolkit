@@ -23,7 +23,7 @@
       defaultPackage = packages.oy-toolkit;
       devShell = pkgs.mkShell rec {
         buildInputs = [
-        (import ./go.nix {inherit pkgs;})
+          pkgs.go
           pkgs.gofumpt
           pkgs.golangci-lint
           pkgs.git

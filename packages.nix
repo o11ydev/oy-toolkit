@@ -19,7 +19,6 @@ with pkgs; let
         if name == "oy-toolkit"
         then []
         else ["./cmd/${name}"];
-      preBuild = "export buildDate=$(date -u '+%Y%m%d-%H:%M:%S%p'); echo OK > VERSION";
 
       ldflags = [
         "-X github.com/prometheus/common/version.Version=${builtins.readFile ./VERSION}"

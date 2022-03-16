@@ -14,7 +14,7 @@ with pkgs; let
     {
       name = name;
       src = ./.;
-      vendorSha256 = "sha256-EN1F5jVitPQGhGHpqjdWzufUBg5v+R2d3P8ejyBkG9E=";
+      vendorSha256 = "sha256-aQbyeQrbiys0RZ/4VSRAoiURmms4500Nf32jmtvYObY=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"

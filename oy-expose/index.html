@@ -58,7 +58,7 @@ This toolkit is currently in early development. The tools here do not have stabl
       "url" : "https://o11y.tools/oy-expose/",
       "headline": "oy-expose",
       "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-expose [\u003cflags\u003e] [\u003cmetrics-file\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=\u0022\u0022 [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=\u0022:9099\u0022 Address to listen on for web interface and telemetry. --web.telemetry-path=\u0022\/metrics\u0022 Path under which to expose metrics.",
-      "wordCount" : "235",
+      "wordCount" : "294",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -552,8 +552,18 @@ maintenance_script_return_code 0
 <pre tabindex="0"><code>$ oy-expose --web.disable-exporter-metrics
 </code></pre><p>And query the metrics:</p>
 <pre tabindex="0"><code>$ curl localhost:9099/metrics
-maintenance_script_run_timestamp_seconds 1647524557
+# HELP maintenance_script_return_code Metric read from metrics
+# TYPE maintenance_script_return_code untyped
 maintenance_script_return_code 0
+# HELP maintenance_script_run_timestamp_seconds Metric read from metrics
+# TYPE maintenance_script_run_timestamp_seconds untyped
+maintenance_script_run_timestamp_seconds 1.647524557e+09
+# HELP node_textfile_mtime_seconds Unixtime mtime of textfiles successfully read.
+# TYPE node_textfile_mtime_seconds gauge
+node_textfile_mtime_seconds{file=&quot;metrics&quot;} 1.647530635e+09
+# HELP node_textfile_scrape_error 1 if there was an error opening or reading a file, 0 otherwise
+# TYPE node_textfile_scrape_error gauge
+node_textfile_scrape_error 0
 </code></pre><div class="gdoc-page__anchorwrap">
     <h2 id="downloading">
         Downloading

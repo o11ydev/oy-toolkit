@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://o11y.tools/categories/</loc>
+  </url><url>
+    <loc>https://o11y.tools/</loc>
+  </url><url>
+    <loc>https://o11y.tools/oy-expose/</loc>
+  </url><url>
+    <loc>https://o11y.tools/oy-runtrace/</loc>
+  </url><url>
+    <loc>https://o11y.tools/tags/</loc>
+  </url>
+</urlset>

@@ -19,10 +19,11 @@ import (
 	"os"
 
 	"github.com/go-kit/log/level"
-	"github.com/o11ydev/tools/util/cmd"
-	"github.com/o11ydev/tools/util/collectors"
-	"github.com/o11ydev/tools/util/http"
 	"github.com/prometheus/client_golang/prometheus"
+
+	"github.com/o11ydev/oy-toolkit/util/cmd"
+	"github.com/o11ydev/oy-toolkit/util/collectors"
+	"github.com/o11ydev/oy-toolkit/util/http"
 
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )

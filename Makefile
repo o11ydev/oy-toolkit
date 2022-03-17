@@ -23,6 +23,7 @@ build: oy-toolkit
 .PHONY: fmt
 fmt:
 	@gofumpt -l -w --extra .
+	@goimports -w -local github.com/o11ydev/oy-toolkit .
 	@alejandra -q *.nix
 
 .PHONY: lint

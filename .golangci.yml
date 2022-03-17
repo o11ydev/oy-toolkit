@@ -20,7 +20,7 @@ linters-settings:
       - sync/atomic: "Use go.uber.org/atomic instead of sync/atomic"
       - github.com/go-kit/kit/log: "Use github.com/go-kit/log instead of github.com/go-kit/kit/log"
   goimports:
-    local-prefixes: github.com/o11ydev/o11ytools
+    local-prefixes: github.com/o11ydev/oy-toolkit
   gofumpt:
     extra-rules: true
   goheader:

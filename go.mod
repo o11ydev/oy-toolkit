@@ -1,4 +1,4 @@
-module github.com/o11ydev/tools
+module github.com/o11ydev/oy-toolkit
 
 go 1.17
 

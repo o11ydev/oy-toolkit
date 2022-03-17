@@ -16,7 +16,7 @@
 package main
 
 import (
-	"github.com/o11ydev/tools/util/cmd"
+	"github.com/o11ydev/oy-toolkit/util/cmd"
 )
 
 func main() {

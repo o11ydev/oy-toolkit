@@ -17,6 +17,12 @@ export DOCKER_USERNAME ?= none
 ifeq ($(O11Y_NIX_SHELL_ENABLED),1)
 all: lint build
 
+# Human friendly way of running tests.
+.PHONY: test
+test: lint
+	@gotestsum ./...
+
+# Build runs tests, we do not need to explicitely add test as a dependency.
 .PHONY: build
 build: oy-toolkit
 
@@ -43,10 +49,13 @@ tidy:
 .PHONY: rebuild
 rebuild:
 
-.PHONY: publish
-publish:
+.PHONY: publish-script
+publish-script:
 	@echo ">> Creating publishing script"
 	@nix build ".#publish-script" -o ./publish.sh
+
+.PHONY: publish
+publish: publish-script
 	@echo ">> Running publishing script"
 	@bash -eu ./publish.sh
 
@@ -59,6 +68,7 @@ documentation:
 vendorhash:
 	@go mod vendor
 	@nix hash path vendor
+	@rm -r vendor
 
 # If we are not in a `nix develop` shell, automatically run into it.
 else

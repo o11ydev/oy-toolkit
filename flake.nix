@@ -28,6 +28,7 @@
         buildInputs = [
           pkgs.go
           pkgs.gofumpt
+          pkgs.gotestsum
           pkgs.gotools
           pkgs.golangci-lint
           pkgs.git

@@ -13,7 +13,7 @@
       
       <guid>https://o11y.tools/oy-expose/</guid>
       <description>This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=&amp;quot;&amp;quot; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=&amp;quot;:9101&amp;quot; Address to listen on for web interface and telemetry. --web.telemetry-path=&amp;quot;/metrics&amp;quot; Path under which to expose metrics.</description>
+This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=&amp;quot;&amp;quot; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=&amp;quot;:9099&amp;quot; Address to listen on for web interface and telemetry. --web.telemetry-path=&amp;quot;/metrics&amp;quot; Path under which to expose metrics.</description>
     </item>
     
     <item>

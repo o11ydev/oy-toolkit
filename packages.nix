@@ -3,10 +3,19 @@ with pkgs; let
   basepkg = name:
     buildGoModule {
       name = name;
-      src =
-        builtins.filterSource
-        (path: type: lib.hasInfix "/cmd" path || lib.hasInfix "/util" path || lib.hasSuffix "/go.mod" path || lib.hasSuffix "/go.sum" path)
-        ./.;
+      src = stdenv.mkDerivation {
+        name = "gosrc";
+        srcs = [./go.mod ./go.sum ./cmd ./util];
+        phases = "installPhase";
+        installPhase = ''
+          mkdir $out
+          for src in $srcs; do
+            for srcFile in $src; do
+              cp -r $srcFile $out/$(stripHash $srcFile)
+            done
+          done
+        '';
+      };
       vendorSha256 = "sha256-vw29oHJEbX7ip5XzjoLr2GGGvM0u2cifW+L2nmev3cE=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =

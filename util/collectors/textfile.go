@@ -171,6 +171,7 @@ func (c *textFileCollector) exportMTimes(mtimes map[string]time.Time, ch chan<- 
 		if c.mtime != nil {
 			mtime = *c.mtime
 		}
+		fmt.Printf("MTIME!")
 		ch <- prometheus.MustNewConstMetric(mtimeDesc, prometheus.GaugeValue, mtime, path)
 	}
 }

@@ -1,0 +1,126 @@
+// Copyright 2022 The o11y toolkit Authors
+// spdx-license-identifier: apache-2.0
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at:
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package collectors
+
+import (
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"testing"
+
+	"github.com/go-kit/log"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/prometheus/common/promlog"
+	"github.com/prometheus/common/promlog/flag"
+	"gopkg.in/alecthomas/kingpin.v2"
+)
+
+type collectorAdapter struct {
+	prometheus.Collector
+}
+
+// Describe implements the prometheus.Collector interface.
+func (a collectorAdapter) Describe(ch chan<- *prometheus.Desc) {
+	// We have to send *some* metric in Describe, but we don't know which ones
+	// we're going to get, so just send a dummy metric.
+	ch <- prometheus.NewDesc("dummy_metric", "Dummy metric.", nil, nil)
+}
+
+func TestTextfileCollector(t *testing.T) {
+	tests := []struct {
+		path string
+		out  string
+	}{
+		{
+			path: "fixtures/textfile/no_metric_files",
+			out:  "fixtures/textfile/no_metric_files.out",
+		},
+		{
+			path: "fixtures/textfile/two_metric_files",
+			out:  "fixtures/textfile/two_metric_files.out",
+		},
+		{
+			path: "fixtures/textfile/nonexistent_path",
+			out:  "fixtures/textfile/nonexistent_path.out",
+		},
+		{
+			path: "fixtures/textfile/client_side_timestamp",
+			out:  "fixtures/textfile/client_side_timestamp.out",
+		},
+		{
+			path: "fixtures/textfile/different_metric_types",
+			out:  "fixtures/textfile/different_metric_types.out",
+		},
+		{
+			path: "fixtures/textfile/inconsistent_metrics",
+			out:  "fixtures/textfile/inconsistent_metrics.out",
+		},
+		{
+			path: "fixtures/textfile/histogram",
+			out:  "fixtures/textfile/histogram.out",
+		},
+		{
+			path: "fixtures/textfile/histogram_extra_dimension",
+			out:  "fixtures/textfile/histogram_extra_dimension.out",
+		},
+		{
+			path: "fixtures/textfile/summary",
+			out:  "fixtures/textfile/summary.out",
+		},
+		{
+			path: "fixtures/textfile/summary_extra_dimension",
+			out:  "fixtures/textfile/summary_extra_dimension.out",
+		},
+		{
+			path: "fixtures/textfile/*_extra_dimension",
+			out:  "fixtures/textfile/glob_extra_dimension.out",
+		},
+	}
+
+	for i, test := range tests {
+		mtime := 1.0
+		c := &textFileCollector{
+			path:   test.path,
+			mtime:  &mtime,
+			logger: log.NewNopLogger(),
+		}
+
+		// Suppress a log message about `nonexistent_path` not existing, this is
+		// expected and clutters the test output.
+		promlogConfig := &promlog.Config{}
+		flag.AddFlags(kingpin.CommandLine, promlogConfig)
+		if _, err := kingpin.CommandLine.Parse([]string{"--log.level", "debug"}); err != nil {
+			t.Fatal(err)
+		}
+
+		registry := prometheus.NewRegistry()
+		registry.MustRegister(collectorAdapter{c})
+
+		rw := httptest.NewRecorder()
+		promhttp.HandlerFor(registry, promhttp.HandlerOpts{}).ServeHTTP(rw, &http.Request{})
+		got := string(rw.Body.String())
+
+		want, err := ioutil.ReadFile(test.out)
+		if err != nil {
+			t.Fatalf("%d. error reading fixture file %s: %s", i, test.out, err)
+		}
+
+		if string(want) != got {
+			t.Fatalf("%d.%q want:\n\n%s\n\ngot:\n\n%s", i, test.path, string(want), got)
+		}
+	}
+}

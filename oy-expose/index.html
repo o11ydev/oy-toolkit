@@ -58,7 +58,7 @@ This toolkit is currently in early development. The tools here do not have stabl
       "url" : "https://o11y.tools/oy-expose/",
       "headline": "oy-expose",
       "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-expose [\u003cflags\u003e] [\u003cmetrics-file\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=\u0022\u0022 [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=\u0022:9099\u0022 Address to listen on for web interface and telemetry. --web.telemetry-path=\u0022\/metrics\u0022 Path under which to expose metrics.",
-      "wordCount" : "177",
+      "wordCount" : "235",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -527,7 +527,34 @@ Args:
 </div>
 <p><em>oy-expose</em> reads a metrics file and exposes its content to be scraped by a
 Prometheus server.</p>
+<p>This is similar to the <a
+  class="gdoc-markdown__link"
+  href="https://github.com/prometheus/node_exporter#textfile-collector"
+  
+>Node Exporter Textfile Collector</a>,
+with a few differences:</p>
+<ul>
+<li>oy-expose only exposes on file.</li>
+<li>oy-expose does not embed other collectors.</li>
+</ul>
 <div class="gdoc-page__anchorwrap">
+    <h2 id="example-usage">
+        Example usage
+        <a data-clipboard-text="https://o11y.tools/oy-expose/#example-usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>Let&rsquo;s create a file called &ldquo;metrics&rdquo; with the following content:</p>
+<pre tabindex="0"><code>maintenance_script_run_timestamp_seconds 1647524557
+maintenance_script_return_code 0
+</code></pre><p>We can run <code>oy-expose</code>:</p>
+<pre tabindex="0"><code>$ oy-expose --web.disable-exporter-metrics
+</code></pre><p>And query the metrics:</p>
+<pre tabindex="0"><code>$ curl localhost:9099/metrics
+maintenance_script_run_timestamp_seconds 1647524557
+maintenance_script_return_code 0
+</code></pre><div class="gdoc-page__anchorwrap">
     <h2 id="downloading">
         Downloading
         <a data-clipboard-text="https://o11y.tools/oy-expose/#downloading" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Downloading" aria-label="Anchor to: Downloading" href="#downloading">

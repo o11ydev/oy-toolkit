@@ -7,7 +7,7 @@ with pkgs; let
         builtins.filterSource
         (path: type: lib.hasInfix "/cmd" path || lib.hasInfix "/util" path || lib.hasSuffix "/go.mod" path || lib.hasSuffix "/go.sum" path)
         ./.;
-      vendorSha256 = "sha256-aQbyeQrbiys0RZ/4VSRAoiURmms4500Nf32jmtvYObY=";
+      vendorSha256 = "sha256-vw29oHJEbX7ip5XzjoLr2GGGvM0u2cifW+L2nmev3cE=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"

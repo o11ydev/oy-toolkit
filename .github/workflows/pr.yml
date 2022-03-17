@@ -10,4 +10,5 @@ jobs:
     - uses: cachix/cachix-action@v10
       with:
         name: oy-toolkit
+    - run: nix show-derivation
     - run: make lint build publish-script documentation

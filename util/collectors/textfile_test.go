@@ -46,14 +46,6 @@ func TestTextfileCollector(t *testing.T) {
 		out  string
 	}{
 		{
-			path: "fixtures/textfile/no_metric_files",
-			out:  "fixtures/textfile/no_metric_files.out",
-		},
-		{
-			path: "fixtures/textfile/two_metric_files",
-			out:  "fixtures/textfile/two_metric_files.out",
-		},
-		{
 			path: "fixtures/textfile/nonexistent_path",
 			out:  "fixtures/textfile/nonexistent_path.out",
 		},
@@ -85,16 +77,12 @@ func TestTextfileCollector(t *testing.T) {
 			path: "fixtures/textfile/summary_extra_dimension",
 			out:  "fixtures/textfile/summary_extra_dimension.out",
 		},
-		{
-			path: "fixtures/textfile/*_extra_dimension",
-			out:  "fixtures/textfile/glob_extra_dimension.out",
-		},
 	}
 
 	for i, test := range tests {
 		mtime := 1.0
 		c := &textFileCollector{
-			path:   test.path,
+			path:   test.path + "/metrics.prom",
 			mtime:  &mtime,
 			logger: log.NewNopLogger(),
 		}

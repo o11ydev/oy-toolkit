@@ -155,7 +155,7 @@ in
             text = builtins.toJSON {
               name = name;
               arch = "amd64";
-              version = ./VERSION;
+              version = builtins.readFile ./VERSION;
               maintainer = "Julien Pivotto <roidelapluie@inuits.eu>";
               description = "The o11y toolkit is a collection of tools that are useful to manage and run an observability stack.";
               vendor = "o11y";

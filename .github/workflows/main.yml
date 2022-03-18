@@ -32,7 +32,7 @@ jobs:
         file_glob: true
         body: "Latest artefacts, built from the main branch."
     - run: Building packages
-      run: make package
+      run: make packages
     - name: Upload packages to release
       uses: svenstaro/upload-release-action@v2
       with:

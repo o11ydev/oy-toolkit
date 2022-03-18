@@ -31,7 +31,7 @@ jobs:
         overwrite: true
         file_glob: true
         body: "Latest artefacts, built from the main branch."
-    - run: Building packages
+    - make: Building packages
       run: make packages
     - name: Upload packages to release
       uses: svenstaro/upload-release-action@v2

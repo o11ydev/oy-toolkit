@@ -25,7 +25,7 @@ with pkgs; let
         else ["./cmd/${name}"];
 
       ldflags = [
-        "-X github.com/prometheus/common/version.Version=${builtins.readFile ./VERSION}"
+        "-X github.com/prometheus/common/version.Version=${pkgs.lib.removeSuffix "\n" (builtins.readFile ./VERSION)}"
         "-X github.com/prometheus/common/version.Branch=n/a"
         "-X github.com/prometheus/common/version.Revision=n/a"
         "-X github.com/prometheus/common/version.BuildUser=n/a"
@@ -155,7 +155,7 @@ in
             text = builtins.toJSON {
               name = name;
               arch = "amd64";
-              version = builtins.readFile ./VERSION;
+              version = pkgs.lib.removeSuffix "\n" (builtins.readFile ./VERSION);
               maintainer = "Julien Pivotto <roidelapluie@inuits.eu>";
               description = "The o11y toolkit is a collection of tools that are useful to manage and run an observability stack.";
               vendor = "o11y";

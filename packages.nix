@@ -147,26 +147,27 @@ in
         }
     );
     nfpmPackages = let
-      npmConfigurations = (builtins.mapAttrs (name: value:
-        pkgs.writeTextFile {
-          name = "npm-config-${name}";
-          text = builtins.toJSON {
-            name = name;
-            arch = "amd64";
-            version = ./VERSION;
-            maintainer = "Julien Pivotto <roidelapluie@inuits.eu>";
-            description = "The o11y toolkit is a collection of tools that are useful to manage and run an observability stack.";
-            vendor = "o11y";
-            contents = [
-              {
-                src = (builtins.getAttr name packageList) + "/bin/${name}";
-                dst = "/bin/${name}";
-              }
-            ];
-          };
-        })
-    (builtins.readDir ./cmd)
-        );
+      npmConfigurations = (
+        builtins.mapAttrs (name: value:
+          pkgs.writeTextFile {
+            name = "npm-config-${name}";
+            text = builtins.toJSON {
+              name = name;
+              arch = "amd64";
+              version = ./VERSION;
+              maintainer = "Julien Pivotto <roidelapluie@inuits.eu>";
+              description = "The o11y toolkit is a collection of tools that are useful to manage and run an observability stack.";
+              vendor = "o11y";
+              contents = [
+                {
+                  src = (builtins.getAttr name packageList) + "/bin/${name}";
+                  dst = "/bin/${name}";
+                }
+              ];
+            };
+          })
+        (builtins.readDir ./cmd)
+      );
     in
       stdenv.mkDerivation {
         name = "gosrc";

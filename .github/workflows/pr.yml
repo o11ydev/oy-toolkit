@@ -11,4 +11,4 @@ jobs:
       with:
         name: oy-toolkit
     - run: nix show-derivation
-    - run: make lint build publish-script documentation
+    - run: make lint build package publish-script documentation

@@ -55,7 +55,7 @@ with pkgs; let
 in
   lib.recursiveUpdate
   (lib.recursiveUpdate packageList dockerPackageList)
-  {
+  rec {
     oy-toolkit = basepkg "oy-toolkit";
     publish-script = (
       stdenv.mkDerivation {
@@ -146,4 +146,47 @@ in
           installPhase = "true";
         }
     );
+    nfpmPackages = let
+      npmConfigurations = (
+        builtins.mapAttrs (name: value:
+          pkgs.writeTextFile {
+            name = "npm-config-${name}";
+            text = builtins.toJSON {
+              name = name;
+              arch = "amd64";
+              version = ./VERSION;
+              maintainer = "Julien Pivotto <roidelapluie@inuits.eu>";
+              description = "The o11y toolkit is a collection of tools that are useful to manage and run an observability stack.";
+              vendor = "o11y";
+              contents = [
+                {
+                  src = (builtins.getAttr name packageList) + "/bin/${name}";
+                  dst = "/bin/${name}";
+                }
+              ];
+            };
+          })
+        (builtins.readDir ./cmd)
+      );
+    in
+      stdenv.mkDerivation {
+        name = "gosrc";
+        buildInputs = [pkgs.nfpm oy-toolkit];
+        phases = "installPhase";
+        installPhase =
+          ''
+            mkdir $out
+          ''
+          + pkgs.lib.concatMapStrings (x: "\n" + x)
+          (
+            builtins.attrValues (
+              builtins.mapAttrs
+              (name: value: ''
+                nfpm package --config ${(builtins.getAttr name npmConfigurations)} -p rpm -t $out/${name}.rpm
+                nfpm package --config ${(builtins.getAttr name npmConfigurations)} -p deb -t $out/${name}.deb
+              '')
+              (builtins.readDir ./cmd)
+            )
+          );
+      };
   }

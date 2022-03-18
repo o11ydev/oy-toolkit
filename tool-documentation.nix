@@ -37,6 +37,16 @@
       ```
       {{< /tab >}}
 
+      {{< tab "linux (deb)" >}}
+      **${name}** is available as a `.deb` package:
+      https://github.com/o11ydev/oy-toolkit/releases/download/main/${name}.deb
+      {{< /tab >}}
+
+      {{< tab "linux (yum)" >}}
+      **${name}** is available as a `.rpm` package:
+      https://github.com/o11ydev/oy-toolkit/releases/download/main/${name}.rpm
+      {{< /tab >}}
+
       {{< tab "docker" >}}
       To execute **${name}** with docker, run:
       ```

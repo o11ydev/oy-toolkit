@@ -64,6 +64,11 @@ documentation:
 	@echo ">> Generating documentation"
 	@nix build ".#documentation" -o ./documentation
 
+.PHONY: packages
+packages:
+	@echo ">> Generating packages"
+	@nix build ".#nfpmPackages"
+
 .PHONY: vendorhash
 vendorhash:
 	@go mod vendor

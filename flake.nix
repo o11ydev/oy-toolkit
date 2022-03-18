@@ -36,6 +36,7 @@
           pkgs.skopeo
           pkgs.hugo
           pkgs.alejandra
+          pkgs.nfpm
         ];
         # This variable is needed in our Makefile.
         O11Y_NIX_SHELL_ENABLED = "1";

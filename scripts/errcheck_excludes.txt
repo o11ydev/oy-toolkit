@@ -1,4 +1,8 @@
 // Used in HTTP handlers, any error is handled by the server itself.
 (net/http.ResponseWriter).Write
+
 // Never check for logger errors.
 (github.com/go-kit/log.Logger).Log
+
+// No need to check for errors on server's shutdown.
+(*net/http.Server).Shutdown

@@ -16,8 +16,8 @@
 package http
 
 import (
+	"context"
 	"net/http"
-	"os"
 
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
@@ -36,7 +36,7 @@ var (
 	disableExporterMetrics = kingpin.Flag("web.disable-exporter-metrics", "Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).").Bool()
 )
 
-func Serve(logger log.Logger, r *prometheus.Registry) {
+func Serve(ctx context.Context, logger log.Logger, r *prometheus.Registry) error {
 	level.Info(logger).Log("msg", "Listening on address", "address", *listenAddress)
 
 	if !*disableExporterMetrics {
@@ -48,8 +48,16 @@ func Serve(logger log.Logger, r *prometheus.Registry) {
 
 	http.Handle(*metricsPath, promhttp.HandlerFor(r, promhttp.HandlerOpts{}))
 	srv := &http.Server{Addr: *listenAddress}
-	if err := web.ListenAndServe(srv, *webConfig, logger); err != nil {
-		level.Error(logger).Log("msg", "Error starting HTTP server", "err", err)
-		os.Exit(1)
+	errCh := make(chan error, 1)
+	go func() {
+		errCh <- web.ListenAndServe(srv, *webConfig, logger)
+	}()
+
+	select {
+	case e := <-errCh:
+		return e
+	case <-ctx.Done():
+		srv.Shutdown(ctx)
+		return nil
 	}
 }

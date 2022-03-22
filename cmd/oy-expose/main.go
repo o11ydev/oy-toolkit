@@ -16,6 +16,7 @@
 package main
 
 import (
+	"context"
 	"os"
 
 	"github.com/go-kit/log/level"
@@ -40,5 +41,5 @@ func main() {
 
 	r := prometheus.NewRegistry()
 	r.MustRegister(collector)
-	http.Serve(logger, r)
+	http.Serve(context.Background(), logger, r)
 }

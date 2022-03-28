@@ -1,6 +1,6 @@
 baseURL = 'https://o11y.tools'
 languageCode = 'en-us'
-title = 'o11y toolkit'
+title = 'O11y toolkit'
 
 [params]
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on o11y toolkit</title>
+    <title>Tags on O11y toolkit</title>
     <link>https://o11y.tools/tags/</link>
-    <description>Recent content in Tags on o11y toolkit</description>
+    <description>Recent content in Tags on O11y toolkit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://o11y.tools/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>

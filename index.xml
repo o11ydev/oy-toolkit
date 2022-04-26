@@ -13,7 +13,7 @@
       
       <guid>https://o11y.tools/oy-expose/</guid>
       <description>This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=&amp;quot;&amp;quot; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=&amp;quot;:9099&amp;quot; Address to listen on for web interface and telemetry. --web.telemetry-path=&amp;quot;/metrics&amp;quot; Path under which to expose metrics.</description>
+This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=&amp;#34;&amp;#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=&amp;#34;:9099&amp;#34; Address to listen on for web interface and telemetry. --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics.</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@ This toolkit is currently in early development. The tools here do not have stabl
       
       <guid>https://o11y.tools/oy-scrape-alignment/</guid>
       <description>This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;quot;up&amp;quot; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned.</description>
+This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned.</description>
     </item>
     
   </channel>

@@ -17,13 +17,13 @@ This toolkit is currently in early development. The tools here do not have stabl
     </item>
     
     <item>
-      <title>oy-runtrace</title>
-      <link>https://o11y.tools/oy-runtrace/</link>
+      <title>oy-scrape-alignment</title>
+      <link>https://o11y.tools/oy-scrape-alignment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://o11y.tools/oy-runtrace/</guid>
+      <guid>https://o11y.tools/oy-scrape-alignment/</guid>
       <description>This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-runtrace [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version.</description>
+This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;quot;up&amp;quot; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned.</description>
     </item>
     
   </channel>

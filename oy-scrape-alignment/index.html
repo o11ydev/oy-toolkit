@@ -9,9 +9,9 @@
 
 
   <meta name="description" content="This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&rsquo;s and might not work as expected.  Usage     usage: oy-runtrace [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version." />
+This toolkit is currently in early development. The tools here do not have stable API&rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&quot;up&quot; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned." />
 
-    <title>oy-runtrace | O11y toolkit</title>
+    <title>oy-scrape-alignment | O11y toolkit</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -32,21 +32,21 @@ This toolkit is currently in early development. The tools here do not have stabl
     
   <meta
     property="og:title"
-    content="oy-runtrace"
+    content="oy-scrape-alignment"
   />
   <meta property="og:site_name" content="O11y toolkit" />
   <meta property="og:description" content="This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-runtrace [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version." />
+This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://o11y.tools/oy-runtrace/" />
+<meta property="og:url" content="https://o11y.tools/oy-scrape-alignment/" />
 
 <meta property="article:section" content="" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="oy-runtrace" />
+<meta name="twitter:title" content="oy-scrape-alignment" />
   <meta name="twitter:description" content="This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-runtrace [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version." />
+This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned." />
 
 
   <script type="application/ld+json">
@@ -54,16 +54,16 @@ This toolkit is currently in early development. The tools here do not have stabl
       "@context": "http://schema.org",
       "@type": "TechArticle",
       "articleSection": "",
-      "name": "oy-runtrace",
-      "url" : "https://o11y.tools/oy-runtrace/",
-      "headline": "oy-runtrace",
-      "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-runtrace [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version.",
-      "wordCount" : "147",
+      "name": "oy-scrape-alignment",
+      "url" : "https://o11y.tools/oy-scrape-alignment/",
+      "headline": "oy-scrape-alignment",
+      "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=\u0022up\u0022 Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned.",
+      "wordCount" : "313",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://o11y.tools/oy-runtrace/"
+          "@id": "https://o11y.tools/oy-scrape-alignment/"
       },
       "copyrightHolder" : "O11y toolkit",
       "copyrightYear" : "0001",
@@ -145,7 +145,7 @@ This toolkit is currently in early development. The tools here do not have stabl
   href="/custom.css"
   media="all"
 />
-  <link href="https://o11y.tools/oy-runtrace/" rel="canonical" type="text/html" />
+  <link href="https://o11y.tools/oy-scrape-alignment/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -372,11 +372,11 @@ This toolkit is currently in early development. The tools here do not have stabl
               
               <a
                 href="
-                  /oy-runtrace/
+                  /oy-scrape-alignment/
                 "
                 class="gdoc-nav__entry is-active"
               >
-                oy-runtrace
+                oy-scrape-alignment
               </a>
             </span>
             
@@ -450,7 +450,7 @@ This toolkit is currently in early development. The tools here do not have stabl
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>oy-runtrace</span><meta itemprop='position' content='2' /></li>
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>oy-scrape-alignment</span><meta itemprop='position' content='2' /></li>
   
 
   
@@ -463,7 +463,7 @@ This toolkit is currently in early development. The tools here do not have stabl
       <span class="editpage">
         <svg class="icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
         <a
-          href="https://github.com/o11ydev/oy-toolkit/edit/main/cmd/oy-runtrace/README.md"
+          href="https://github.com/o11ydev/oy-toolkit/edit/main/cmd/oy-scrape-alignment/README.md"
         >
           Edit page
         </a>
@@ -477,7 +477,7 @@ This toolkit is currently in early development. The tools here do not have stabl
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>oy-runtrace</h1>
+    <h1>oy-scrape-alignment</h1>
     <blockquote class="gdoc-hint danger">
   <strong>This toolkit is WIP.</strong><br>
 This toolkit is currently in early development. The tools here do not have
@@ -487,36 +487,75 @@ stable API&rsquo;s and might not work as expected.
 <div class="gdoc-page__anchorwrap">
     <h2 id="usage">
         Usage
-        <a data-clipboard-text="https://o11y.tools/oy-runtrace/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
+        <a data-clipboard-text="https://o11y.tools/oy-scrape-alignment/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<pre tabindex="0"><code>usage: oy-runtrace [&lt;flags&gt;]
+<pre tabindex="0"><code>usage: oy-scrape-alignment [&lt;flags&gt;]
 
 Flags:
-  -h, --help               Show context-sensitive help (also try --help-long and
-                           --help-man).
-      --log.level=info     Only log messages with the given severity or above.
-                           One of: [debug, info, warn, error]
-      --log.format=logfmt  Output format of log messages. One of: [logfmt, json]
-      --version            Show application version.
+  -h, --help                Show context-sensitive help (also try --help-long
+                            and --help-man).
+      --metric=&quot;up&quot;         Metric to use to determine alignment.
+      --lookback=1h         How much time to look in the past for scrapes.
+      --divisor=1s          Divisor to use to determine if a scrape is aligned.
+      --log.unaligned-only  Only log unaligned targets.
+      --log.results-only    Only log final result.
+      --prometheus.url=&quot;http://127.0.0.1:9090&quot;  
+                            URL of the Prometheus server.
+      --log.level=info      Only log messages with the given severity or above.
+                            One of: [debug, info, warn, error]
+      --log.format=logfmt   Output format of log messages. One of: [logfmt,
+                            json]
+      --version             Show application version.
 
 
 </code></pre><div class="gdoc-page__anchorwrap">
     <h2 id="description">
         Description
-        <a data-clipboard-text="https://o11y.tools/oy-runtrace/#description" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Description" aria-label="Anchor to: Description" href="#description">
+        <a data-clipboard-text="https://o11y.tools/oy-scrape-alignment/#description" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Description" aria-label="Anchor to: Description" href="#description">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p><em>oy-runtrace</em> executes a command and sends a trace to the selected OpenTelemetry
-endpoint.</p>
+<p><em>oy-scrape-alignment</em> queries a Prometheus server to see how aligned scrapes are.
+Perfect scrape alignment happens when the distance between all the scrapes are
+exactly the same. It enables Prometheus <a
+  class="gdoc-markdown__link"
+  href="https://github.com/prometheus/prometheus/blob/main/tsdb/docs/bstream.md"
+  
+>delta-of-delta</a>
+encoding to reduce significantly the size of the blocks.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="example-usage">
+        Example usage
+        <a data-clipboard-text="https://o11y.tools/oy-scrape-alignment/#example-usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ./oy-scrape-alignment --prometheus.url<span style="color:#f92672">=</span>https://prometheus.demo.do.prometheus.io/ --log.results-only
+ts<span style="color:#f92672">=</span>2022-04-26T12:11:34.659Z caller<span style="color:#f92672">=</span>main.go:117 level<span style="color:#f92672">=</span>info msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;overall results&#34;</span> aligned_targets<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> unaligned_targets<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> max_ms<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>
+</code></pre></div><p>This means that the maximum deviation seen in your scrape jobs is 25ms. You
+could set <code>--scrape.timestamp-tolerance=25ms</code> to reduce your disk usage over
+time, by enabling Prometheus to correct timestamps up to 25ms.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="prometheus-limits">
+        Prometheus limits
+        <a data-clipboard-text="https://o11y.tools/oy-scrape-alignment/#prometheus-limits" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Prometheus limits" aria-label="Anchor to: Prometheus limits" href="#prometheus-limits">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>Prometheus will only apply timestamp tolerance up to 1%. If your scrape interval
+is 30s, you can only adjust timestamps up to 300ms. Setting a 500ms tolerance
+will have no effects on jobs with a scrape interval lower than 500s, even if the
+deviation is tiny.</p>
 <div class="gdoc-page__anchorwrap">
     <h2 id="downloading">
         Downloading
-        <a data-clipboard-text="https://o11y.tools/oy-runtrace/#downloading" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Downloading" aria-label="Anchor to: Downloading" href="#downloading">
+        <a data-clipboard-text="https://o11y.tools/oy-scrape-alignment/#downloading" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Downloading" aria-label="Anchor to: Downloading" href="#downloading">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -539,8 +578,8 @@ endpoint.</p>
       linux (wget)
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
-      <p>To execute <strong>oy-runtrace</strong> within Linux, run:</p>
-<pre tabindex="0"><code>wget https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-runtrace -O oy-runtrace &amp;&amp; chmod +x oy-runtrace &amp;&amp; ./oy-runtrace --help
+      <p>To execute <strong>oy-scrape-alignment</strong> within Linux, run:</p>
+<pre tabindex="0"><code>wget https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-scrape-alignment -O oy-scrape-alignment &amp;&amp; chmod +x oy-scrape-alignment &amp;&amp; ./oy-scrape-alignment --help
 </code></pre>
     </div>
   
@@ -555,12 +594,12 @@ endpoint.</p>
       linux (deb)
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
-      <strong>oy-runtrace</strong> is available as a <code>.deb</code> package:
+      <strong>oy-scrape-alignment</strong> is available as a <code>.deb</code> package:
 <a
   class="gdoc-markdown__link"
-  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-runtrace.deb"
+  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-scrape-alignment.deb"
   
->https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-runtrace.deb</a>
+>https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-scrape-alignment.deb</a>
     </div>
   
     <input
@@ -574,12 +613,12 @@ endpoint.</p>
       linux (yum)
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
-      <strong>oy-runtrace</strong> is available as a <code>.rpm</code> package:
+      <strong>oy-scrape-alignment</strong> is available as a <code>.rpm</code> package:
 <a
   class="gdoc-markdown__link"
-  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-runtrace.rpm"
+  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-scrape-alignment.rpm"
   
->https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-runtrace.rpm</a>
+>https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-scrape-alignment.rpm</a>
     </div>
   
     <input
@@ -593,8 +632,8 @@ endpoint.</p>
       docker
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
-      <p>To execute <strong>oy-runtrace</strong> with docker, run:</p>
-<pre tabindex="0"><code>docker run quay.io/o11y/oy-toolkit:oy-runtrace --help
+      <p>To execute <strong>oy-scrape-alignment</strong> with docker, run:</p>
+<pre tabindex="0"><code>docker run quay.io/o11y/oy-toolkit:oy-scrape-alignment --help
 </code></pre>
     </div>
   
@@ -609,8 +648,8 @@ endpoint.</p>
       nix
     </label>
     <div class="gdoc-markdown--nested gdoc-tabs__content">
-      <p>To execute <strong>oy-runtrace</strong> with nix, run:</p>
-<pre tabindex="0"><code>nix run github:o11ydev/oy-toolkit#oy-runtrace -- --help
+      <p>To execute <strong>oy-scrape-alignment</strong> with nix, run:</p>
+<pre tabindex="0"><code>nix run github:o11ydev/oy-toolkit#oy-scrape-alignment -- --help
 </code></pre>
     </div>
   

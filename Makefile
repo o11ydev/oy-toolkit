@@ -71,8 +71,7 @@ packages:
 
 .PHONY: vendorhash
 vendorhash:
-	@go mod vendor
-	@nix hash path vendor
+	@sed -i '/vendorSha256/s/".*"/"$(shell go mod vendor && nix hash path vendor)"/' packages.nix
 	@rm -r vendor
 
 # If we are not in a `nix develop` shell, automatically run into it.

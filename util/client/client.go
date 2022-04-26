@@ -13,12 +13,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package client
 
 import (
-	"github.com/o11ydev/oy-toolkit/util/cmd"
+	"github.com/prometheus/client_golang/api"
+	"gopkg.in/alecthomas/kingpin.v2"
 )
 
-func main() {
-	cmd.InitCmd("oy-runtrace")
+type Config struct {
+	url string
+}
+
+func InitCliFlags() *Config {
+	var c Config
+	kingpin.Flag("prometheus.url", "URL of the Prometheus server.").Default("http://127.0.0.1:9090").StringVar(&c.url)
+	return &c
+}
+
+func NewClient(c *Config) (api.Client, error) {
+	return api.NewClient(api.Config{
+		Address: c.url,
+	})
 }

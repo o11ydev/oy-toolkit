@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-vw29oHJEbX7ip5XzjoLr2GGGvM0u2cifW+L2nmev3cE=";
+      vendorSha256 = "sha256-+NFYMItL5p7cy52rBR0bf3aTT+YrWLw+QQiM1Z+he7E=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"

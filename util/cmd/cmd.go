@@ -19,6 +19,7 @@ import (
 	"os"
 
 	"github.com/go-kit/log"
+	"github.com/go-kit/log/level"
 	"github.com/prometheus/common/promlog"
 	"github.com/prometheus/common/promlog/flag"
 	"github.com/prometheus/common/version"
@@ -32,5 +33,32 @@ func InitCmd(name string) log.Logger {
 	kingpin.CommandLine.UsageWriter(os.Stdout)
 	kingpin.HelpFlag.Short('h')
 	kingpin.Parse()
-	return promlog.New(promlogConfig)
+	return newLogger(promlogConfig)
+}
+
+func newLogger(config *promlog.Config) log.Logger {
+	var l log.Logger
+	if config.Format != nil && config.Format.String() == "json" {
+		l = log.NewJSONLogger(log.NewSyncWriter(os.Stdout))
+	} else {
+		l = log.NewLogfmtLogger(log.NewSyncWriter(os.Stdout))
+	}
+
+	if config.Level != nil {
+		var lvl level.Option
+		switch config.Level.String() {
+		case "debug":
+			lvl = level.AllowDebug()
+		case "info":
+			lvl = level.AllowInfo()
+		case "warn":
+			lvl = level.AllowWarn()
+		case "error":
+			lvl = level.AllowError()
+		default:
+			lvl = level.AllowDebug()
+		}
+		l = level.NewFilter(l, lvl)
+	}
+	return l
 }

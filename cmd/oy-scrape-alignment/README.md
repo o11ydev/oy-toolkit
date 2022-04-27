@@ -23,3 +23,8 @@ Prometheus will only apply timestamp tolerance up to 1%. If your scrape interval
 is 30s, you can only adjust timestamps up to 300ms. Setting a 500ms tolerance
 will have no effects on jobs with a scrape interval lower than 500s, even if the
 deviation is tiny.
+
+## Plotting the output
+
+By using `--plot.file=scrape.png`, you can generate a PNG file which shows the
+scrape (mis-)alignment with an histogram.

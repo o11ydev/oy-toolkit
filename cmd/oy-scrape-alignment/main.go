@@ -18,6 +18,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"image/color"
 	"os"
 	"time"
 
@@ -26,6 +27,9 @@ import (
 	"github.com/prometheus/client_golang/api"
 	apiv1 "github.com/prometheus/client_golang/api/prometheus/v1"
 	"github.com/prometheus/common/model"
+	"gonum.org/v1/plot"
+	"gonum.org/v1/plot/plotter"
+	"gonum.org/v1/plot/vg"
 	"gopkg.in/alecthomas/kingpin.v2"
 
 	"github.com/o11ydev/oy-toolkit/util/client"
@@ -33,11 +37,14 @@ import (
 )
 
 var (
-	metric        = kingpin.Flag("metric", "Metric to use to determine alignment.").Default("up").String()
-	lookback      = kingpin.Flag("lookback", "How much time to look in the past for scrapes.").Default("1h").Duration()
-	divisor       = kingpin.Flag("divisor", "Divisor to use to determine if a scrape is aligned.").Default("1s").Duration()
-	unalignedOnly = kingpin.Flag("log.unaligned-only", "Only log unaligned targets.").Bool()
-	quiet         = kingpin.Flag("log.results-only", "Only log final result.").Bool()
+	metric            = kingpin.Flag("metric", "Metric to use to determine alignment.").Default("up").String()
+	png               = kingpin.Flag("plot.file", "Path to a file to write an image of the results.").PlaceHolder("file.png").String()
+	plotLog           = kingpin.Flag("plot.log-y", "Use logarithmic Y axis.").Bool()
+	lookback          = kingpin.Flag("lookback", "How much time to look in the past for scrapes.").Default("1h").Duration()
+	divisor           = kingpin.Flag("divisor", "Divisor to use to determine if a scrape is aligned.").Default("1s").Duration()
+	unalignedOnly     = kingpin.Flag("log.unaligned-only", "Only take unaligned targets in logging.").Bool()
+	plotUnalignedOnly = kingpin.Flag("plot.unaligned-only", "Only take unaligned targets in plot.").Default("true").Bool()
+	quiet             = kingpin.Flag("log.results-only", "Only log final result.").Bool()
 )
 
 func main() {
@@ -54,6 +61,8 @@ func main() {
 }
 
 func analyzeScrapeAlignment(logger log.Logger, promClient api.Client) {
+	var plotValues plotter.Values
+
 	api := apiv1.NewAPI(promClient)
 	v, warnings, err := api.Query(context.Background(), fmt.Sprintf("%s[%dms]", *metric, lookback.Milliseconds()), time.Now())
 	if err != nil {
@@ -102,6 +111,11 @@ func analyzeScrapeAlignment(logger log.Logger, promClient api.Client) {
 					}
 				}
 			}
+			if *png != "" {
+				if !ok || !*plotUnalignedOnly {
+					plotValues = append(plotValues, float64(diff%divisor.Milliseconds()))
+				}
+			}
 			lastTs = s.Timestamp.Time()
 		}
 
@@ -115,5 +129,36 @@ func analyzeScrapeAlignment(logger log.Logger, promClient api.Client) {
 			badTargets++
 		}
 	}
-	level.Info(logger).Log("msg", "overall results", "aligned_targets", goodTargets, "unaligned_targets", badTargets, "max_ms", maxTarget)
+	level.Info(logger).Log("aligned_targets", goodTargets, "unaligned_targets", badTargets, "max_ms", maxTarget)
+	if *png != "" {
+		err := makePlot(plotValues, *png)
+		if err != nil {
+			level.Error(logger).Log("msg", "Unable to plot data.", "err", err)
+		}
+	}
+}
+
+func makePlot(values plotter.Values, out string) error {
+	p := plot.New()
+	p.Title.Text = "Scrape alignement"
+	p.X.Label.Text = "Timestamp difference (ms)"
+	p.Y.Label.Text = "Scrapes"
+	l := plot.NewLegend()
+	l.Add("https://o11y.tools")
+	l.Top = true
+	l.TextStyle.Color = color.RGBA{0, 0, 0, 100}
+
+	hist, err := plotter.NewHist(values, 25)
+	if err != nil {
+		return err
+	}
+	hist.FillColor = color.RGBA{255, 0, 74, 255}
+	hist.LogY = *plotLog
+	p.Add(hist)
+	p.Legend = l
+
+	if err := p.Save(4*vg.Inch, 3*vg.Inch, out); err != nil {
+		return err
+	}
+	return nil
 }

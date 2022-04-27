@@ -9,7 +9,7 @@
 
 
   <meta name="description" content="This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned." />
+This toolkit is currently in early development. The tools here do not have stable API&rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes." />
 
     <title>oy-scrape-alignment | O11y toolkit</title>
 
@@ -36,7 +36,7 @@ This toolkit is currently in early development. The tools here do not have stabl
   />
   <meta property="og:site_name" content="O11y toolkit" />
   <meta property="og:description" content="This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned." />
+This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://o11y.tools/oy-scrape-alignment/" />
 
@@ -46,7 +46,7 @@ This toolkit is currently in early development. The tools here do not have stabl
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="oy-scrape-alignment" />
   <meta name="twitter:description" content="This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned." />
+This toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine alignment. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes." />
 
 
   <script type="application/ld+json">
@@ -57,8 +57,8 @@ This toolkit is currently in early development. The tools here do not have stabl
       "name": "oy-scrape-alignment",
       "url" : "https://o11y.tools/oy-scrape-alignment/",
       "headline": "oy-scrape-alignment",
-      "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=\u0022up\u0022 Metric to use to determine alignment. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned.",
-      "wordCount" : "313",
+      "description": "This toolkit is WIP.\nThis toolkit is currently in early development. The tools here do not have stable API’s and might not work as expected.  Usage     usage: oy-scrape-alignment [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=\u0022up\u0022 Metric to use to determine alignment. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes.",
+      "wordCount" : "359",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -495,20 +495,23 @@ stable API&rsquo;s and might not work as expected.
 <pre tabindex="0"><code>usage: oy-scrape-alignment [&lt;flags&gt;]
 
 Flags:
-  -h, --help                Show context-sensitive help (also try --help-long
-                            and --help-man).
-      --metric=&#34;up&#34;         Metric to use to determine alignment.
-      --lookback=1h         How much time to look in the past for scrapes.
-      --divisor=1s          Divisor to use to determine if a scrape is aligned.
-      --log.unaligned-only  Only log unaligned targets.
-      --log.results-only    Only log final result.
+  -h, --help                 Show context-sensitive help (also try --help-long
+                             and --help-man).
+      --metric=&#34;up&#34;          Metric to use to determine alignment.
+      --plot.file=file.png   Path to a file to write an image of the results.
+      --plot.log-y           Use logarithmic Y axis.
+      --lookback=1h          How much time to look in the past for scrapes.
+      --divisor=1s           Divisor to use to determine if a scrape is aligned.
+      --log.unaligned-only   Only take unaligned targets in logging.
+      --plot.unaligned-only  Only take unaligned targets in plot.
+      --log.results-only     Only log final result.
       --prometheus.url=&#34;http://127.0.0.1:9090&#34;  
-                            URL of the Prometheus server.
-      --log.level=info      Only log messages with the given severity or above.
-                            One of: [debug, info, warn, error]
-      --log.format=logfmt   Output format of log messages. One of: [logfmt,
-                            json]
-      --version             Show application version.
+                             URL of the Prometheus server.
+      --log.level=info       Only log messages with the given severity or above.
+                             One of: [debug, info, warn, error]
+      --log.format=logfmt    Output format of log messages. One of: [logfmt,
+                             json]
+      --version              Show application version.
 </code></pre><div class="gdoc-page__anchorwrap">
     <h2 id="description">
         Description
@@ -550,6 +553,16 @@ time, by enabling Prometheus to correct timestamps up to 25ms.</p>
 is 30s, you can only adjust timestamps up to 300ms. Setting a 500ms tolerance
 will have no effects on jobs with a scrape interval lower than 500s, even if the
 deviation is tiny.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="plotting-the-output">
+        Plotting the output
+        <a data-clipboard-text="https://o11y.tools/oy-scrape-alignment/#plotting-the-output" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Plotting the output" aria-label="Anchor to: Plotting the output" href="#plotting-the-output">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>By using <code>--plot.file=scrape.png</code>, you can generate a PNG file which shows the
+scrape (mis-)alignment with an histogram.</p>
 <div class="gdoc-page__anchorwrap">
     <h2 id="downloading">
         Downloading

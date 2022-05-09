@@ -5,7 +5,7 @@ with pkgs; let
       name = name;
       src = stdenv.mkDerivation {
         name = "gosrc";
-        srcs = [./go.mod ./go.sum ./cmd ./util];
+        srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
         phases = "installPhase";
         installPhase = ''
           mkdir $out
@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-A/8aQkEshR4yePLUhkV6Rcn8jTB6VIMmUoYgvgUoHxA=";
+      vendorSha256 = "sha256-1tEJR8F8AHjyYyv64zGSHx9O+JyHw0agbV8K/p2FVJ4=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"
@@ -97,6 +97,10 @@ in
                 ref = "/" + x;
               }) (builtins.attrNames packageList);
             }
+            {
+              name = "/metrics lint";
+              ref = "/metriclint";
+            }
           ];
         };
         menuFile = pkgs.writeTextFile {
@@ -131,12 +135,41 @@ in
               )
             );
         };
+        metricLint = buildGoModule rec {
+          name = "metriclint";
+          src = stdenv.mkDerivation {
+            name = "gosrc";
+            srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
+            phases = "installPhase";
+            installPhase = ''
+              mkdir $out
+              for src in $srcs; do
+                for srcFile in $src; do
+                  cp -r $srcFile $out/$(stripHash $srcFile)
+                done
+              done
+            '';
+          };
+          CGO_ENABLED = 0;
+          vendorSha256 = "sha256-1tEJR8F8AHjyYyv64zGSHx9O+JyHw0agbV8K/p2FVJ4=";
+          #vendorSha256 = pkgs.lib.fakeSha256;
+          subPackages = ["wasm/${name}"];
+          preBuild = ''
+            export GOOS=js
+            export GOARCH=wasm
+          '';
+        };
       in
         stdenv.mkDerivation {
           name = "documentation";
           src = ./docs;
           buildInputs = [pkgs.hugo];
           buildPhase = pkgs.writeShellScript "hugo" ''
+            set -e
+            cp ${metricLint}/bin/js_wasm/metriclint static/metriclint.wasm
+            chmod -x static/metriclint.wasm
+            cp ${pkgs.go_1_18}/share/go/misc/wasm/wasm_exec.js static
+
             mkdir -p data/menu
             cp ${menuFile} data/menu/main.yml
             cp -r ${commandDocs}/* content

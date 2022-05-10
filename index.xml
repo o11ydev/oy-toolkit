@@ -2,38 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>O11y toolkit</title>
-    <link>https://o11y.tools/</link>
+    <link>/</link>
     <description>Recent content on O11y toolkit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://o11y.tools/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>/metrics lint</title>
-      <link>https://o11y.tools/metricslint/</link>
+      <link>/metricslint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://o11y.tools/metricslint/</guid>
+      <guid>/metricslint/</guid>
       <description>This tool enables you to validate the format of Prometheus metrics, and make sure they can be scraped by a Prometheus server.
 Prometheus supports two exposition formats: the Prometheus text-based exposition format and OpenMetrics. The text-based exposition format is widespread, and many applications and client libraries supports it. Additionally, it can be used from scripts, to push metrics to the Pushgateway or written to *.prom files, to be collected by the textfile collectors (available in both the Node Exporter and the Windows Exporter).</description>
     </item>
     
     <item>
       <title>oy-expose</title>
-      <link>https://o11y.tools/oy-expose/</link>
+      <link>/oy-expose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://o11y.tools/oy-expose/</guid>
-      <description>This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=&amp;#34;&amp;#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=&amp;#34;:9099&amp;#34; Address to listen on for web interface and telemetry. --web.</description>
+      <guid>/oy-expose/</guid>
+      <description>Usage     usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.config.file=&amp;#34;&amp;#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.listen-address=&amp;#34;:9099&amp;#34; Address to listen on for web interface and telemetry. --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*). --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.</description>
     </item>
     
     <item>
-      <title>oy-scrape-alignment</title>
-      <link>https://o11y.tools/oy-scrape-alignment/</link>
+      <title>oy-scrape-jitter</title>
+      <link>/oy-scrape-jitter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://o11y.tools/oy-scrape-alignment/</guid>
-      <description>This toolkit is WIP.
-This toolkit is currently in early development. The tools here do not have stable API&amp;rsquo;s and might not work as expected.  Usage     usage: oy-scrape-alignment [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine alignment. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis.</description>
+      <guid>/oy-scrape-jitter/</guid>
+      <description>Usage     usage: oy-scrape-jitter [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine jitter. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging.</description>
     </item>
     
   </channel>

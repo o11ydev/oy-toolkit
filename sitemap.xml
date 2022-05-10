@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://o11y.tools/metricslint/</loc>
+    <loc>/metricslint/</loc>
   </url><url>
-    <loc>https://o11y.tools/categories/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>https://o11y.tools/</loc>
+    <loc>/</loc>
   </url><url>
-    <loc>https://o11y.tools/oy-expose/</loc>
+    <loc>/oy-expose/</loc>
   </url><url>
-    <loc>https://o11y.tools/oy-scrape-alignment/</loc>
+    <loc>/oy-scrape-jitter/</loc>
   </url><url>
-    <loc>https://o11y.tools/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>

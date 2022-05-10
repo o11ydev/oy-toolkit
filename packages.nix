@@ -98,6 +98,10 @@ in
               }) (builtins.attrNames packageList);
             }
             {
+              name = "HTTP client";
+              ref = "/httpclient";
+            }
+            {
               name = "/metrics lint";
               ref = "/metricslint";
             }

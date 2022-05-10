@@ -84,8 +84,8 @@ in
     documentation = (
       let
         theme = pkgs.fetchzip {
-          url = "https://github.com/thegeeklab/hugo-geekdoc/releases/download/v0.27.4/hugo-geekdoc.tar.gz";
-          sha256 = "sha256-TtnpqLRaanninztiv85ASEsiO6/ciVmnjS4zotkdCaY=";
+          url = "https://github.com/thegeeklab/hugo-geekdoc/releases/download/v0.29.4/hugo-geekdoc.tar.gz";
+          sha256 = "sha256-Sypg9jBNbW4IeHTqDAq9ZpxgweW1BmFRFjDF51NSg/M=";
           stripRoot = false;
         };
         menu = {
@@ -99,7 +99,7 @@ in
             }
             {
               name = "/metrics lint";
-              ref = "/metriclint";
+              ref = "/metricslint";
             }
           ];
         };
@@ -135,8 +135,8 @@ in
               )
             );
         };
-        metricLint = buildGoModule rec {
-          name = "metriclint";
+        metricsLint = buildGoModule rec {
+          name = "metricslint";
           src = stdenv.mkDerivation {
             name = "gosrc";
             srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
@@ -166,8 +166,8 @@ in
           buildInputs = [pkgs.hugo];
           buildPhase = pkgs.writeShellScript "hugo" ''
             set -e
-            cp ${metricLint}/bin/js_wasm/metriclint static/metriclint.wasm
-            chmod -x static/metriclint.wasm
+            cp ${metricsLint}/bin/js_wasm/metricslint static/metricslint.wasm
+            chmod -x static/metricslint.wasm
             cp ${pkgs.go_1_18}/share/go/misc/wasm/wasm_exec.js static
 
             mkdir -p data/menu

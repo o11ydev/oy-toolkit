@@ -1,4 +1,4 @@
-baseURL = 'https://o11y.tools'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'O11y toolkit'
 

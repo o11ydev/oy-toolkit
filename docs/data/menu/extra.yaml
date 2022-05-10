@@ -1,0 +1,10 @@
+---
+header:
+  - name: GitHub
+    ref: https://github.com/o11ydev/oy-toolkit
+    icon: gdoc_github
+    external: true
+  - name: Support
+    ref: https://o11y.eu/support
+    icon: gdoc_fire
+    external: true

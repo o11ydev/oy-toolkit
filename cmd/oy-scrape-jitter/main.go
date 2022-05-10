@@ -38,6 +38,7 @@ import (
 
 var (
 	metric            = kingpin.Flag("metric", "Metric to use to determine jitter.").Default("up").String()
+	qtime             = kingpin.Flag("query.timestamp", "Timestamp of the query.").Int64()
 	png               = kingpin.Flag("plot.file", "Path to a file to write an image of the results.").PlaceHolder("file.png").String()
 	plotLog           = kingpin.Flag("plot.log-y", "Use logarithmic Y axis.").Bool()
 	lookback          = kingpin.Flag("lookback", "How much time to look in the past for scrapes.").Default("1h").Duration()
@@ -63,8 +64,13 @@ func main() {
 func analyzeScrapeAlignment(logger log.Logger, promClient api.Client) {
 	var plotValues plotter.Values
 
+	tm := time.Now()
+	if *qtime != 0 {
+		tm = time.Unix(*qtime, 0)
+	}
+
 	api := apiv1.NewAPI(promClient)
-	v, warnings, err := api.Query(context.Background(), fmt.Sprintf("%s[%dms]", *metric, lookback.Milliseconds()), time.Now())
+	v, warnings, err := api.Query(context.Background(), fmt.Sprintf("%s[%dms]", *metric, lookback.Milliseconds()), tm)
 	if err != nil {
 		level.Error(logger).Log("msg", "Can't query up metrics", "err", err)
 		os.Exit(1)

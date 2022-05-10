@@ -8,8 +8,12 @@
 <meta name="generator" content="Hugo 0.96.0" />
 
 
+  <meta name="description" content="Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
+The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
+Generic placeholders are defined as follows:
+ &lt;bool&gt;: a boolean that can take the values true or false &lt;filename&gt;: a valid path in the current working directory &lt;secret&gt;: a regular string that is a secret, such as a password &lt;string&gt;: a regular string  The other placeholders are specified separately." />
 
-    <title>O11y toolkit</title>
+    <title>HTTP client | O11y toolkit</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -28,25 +32,62 @@
     
 
     
+  <meta
+    property="og:title"
+    content="HTTP client"
+  />
   <meta property="og:site_name" content="O11y toolkit" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+  <meta property="og:description" content="Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
+The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
+Generic placeholders are defined as follows:
+ &lt;bool&gt;: a boolean that can take the values true or false &lt;filename&gt;: a valid path in the current working directory &lt;secret&gt;: a regular string that is a secret, such as a password &lt;string&gt;: a regular string  The other placeholders are specified separately." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/httpclient/" />
 
-
+<meta property="article:section" content="" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="O11y toolkit" />
+<meta name="twitter:title" content="HTTP client" />
+  <meta name="twitter:description" content="Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
+The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
+Generic placeholders are defined as follows:
+ &lt;bool&gt;: a boolean that can take the values true or false &lt;filename&gt;: a valid path in the current working directory &lt;secret&gt;: a regular string that is a secret, such as a password &lt;string&gt;: a regular string  The other placeholders are specified separately." />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "O11y toolkit",
-      "url": "/",
+      "@type": "TechArticle",
+      "articleSection": "",
+      "name": "HTTP client",
+      "url" : "/httpclient/",
+      "headline": "HTTP client",
+      "description": "Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.\nThe file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.\nGeneric placeholders are defined as follows:\n \u003cbool\u003e: a boolean that can take the values true or false \u003cfilename\u003e: a valid path in the current working directory \u003csecret\u003e: a regular string that is a secret, such as a password \u003cstring\u003e: a regular string  The other placeholders are specified separately.",
+      "wordCount" : "520",
       "license": "CC BY-SA 4.0",
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "/httpclient/"
+      },
+      "copyrightHolder" : "O11y toolkit",
+      "copyrightYear" : "0001",
+      "dateCreated": "0001-01-01T00:00:00.00Z",
+      "datePublished": "0001-01-01T00:00:00.00Z",
+      "dateModified": "0001-01-01T00:00:00.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "O11y toolkit",
+          "url": "/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "/brand.svg",
+              "width":"32",
+              "height":"32"
+          }
+      }
   }
   </script>
 
@@ -111,7 +152,7 @@
   href="/custom.css"
   media="all"
 />
-  <link href="/" rel="canonical" type="text/html" />
+  <link href="/httpclient/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -453,7 +494,7 @@
                 
                 <a
                   href="/httpclient/"
-                  class="gdoc-nav__entry"
+                  class="gdoc-nav__entry is-active"
                 >
                   HTTP client
                 </a>
@@ -561,7 +602,15 @@
         
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>O11y toolkit</span><meta itemprop='position' content='1' /></li>
+    
+    
+    
+    
+  
+  
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>HTTP client</span><meta itemprop='position' content='2' /></li>
+  
+
   
 
       </ol>
@@ -575,55 +624,136 @@
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>O11y toolkit</h1>
-    <p>The <strong>O11y toolkit</strong> is a set of utilities that help you debug, augment,
-and manage your open source observability stack.</p>
-<p>The toolkit is licensed under the Apache 2 license. You can use it for free.</p>
-<div class="gdoc-page__anchorwrap">
-    <h3 id="available-tools">
-        Available tools
-        <a data-clipboard-text="/#available-tools" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Available tools" aria-label="Anchor to: Available tools" href="#available-tools">
-            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h3>
-</div>
+    <h1>HTTP client</h1>
+    <p>Command line tools that connect to a Prometheus server can take a file path in
+a <code>--client.config</code> parameter. This is useful to connect to a Prometheus server
+with authentication or self-signed certificates.</p>
+<p>The file is written in <a
+  class="gdoc-markdown__link"
+  href="https://en.wikipedia.org/wiki/YAML"
+  
+>YAML format</a>,
+defined by the scheme described below.
+Brackets indicate that a parameter is optional. For non-list parameters the
+value is set to the specified default.</p>
+<p>Generic placeholders are defined as follows:</p>
 <ul>
-<li><a
-  class="gdoc-markdown__link"
-  href="/oy-expose"
-  
->oy-expose</a>: command line utility to expose a single metrics file
-to be scraped by Prometheus.</li>
-<li><a
-  class="gdoc-markdown__link"
-  href="/oy-scrape-jitter"
-  
->oy-scrape-jitter</a>: command line utility to analyze
-Prometheus scrape timestamps jitter.</li>
+<li><code>&lt;bool&gt;</code>: a boolean that can take the values <code>true</code> or <code>false</code></li>
+<li><code>&lt;filename&gt;</code>: a valid path in the current working directory</li>
+<li><code>&lt;secret&gt;</code>: a regular string that is a secret, such as a password</li>
+<li><code>&lt;string&gt;</code>: a regular string</li>
 </ul>
-<div class="gdoc-page__anchorwrap">
-    <h3 id="sponsor">
-        Sponsor
-        <a data-clipboard-text="/#sponsor" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Sponsor" aria-label="Anchor to: Sponsor" href="#sponsor">
+<p>The other placeholders are specified separately.</p>
+<pre tabindex="0"><code># Sets the `Authorization` header on every request with the
+# configured username an.
+# password and password_file are mutually exclusive.
+basic_auth:
+  [ username: &lt;string&gt; ]
+  [ password: &lt;secret&gt; ]
+  [ password_file: &lt;string&gt; ]
+
+# Sets the `Authorization` header on every request with
+# the configured credentials.
+authorization:
+  # Sets the authentication type of the request.
+  [ type: &lt;string&gt; | default: Bearer ]
+  # Sets the credentials of the request. It is mutually exclusive with
+  # `credentials_file`.
+  [ credentials: &lt;secret&gt; ]
+  # Sets the credentials of the request with the credentials read from the
+  # configured file. It is mutually exclusive with `credentials`.
+  [ credentials_file: &lt;filename&gt; ]
+
+# Optional OAuth 2.0 configuration.
+# Cannot be used at the same time as basic_auth or authorization.
+oauth2:
+  [ &lt;oauth2&gt; ]
+
+# Configure whether requests follow HTTP 3xx redirects.
+[ follow_redirects: &lt;boolean&gt; | default = true ]
+
+# Whether to enable HTTP2.
+[ enable_http2: &lt;bool&gt; | default: true ]
+
+# Configures the  request&#39;s TLS settings.
+tls_config:
+  [ &lt;tls_config&gt; ]
+
+# Optional proxy URL.
+[ proxy_url: &lt;string&gt; ]
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h3 id="tls_config">
+        <code>&lt;tls_config&gt;</code>
+        <a data-clipboard-text="/httpclient/#tls_config" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: &lt;tls_config&gt;" aria-label="Anchor to: &lt;tls_config&gt;" href="#tls_config">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
 </div>
-<p>This toolkit is sponsored by <a
+<p>A <code>tls_config</code> allows configuring TLS connections.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># CA certificate to validate API server certificate with.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ ca_file</span>: <span style="color:#ae81ff">&lt;filename&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Certificate and key files for client cert authentication to the server.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ cert_file</span>: <span style="color:#ae81ff">&lt;filename&gt; ]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ key_file</span>: <span style="color:#ae81ff">&lt;filename&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ServerName extension to indicate the name of the server.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://tools.ietf.org/html/rfc4366#section-3.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ server_name</span>: <span style="color:#ae81ff">&lt;string&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable validation of the server certificate.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ insecure_skip_verify</span>: <span style="color:#ae81ff">&lt;boolean&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Minimum acceptable TLS version. Accepted values: TLS10 (TLS 1.0), TLS11 (TLS</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1.1), TLS12 (TLS 1.2), TLS13 (TLS 1.3).</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If unset, Prometheus will use Go default minimum version, which is TLS 1.2.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See MinVersion in https://pkg.go.dev/crypto/tls#Config.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ min_version</span>: <span style="color:#ae81ff">&lt;string&gt; ]</span>
+</span></span></code></pre></div><div class="gdoc-page__anchorwrap">
+    <h3 id="oauth2">
+        <code>&lt;oauth2&gt;</code>
+        <a data-clipboard-text="/httpclient/#oauth2" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: &lt;oauth2&gt;" aria-label="Anchor to: &lt;oauth2&gt;" href="#oauth2">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>OAuth 2.0 authentication using the client credentials grant type.
+Prometheus fetches an access token from the specified endpoint with
+the given client access and secret keys.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">client_id</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ client_secret</span>: <span style="color:#ae81ff">&lt;secret&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Read the client secret from a file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># It is mutually exclusive with `client_secret`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ client_secret_file</span>: <span style="color:#ae81ff">&lt;filename&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scopes for the token request.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">scopes</span>:
+</span></span><span style="display:flex;"><span>  [ - <span style="color:#ae81ff">&lt;string&gt; ... ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The URL to fetch the token from.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">token_url</span>: <span style="color:#ae81ff">&lt;string&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optional parameters to append to the token URL.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">endpoint_params</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[ &lt;string&gt;</span>: <span style="color:#ae81ff">&lt;string&gt; ... ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configures the token request&#39;s TLS settings.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tls_config</span>:
+</span></span><span style="display:flex;"><span>  [ <span style="color:#ae81ff">&lt;tls_config&gt; ]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optional proxy URL.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[ proxy_url</span>: <span style="color:#ae81ff">&lt;string&gt; ]</span>
+</span></span></code></pre></div><hr>
+<p>This page is derived from the <a
   class="gdoc-markdown__link"
-  href="https://o11y.eu"
+  href="https://prometheus.io/docs"
   
->O11y</a>. O11y provides
-professional <a
+>Prometheus documentation</a> which is licensed under <a
   class="gdoc-markdown__link"
-  href="https://o11y.eu/support/"
+  href="https://creativecommons.org/licenses/by-sa/4.0/"
   
->support</a> and <a
-  class="gdoc-markdown__link"
-  href="https://o11y.eu/services/"
-  
->services</a>
-for your Open Source observability stack.</p>
+>CC-BY-SA 4.0</a> © Prometheus Authors.</p>
 
   </article>
 
@@ -724,6 +854,9 @@ for your Open Source observability stack.</p>
       
 
       
+        
+        
+      
 
       
     
@@ -746,6 +879,9 @@ for your Open Source observability stack.</p>
       
 
       
+        
+        
+      
 
       
 
@@ -763,8 +899,26 @@ for your Open Source observability stack.</p>
 
   <span class="gdoc-page__nav">
     
+      <a
+        class="gdoc-page__nav--prev flex align-center"
+        href="/oy-scrape-jitter/"
+        title="oy-scrape-jitter"
+      >
+        <i class="gdoc-icon">gdoc_arrow_left_alt</i>
+        oy-scrape-jitter
+      </a>
+    
   </span>
   <span class="gdoc-page__nav">
+    
+      <a
+        class="gdoc-page__nav--next flex align-center"
+        href="/metricslint/"
+        title="/metrics lint"
+      >
+        /metrics lint
+        <i class="gdoc-icon">gdoc_arrow_right_alt</i>
+      </a>
     
   </span>
 

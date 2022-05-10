@@ -17,6 +17,18 @@ Prometheus supports two exposition formats: the Prometheus text-based exposition
     </item>
     
     <item>
+      <title>HTTP client</title>
+      <link>/httpclient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/httpclient/</guid>
+      <description>Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
+The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
+Generic placeholders are defined as follows:
+ &amp;lt;bool&amp;gt;: a boolean that can take the values true or false &amp;lt;filename&amp;gt;: a valid path in the current working directory &amp;lt;secret&amp;gt;: a regular string that is a secret, such as a password &amp;lt;string&amp;gt;: a regular string  The other placeholders are specified separately.</description>
+    </item>
+    
+    <item>
       <title>oy-expose</title>
       <link>/oy-expose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -31,7 +43,7 @@ Prometheus supports two exposition formats: the Prometheus text-based exposition
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/oy-scrape-jitter/</guid>
-      <description>Usage     usage: oy-scrape-jitter [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine jitter. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging.</description>
+      <description>Usage     usage: oy-scrape-jitter [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.</description>
     </item>
     
   </channel>

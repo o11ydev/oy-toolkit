@@ -8,7 +8,7 @@
 <meta name="generator" content="Hugo 0.96.0" />
 
 
-  <meta name="description" content="Usage     usage: oy-scrape-jitter [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine jitter. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging." />
+  <meta name="description" content="Usage     usage: oy-scrape-jitter [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log." />
 
     <title>oy-scrape-jitter | O11y toolkit</title>
 
@@ -34,7 +34,7 @@
     content="oy-scrape-jitter"
   />
   <meta property="og:site_name" content="O11y toolkit" />
-  <meta property="og:description" content="Usage     usage: oy-scrape-jitter [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine jitter. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging." />
+  <meta property="og:description" content="Usage     usage: oy-scrape-jitter [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/oy-scrape-jitter/" />
 
@@ -43,7 +43,7 @@
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="oy-scrape-jitter" />
-  <meta name="twitter:description" content="Usage     usage: oy-scrape-jitter [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine jitter. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging." />
+  <meta name="twitter:description" content="Usage     usage: oy-scrape-jitter [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&#34;up&#34; Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log." />
 
 
   <script type="application/ld+json">
@@ -54,8 +54,9 @@
       "name": "oy-scrape-jitter",
       "url" : "/oy-scrape-jitter/",
       "headline": "oy-scrape-jitter",
-      "description": "Usage     usage: oy-scrape-jitter [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=\u0022up\u0022 Metric to use to determine jitter. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging.",
-      "wordCount" : "335",
+      "description": "Usage     usage: oy-scrape-jitter [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=\u0022up\u0022 Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.",
+      "wordCount" : "347",
+      "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -483,6 +484,48 @@
               <span class="flex">
                 
                 <a
+                  href="/httpclient/"
+                  class="gdoc-nav__entry"
+                >
+                  HTTP client
+                </a>
+              </span>
+              
+            </label>
+          
+        
+
+        
+      </li>
+    
+      
+      
+
+
+      <li>
+        
+        
+          
+          
+          
+          
+          
+          
+          
+
+          
+            <input
+              type="checkbox"
+              
+                class="hidden"
+              
+            />
+            <label
+              
+            >
+              <span class="flex">
+                
+                <a
                   href="/metricslint/"
                   class="gdoc-nav__entry"
                 >
@@ -598,6 +641,8 @@ Flags:
   -h, --help                 Show context-sensitive help (also try --help-long
                              and --help-man).
       --metric=&#34;up&#34;          Metric to use to determine jitter.
+      --query.timestamp=QUERY.TIMESTAMP  
+                             Timestamp of the query.
       --plot.file=file.png   Path to a file to write an image of the results.
       --plot.log-y           Use logarithmic Y axis.
       --lookback=1h          How much time to look in the past for scrapes.
@@ -607,6 +652,8 @@ Flags:
       --log.results-only     Only log final result.
       --prometheus.url=&#34;http://127.0.0.1:9090&#34;  
                              URL of the Prometheus server.
+      --client.config=CLIENT.CONFIG  
+                             Path to a HTTP client configuration.
       --log.level=info       Only log messages with the given severity or above.
                              One of: [debug, info, warn, error]
       --log.format=logfmt    Output format of log messages. One of: [logfmt,
@@ -879,6 +926,30 @@ scrape timestamps jitter with an histogram.</p>
     
     
   
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
+
+      
+    
+
+    
+    
+  
 
 
 
@@ -901,10 +972,10 @@ scrape timestamps jitter with an histogram.</p>
     
       <a
         class="gdoc-page__nav--next flex align-center"
-        href="/metricslint/"
-        title="/metrics lint"
+        href="/httpclient/"
+        title="HTTP client"
       >
-        /metrics lint
+        HTTP client
         <i class="gdoc-icon">gdoc_arrow_right_alt</i>
       </a>
     
@@ -926,6 +997,14 @@ scrape timestamps jitter with an histogram.</p>
         
         
       </section>
+      
+        <section class="flex flex-wrap align-center">
+          <span class="gdoc-footer__item">
+            Content licensed under
+
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="gdoc-footer__link no-wrap">CC BY-SA 4.0</a>
+          </span>
+        </section>
       
     </div>
     

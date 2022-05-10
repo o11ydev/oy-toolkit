@@ -12,7 +12,7 @@ Additionally, it can be used from scripts, to push metrics to the
 [Pushgateway](https://github.com/prometheus/pushgateway) or written to `*.prom` files, to
 be collected by the [textfile collectors](https://github.com/prometheus/node_exporter#textfile-collector)
 (available in both the [Node Exporter](https://github.com/prometheus/node_exporter) and the
-[Windows Exporter](https://github.com/prometheus-community/node_exporter)).
+[Windows Exporter](https://github.com/prometheus-community/windows_exporter)).
 
 Our toolkit also provides [oy-expose](/oy-expose), a standalone tool that can
 expose the metrics of a file to be consumed by Prometheus.
@@ -46,6 +46,11 @@ OpenMetrics is not supported yet.
 
 Everything is run locally from your browser, we do not receive or collect your
 metrics.
+
+## Command line tool
+
+This utilise behaves like the `promtool check metrics` command, which is
+downloadable with [Prometheus](https://prometheus.io/download).
 
 ## Metrics validation
 

@@ -37,7 +37,7 @@ import (
 )
 
 var (
-	metric            = kingpin.Flag("metric", "Metric to use to determine alignment.").Default("up").String()
+	metric            = kingpin.Flag("metric", "Metric to use to determine jitter.").Default("up").String()
 	png               = kingpin.Flag("plot.file", "Path to a file to write an image of the results.").PlaceHolder("file.png").String()
 	plotLog           = kingpin.Flag("plot.log-y", "Use logarithmic Y axis.").Bool()
 	lookback          = kingpin.Flag("lookback", "How much time to look in the past for scrapes.").Default("1h").Duration()
@@ -49,7 +49,7 @@ var (
 
 func main() {
 	c := client.InitCliFlags()
-	logger := cmd.InitCmd("oy-scrape-alignment")
+	logger := cmd.InitCmd("oy-scrape-jitter")
 
 	promClient, err := client.NewClient(c)
 	if err != nil {
@@ -140,7 +140,7 @@ func analyzeScrapeAlignment(logger log.Logger, promClient api.Client) {
 
 func makePlot(values plotter.Values, out string) error {
 	p := plot.New()
-	p.Title.Text = "Scrape alignement"
+	p.Title.Text = "Scrape timestamps jitter"
 	p.X.Label.Text = "Timestamp difference (ms)"
 	p.Y.Label.Text = "Scrapes"
 	l := plot.NewLegend()

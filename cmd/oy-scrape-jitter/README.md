@@ -1,6 +1,6 @@
-# oy-scrape-alignment
+# oy-scrape-jitter
 
-*oy-scrape-alignment* queries a Prometheus server to see how aligned scrapes are.
+*oy-scrape-jitter* queries a Prometheus server to see how regular scrapes are.
 Perfect scrape alignment happens when the distance between all the scrapes are
 exactly the same. It enables Prometheus [delta-of-delta](https://github.com/prometheus/prometheus/blob/main/tsdb/docs/bstream.md)
 encoding to reduce significantly the size of the blocks.
@@ -8,7 +8,7 @@ encoding to reduce significantly the size of the blocks.
 ## Example usage
 
 ```shell
-$ ./oy-scrape-alignment --prometheus.url=https://prometheus.demo.do.prometheus.io/ --log.results-only
+$ ./oy-scrape-jitter --prometheus.url=https://prometheus.demo.do.prometheus.io/ --log.results-only
 ts=2022-04-26T12:11:34.659Z caller=main.go:117 level=info msg="overall results" aligned_targets=0 unaligned_targets=10 max_ms=25
 ```
 
@@ -27,4 +27,4 @@ deviation is tiny.
 ## Plotting the output
 
 By using `--plot.file=scrape.png`, you can generate a PNG file which shows the
-scrape (mis-)alignment with an histogram.
+scrape timestamps jitter with an histogram.

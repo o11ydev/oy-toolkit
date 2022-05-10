@@ -16,22 +16,45 @@
 package client
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/prometheus/client_golang/api"
+	"github.com/prometheus/common/config"
 	"gopkg.in/alecthomas/kingpin.v2"
+	"gopkg.in/yaml.v2"
 )
 
 type Config struct {
-	url string
+	url  string
+	file string
 }
 
 func InitCliFlags() *Config {
 	var c Config
 	kingpin.Flag("prometheus.url", "URL of the Prometheus server.").Default("http://127.0.0.1:9090").StringVar(&c.url)
+	kingpin.Flag("client.config", "Path to a HTTP client configuration.").StringVar(&c.file)
 	return &c
 }
 
 func NewClient(c *Config) (api.Client, error) {
+	cfg := config.DefaultHTTPClientConfig
+	if c.file != "" {
+		dat, err := os.ReadFile(c.file)
+		if err != nil {
+			return nil, fmt.Errorf("error reading client config %s: %w", c.file, err)
+		}
+		err = yaml.UnmarshalStrict(dat, &cfg)
+		if err != nil {
+			return nil, fmt.Errorf("error unmarshaling client config %s: %w", c.file, err)
+		}
+	}
+	rt, err := config.NewRoundTripperFromConfig(cfg, "oy-toolkit")
+	if err != nil {
+		return nil, fmt.Errorf("error creating roundtripper: %w", err)
+	}
 	return api.NewClient(api.Config{
-		Address: c.url,
+		Address:      c.url,
+		RoundTripper: rt,
 	})
 }

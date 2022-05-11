@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-1tEJR8F8AHjyYyv64zGSHx9O+JyHw0agbV8K/p2FVJ4=";
+      vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"
@@ -139,6 +139,30 @@ in
               )
             );
         };
+        promqlParser = buildGoModule rec {
+          name = "promqlparser";
+          src = stdenv.mkDerivation {
+            name = "gosrc";
+            srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
+            phases = "installPhase";
+            installPhase = ''
+              mkdir $out
+              for src in $srcs; do
+                for srcFile in $src; do
+                  cp -r $srcFile $out/$(stripHash $srcFile)
+                done
+              done
+            '';
+          };
+          CGO_ENABLED = 0;
+          vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
+          #vendorSha256 = pkgs.lib.fakeSha256;
+          subPackages = ["wasm/${name}"];
+          preBuild = ''
+            export GOOS=js
+            export GOARCH=wasm
+          '';
+        };
         metricsLint = buildGoModule rec {
           name = "metricslint";
           src = stdenv.mkDerivation {
@@ -155,7 +179,7 @@ in
             '';
           };
           CGO_ENABLED = 0;
-          vendorSha256 = "sha256-1tEJR8F8AHjyYyv64zGSHx9O+JyHw0agbV8K/p2FVJ4=";
+          vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
           #vendorSha256 = pkgs.lib.fakeSha256;
           subPackages = ["wasm/${name}"];
           preBuild = ''
@@ -171,6 +195,7 @@ in
           buildPhase = pkgs.writeShellScript "hugo" ''
             set -e
             cp ${metricsLint}/bin/js_wasm/metricslint static/metricslint.wasm
+            cp ${promqlParser}/bin/js_wasm/promqlparser static/promqlparser.wasm
             chmod -x static/metricslint.wasm
             cp ${pkgs.go_1_18}/share/go/misc/wasm/wasm_exec.js static
 

@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
+      vendorSha256 = "sha256-b2kKBPheOJP+MxBfp7T53eZ6+aXO8Vi97rt45Q+TiMs=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"
@@ -155,7 +155,7 @@ in
             '';
           };
           CGO_ENABLED = 0;
-          vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
+          vendorSha256 = "sha256-b2kKBPheOJP+MxBfp7T53eZ6+aXO8Vi97rt45Q+TiMs=";
           #vendorSha256 = pkgs.lib.fakeSha256;
           subPackages = ["wasm/${name}"];
           preBuild = ''
@@ -179,7 +179,7 @@ in
             '';
           };
           CGO_ENABLED = 0;
-          vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
+          vendorSha256 = "sha256-b2kKBPheOJP+MxBfp7T53eZ6+aXO8Vi97rt45Q+TiMs=";
           #vendorSha256 = pkgs.lib.fakeSha256;
           subPackages = ["wasm/${name}"];
           preBuild = ''

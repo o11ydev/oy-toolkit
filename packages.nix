@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
+      vendorSha256 = "sha256-/Ah2uYDydDjIEJdeSzicqVsYT17htFU6vjsLta76fxw=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"
@@ -39,6 +39,38 @@ with pkgs; let
         basepkg name
     )
     (builtins.readDir ./cmd);
+  wasmpkg = name:
+    buildGoModule {
+      name = name;
+      src = stdenv.mkDerivation {
+        name = "gosrc";
+        srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
+        phases = "installPhase";
+        installPhase = ''
+          mkdir $out
+          for src in $srcs; do
+            for srcFile in $src; do
+              cp -r $srcFile $out/$(stripHash $srcFile)
+            done
+          done
+        '';
+      };
+      CGO_ENABLED = 0;
+      vendorSha256 = "sha256-/Ah2uYDydDjIEJdeSzicqVsYT17htFU6vjsLta76fxw=";
+      #vendorSha256 = pkgs.lib.fakeSha256;
+      subPackages = ["wasm/${name}"];
+      preBuild = ''
+        export GOOS=js
+        export GOARCH=wasm
+      '';
+    };
+  wasmList =
+    builtins.mapAttrs
+    (
+      name: value:
+        wasmpkg name
+    )
+    (builtins.readDir ./wasm);
   dockerPackageList =
     lib.mapAttrs'
     (name: value:
@@ -102,14 +134,43 @@ in
               ref = "/httpclient";
             }
             {
-              name = "/metrics lint";
-              ref = "/metricslint";
+              name = "Web tools";
+              sub = [
+                {
+                  name = "/metrics lint";
+                  ref = "/metricslint";
+                }
+                {
+                  name = "password generator";
+                  ref = "/pwgen";
+                }
+              ];
             }
           ];
         };
         menuFile = pkgs.writeTextFile {
           name = "menu";
           text = builtins.toJSON menu;
+        };
+        wasmFiles = stdenv.mkDerivation {
+          name = "wasmFiles";
+          phases = "buildPhase";
+          buildPhase =
+            pkgs.writeShellScript "wasmFiles" ''
+              mkdir $out
+            ''
+            + (
+              pkgs.lib.concatMapStrings (x: "\n" + x)
+              (
+                builtins.attrValues (
+                  builtins.mapAttrs
+                  (name: value: ''
+                    cp ${builtins.getAttr name wasmList}/bin/js_wasm/${name} $out/${name}.wasm
+                  '')
+                  wasmList
+                )
+              )
+            );
         };
         commandDocs = stdenv.mkDerivation {
           name = "commandDocs";
@@ -139,54 +200,6 @@ in
               )
             );
         };
-        promqlParser = buildGoModule rec {
-          name = "promqlparser";
-          src = stdenv.mkDerivation {
-            name = "gosrc";
-            srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
-            phases = "installPhase";
-            installPhase = ''
-              mkdir $out
-              for src in $srcs; do
-                for srcFile in $src; do
-                  cp -r $srcFile $out/$(stripHash $srcFile)
-                done
-              done
-            '';
-          };
-          CGO_ENABLED = 0;
-          vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
-          #vendorSha256 = pkgs.lib.fakeSha256;
-          subPackages = ["wasm/${name}"];
-          preBuild = ''
-            export GOOS=js
-            export GOARCH=wasm
-          '';
-        };
-        metricsLint = buildGoModule rec {
-          name = "metricslint";
-          src = stdenv.mkDerivation {
-            name = "gosrc";
-            srcs = [./go.mod ./go.sum ./cmd ./util ./wasm];
-            phases = "installPhase";
-            installPhase = ''
-              mkdir $out
-              for src in $srcs; do
-                for srcFile in $src; do
-                  cp -r $srcFile $out/$(stripHash $srcFile)
-                done
-              done
-            '';
-          };
-          CGO_ENABLED = 0;
-          vendorSha256 = "sha256-vqy6YSWWir0cPaSJ/bQ07nk5E7bLSndTcBLGP25E62k=";
-          #vendorSha256 = pkgs.lib.fakeSha256;
-          subPackages = ["wasm/${name}"];
-          preBuild = ''
-            export GOOS=js
-            export GOARCH=wasm
-          '';
-        };
       in
         stdenv.mkDerivation {
           name = "documentation";
@@ -194,9 +207,7 @@ in
           buildInputs = [pkgs.hugo];
           buildPhase = pkgs.writeShellScript "hugo" ''
             set -e
-            cp ${metricsLint}/bin/js_wasm/metricslint static/metricslint.wasm
-            cp ${promqlParser}/bin/js_wasm/promqlparser static/promqlparser.wasm
-            chmod -x static/metricslint.wasm
+            cp ${wasmFiles}/* static/
             cp ${pkgs.go_1_18}/share/go/misc/wasm/wasm_exec.js static
 
             mkdir -p data/menu

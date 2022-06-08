@@ -1,12 +1,12 @@
 ---
-title: Prometheus Password Generator
+title: Prometheus password file generator
 ---
 
 This form enables you to generate a [Prometheus web.yml
 file](https://prometheus.io/docs/prometheus/latest/configuration/https/) to
 secure your Prometheus endpoints with basic authentication.
 
-To do this, you need to hash passwords with [bcrypt](https://en.wikipedia.org/wiki/Bcrypt).
+Prometheus needs passwords hashed with [bcrypt](https://en.wikipedia.org/wiki/Bcrypt).
 This tool hashes the passwords directly in your browser, in such a way that we
 do not receive the passwords you are generating.
 
@@ -19,8 +19,8 @@ other official exporters.
 
 ## How to
 
-Enter the usernames and the password, then press the generate button to generate
-the file.
+Enter the usernames and the passwords, then press the `Generate` button to
+compute the file.
 
 You can add and remove users with the `Remove` and `Add user` buttons.
 
@@ -31,7 +31,7 @@ The input is parsed in your browser and is not sent to our servers. This tool is
 cross compiled to [WASM](https://webassembly.org/), so that it runs natively in
 your browser.
 
-## Metrics validation
+## Users list
 
 {{< unsafe >}}
 <div id="loadingWarning">
@@ -67,10 +67,17 @@ WebAssembly.instantiateStreaming(fetch("/pwgen.wasm"),
 
 addUser = function(){
     tb = document.getElementById('usersTable');
-    newRow = tb.insertRow();
-     newRow.insertCell().innerHTML='<input type="text" name="username" placeholder="username">';
-     newRow.insertCell().innerHTML='<input type="password" name="password" placeholder="password">';
-     newRow.insertCell().innerHTML='<input type="button" value="Remove" onclick="removeUser(this)">';
+    newRow = tb.getElementsByTagName('tbody')[0].insertRow();
+     t1=newRow.insertCell();
+     t1.innerHTML='<input type="text" name="username" placeholder="username">';
+     t1.setAttribute("label","Username");
+     t1.setAttribute("class","flext");
+     t2=newRow.insertCell();
+     t2.innerHTML='<input type="password" name="password" placeholder="password">';
+     t2.setAttribute("label","Password");
+     t2.setAttribute("class","flext");
+     t3=newRow.insertCell();
+     t3.innerHTML='<input type="button" value="Remove" onclick="removeUser(this)">';
 };
 
 switchViz = function(t){
@@ -93,12 +100,16 @@ removeUser = function(t) {
 
 </script>
 
-<table id="usersTable">
+<table class="flext" id="usersTable">
+<thead>
 <tr>
 <th>Username</th>
 <th>Password</th>
 <th></th>
 </tr>
+</thead>
+<tbody>
+</tbody>
 </table>
 
 <button onClick="addUser();" id="addUserButton">New user</button>

@@ -1,5 +1,5 @@
 ---
-title: Prometheus password file generator
+title: Password file generator for Prometheus
 ---
 
 This form enables you to generate a [Prometheus web.yml

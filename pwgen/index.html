@@ -9,10 +9,10 @@
 
 
   <meta name="description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-To do this, you need to hash passwords with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web." />
+Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
+Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
 
-    <title>Prometheus Password Generator | O11y toolkit</title>
+    <title>Prometheus password file generator | O11y toolkit</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -33,12 +33,12 @@ Once the file is generated, you can optionally append your TLS server configurat
     
   <meta
     property="og:title"
-    content="Prometheus Password Generator"
+    content="Prometheus password file generator"
   />
   <meta property="og:site_name" content="O11y toolkit" />
   <meta property="og:description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-To do this, you need to hash passwords with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web." />
+Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
+Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pwgen/" />
 
@@ -46,10 +46,10 @@ Once the file is generated, you can optionally append your TLS server configurat
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Prometheus Password Generator" />
+<meta name="twitter:title" content="Prometheus password file generator" />
   <meta name="twitter:description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-To do this, you need to hash passwords with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web." />
+Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
+Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
 
 
   <script type="application/ld+json">
@@ -57,11 +57,11 @@ Once the file is generated, you can optionally append your TLS server configurat
       "@context": "http://schema.org",
       "@type": "TechArticle",
       "articleSection": "",
-      "name": "Prometheus Password Generator",
+      "name": "Prometheus password file generator",
       "url" : "/pwgen/",
-      "headline": "Prometheus Password Generator",
-      "description": "This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.\nTo do this, you need to hash passwords with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.\nOnce the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.",
-      "wordCount" : "246",
+      "headline": "Prometheus password file generator",
+      "description": "This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.\nPrometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.\nOnce the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.",
+      "wordCount" : "249",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
@@ -670,7 +670,7 @@ Once the file is generated, you can optionally append your TLS server configurat
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Prometheus Password Generator</span><meta itemprop='position' content='2' /></li>
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Prometheus password file generator</span><meta itemprop='position' content='2' /></li>
   
 
   
@@ -686,7 +686,7 @@ Once the file is generated, you can optionally append your TLS server configurat
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>Prometheus Password Generator</h1>
+    <h1>Prometheus password file generator</h1>
     <p>This form enables you to generate a <a
   class="gdoc-markdown__link"
   href="https://prometheus.io/docs/prometheus/latest/configuration/https/"
@@ -694,7 +694,7 @@ Once the file is generated, you can optionally append your TLS server configurat
 >Prometheus web.yml
 file</a> to
 secure your Prometheus endpoints with basic authentication.</p>
-<p>To do this, you need to hash passwords with <a
+<p>Prometheus needs passwords hashed with <a
   class="gdoc-markdown__link"
   href="https://en.wikipedia.org/wiki/Bcrypt"
   
@@ -714,8 +714,8 @@ other official exporters.</p>
         </a>
     </h2>
 </div>
-<p>Enter the usernames and the password, then press the generate button to generate
-the file.</p>
+<p>Enter the usernames and the passwords, then press the <code>Generate</code> button to
+compute the file.</p>
 <p>You can add and remove users with the <code>Remove</code> and <code>Add user</code> buttons.</p>
 <div class="gdoc-page__anchorwrap">
     <h2 id="security-and-privacy">
@@ -733,9 +733,9 @@ cross compiled to <a
 >WASM</a>, so that it runs natively in
 your browser.</p>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="metrics-validation">
-        Metrics validation
-        <a data-clipboard-text="/pwgen/#metrics-validation" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Metrics validation" aria-label="Anchor to: Metrics validation" href="#metrics-validation">
+    <h2 id="users-list">
+        Users list
+        <a data-clipboard-text="/pwgen/#users-list" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Users list" aria-label="Anchor to: Users list" href="#users-list">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
@@ -785,10 +785,17 @@ WebAssembly.instantiateStreaming(fetch("/pwgen.wasm"),
 
 addUser = function(){
     tb = document.getElementById('usersTable');
-    newRow = tb.insertRow();
-     newRow.insertCell().innerHTML='<input type="text" name="username" placeholder="username">';
-     newRow.insertCell().innerHTML='<input type="password" name="password" placeholder="password">';
-     newRow.insertCell().innerHTML='<input type="button" value="Remove" onclick="removeUser(this)">';
+    newRow = tb.getElementsByTagName('tbody')[0].insertRow();
+     t1=newRow.insertCell();
+     t1.innerHTML='<input type="text" name="username" placeholder="username">';
+     t1.setAttribute("label","Username");
+     t1.setAttribute("class","flext");
+     t2=newRow.insertCell();
+     t2.innerHTML='<input type="password" name="password" placeholder="password">';
+     t2.setAttribute("label","Password");
+     t2.setAttribute("class","flext");
+     t3=newRow.insertCell();
+     t3.innerHTML='<input type="button" value="Remove" onclick="removeUser(this)">';
 };
 
 switchViz = function(t){
@@ -811,12 +818,16 @@ removeUser = function(t) {
 
 </script>
 
-<table id="usersTable">
+<table class="flext" id="usersTable">
+<thead>
 <tr>
 <th>Username</th>
 <th>Password</th>
 <th></th>
 </tr>
+</thead>
+<tbody>
+</tbody>
 </table>
 
 <button onClick="addUser();" id="addUserButton">New user</button>

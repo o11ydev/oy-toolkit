@@ -47,14 +47,14 @@ Generic placeholders are defined as follows:
     </item>
     
     <item>
-      <title>Prometheus Password Generator</title>
+      <title>Prometheus password file generator</title>
       <link>/pwgen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/pwgen/</guid>
       <description>This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-To do this, you need to hash passwords with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.</description>
+Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
+Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.</description>
     </item>
     
     <item>

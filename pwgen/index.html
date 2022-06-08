@@ -61,7 +61,7 @@ Once the file is generated, you can optionally append your TLS server configurat
       "url" : "/pwgen/",
       "headline": "Prometheus password file generator",
       "description": "This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.\nPrometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.\nOnce the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.",
-      "wordCount" : "249",
+      "wordCount" : "263",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
@@ -829,6 +829,12 @@ removeUser = function(t) {
 <tbody>
 </tbody>
 </table>
+
+<hr>
+<p>Cost: <input type="number" min="10" max="13" name="cost" value="10"
+/><br/><small>Increasing cost will increase Prometheus server CPU usage and time
+to authenticate users.</small></p>
+<hr>
 
 <button onClick="addUser();" id="addUserButton">New user</button>
 <button onClick="switchViz(this);" id="switchViz">Show passwords</button>

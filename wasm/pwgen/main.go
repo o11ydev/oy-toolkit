@@ -21,6 +21,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"strconv"
 	"syscall/js"
 
 	"golang.org/x/crypto/bcrypt"
@@ -44,6 +45,12 @@ func pwgen(this js.Value, args []js.Value) interface{} {
 	res := jsDoc.Call("getElementById", "resultDiv")
 	users := jsDoc.Call("querySelectorAll", `[name="username"]`)
 	passwords := jsDoc.Call("querySelectorAll", `[name="password"]`)
+	cost := jsDoc.Call("querySelectorAll", `[name="cost"]`)
+	c, err := strconv.ParseInt(cost.Index(0).Get("value").String(), 10, 32)
+	if err != nil {
+		mkErr(err)
+		return nil
+	}
 	userspw := make(map[string]string, users.Length())
 	for i := 0; i < users.Length(); i++ {
 		user := users.Index(i).Get("value").String()
@@ -60,7 +67,7 @@ func pwgen(this js.Value, args []js.Value) interface{} {
 			mkErr(fmt.Errorf("duplicate user %q", user))
 			return nil
 		}
-		gpw, err := bcrypt.GenerateFromPassword([]byte(pw), 10)
+		gpw, err := bcrypt.GenerateFromPassword([]byte(pw), int(c))
 		if err != nil {
 			mkErr(err)
 			return nil

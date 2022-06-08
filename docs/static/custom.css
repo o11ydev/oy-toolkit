@@ -152,3 +152,19 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 600px) {
+    table.flext thead {
+        display: none;
+    }
+    table.flext td {
+        display: flex;
+    }
+
+    table.flext td.flext::before {
+        content: attr(label);
+        font-weight: bold;
+        width: 120px;
+        min-width: 120px;
+    }
+}

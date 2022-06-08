@@ -112,6 +112,12 @@ removeUser = function(t) {
 </tbody>
 </table>
 
+<hr>
+<p>Cost: <input type="number" min="10" max="13" name="cost" value="10"
+/><br/><small>Increasing cost will increase Prometheus server CPU usage and time
+to authenticate users.</small></p>
+<hr>
+
 <button onClick="addUser();" id="addUserButton">New user</button>
 <button onClick="switchViz(this);" id="switchViz">Show passwords</button>
 <button onClick="generateUsers();" id="runButton" disabled>Generate</button>

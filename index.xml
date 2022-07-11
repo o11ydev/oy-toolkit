@@ -47,7 +47,7 @@ Generic placeholders are defined as follows:
     </item>
     
     <item>
-      <title>Prometheus password file generator</title>
+      <title>Password file generator for Prometheus</title>
       <link>/pwgen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

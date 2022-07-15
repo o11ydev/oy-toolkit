@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-/Ah2uYDydDjIEJdeSzicqVsYT17htFU6vjsLta76fxw=";
+      vendorSha256 = "sha256-oUmFwNRJvbdlX3QzudPPcyAJ0gbBw8dGptLcb0ExzoY=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"
@@ -56,7 +56,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-/Ah2uYDydDjIEJdeSzicqVsYT17htFU6vjsLta76fxw=";
+      vendorSha256 = "sha256-oUmFwNRJvbdlX3QzudPPcyAJ0gbBw8dGptLcb0ExzoY=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages = ["wasm/${name}"];
       preBuild = ''
@@ -141,8 +141,12 @@ in
                   ref = "/metricslint";
                 }
                 {
-                  name = "password generator";
+                  name = "Password generator";
                   ref = "/pwgen";
+                }
+                {
+                  name = "PromQL parser";
+                  ref = "/promqlparser";
                 }
               ];
             }

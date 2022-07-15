@@ -2,9 +2,30 @@
 title: PromQL Parser
 ---
 
+This tool enables you to validate the format of PromQL queries. It also produces
+a prettified query.
+
+## Usage
+
+To use this tool, simply paste the content of your query in the
+following text area.
+Then, click on the "Parse" button.
+
+You can click on the following button to load a PromQL query:
+
 {{< unsafe >}}
 <button onClick="loadexample();" id="exampleButton" disabled>Load sample</button>
 {{< /unsafe >}}
+
+## Security and privacy
+
+The input is parsed in your browser and is not sent to our servers. This tool is
+based on the official
+[prometheus](https://pkg.go.dev/github.com/prometheus/prometheus@main/promql/parser#Prettify) library and is
+cross compiled to [WASM](https://webassembly.org/), so that it runs natively in
+your browser.
+
+## PromQL input
 
 {{< unsafe >}}
 <div id="loadingWarning">

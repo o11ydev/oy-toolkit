@@ -5,6 +5,6 @@ header:
     icon: gdoc_github
     external: true
   - name: Support
-    ref: https://o11y.eu/support
+    ref: https://o11y.eu/prometheus-support
     icon: gdoc_fire
     external: true

@@ -8,7 +8,10 @@
 <meta name="generator" content="Hugo 0.96.0" />
 
 
-  <meta name="description" content=" Load sample  Loading The application is loading. If this warning does not disappear, please make sure that your browser supports WASM and that javascript is enabled.     if (!WebAssembly.instantiateStreaming) { // polyfill WebAssembly.instantiateStreaming = async (resp, importObject) = { const source = await (await resp).arrayBuffer(); return await WebAssembly.instantiate(source, importObject); }; } const go = new Go(); WebAssembly.instantiateStreaming(fetch(&#34;/promqlparser.wasm&#34;), go.importObject).then((result) = { go.run(result.instance); });   Parse  " />
+  <meta name="description" content="This tool enables you to validate the format of PromQL queries. It also produces a prettified query.
+Usage     To use this tool, simply paste the content of your query in the following text area. Then, click on the &ldquo;Parse&rdquo; button.
+You can click on the following button to load a PromQL query:
+Load sample Security and privacy     The input is parsed in your browser and is not sent to our servers." />
 
     <title>PromQL Parser | O11y toolkit</title>
 
@@ -34,7 +37,10 @@
     content="PromQL Parser"
   />
   <meta property="og:site_name" content="O11y toolkit" />
-  <meta property="og:description" content=" Load sample  Loading The application is loading. If this warning does not disappear, please make sure that your browser supports WASM and that javascript is enabled.     if (!WebAssembly.instantiateStreaming) { // polyfill WebAssembly.instantiateStreaming = async (resp, importObject) = { const source = await (await resp).arrayBuffer(); return await WebAssembly.instantiate(source, importObject); }; } const go = new Go(); WebAssembly.instantiateStreaming(fetch(&#34;/promqlparser.wasm&#34;), go.importObject).then((result) = { go.run(result.instance); });   Parse  " />
+  <meta property="og:description" content="This tool enables you to validate the format of PromQL queries. It also produces a prettified query.
+Usage     To use this tool, simply paste the content of your query in the following text area. Then, click on the “Parse” button.
+You can click on the following button to load a PromQL query:
+Load sample Security and privacy     The input is parsed in your browser and is not sent to our servers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/promqlparser/" />
 
@@ -43,7 +49,10 @@
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="PromQL Parser" />
-  <meta name="twitter:description" content=" Load sample  Loading The application is loading. If this warning does not disappear, please make sure that your browser supports WASM and that javascript is enabled.     if (!WebAssembly.instantiateStreaming) { // polyfill WebAssembly.instantiateStreaming = async (resp, importObject) = { const source = await (await resp).arrayBuffer(); return await WebAssembly.instantiate(source, importObject); }; } const go = new Go(); WebAssembly.instantiateStreaming(fetch(&#34;/promqlparser.wasm&#34;), go.importObject).then((result) = { go.run(result.instance); });   Parse  " />
+  <meta name="twitter:description" content="This tool enables you to validate the format of PromQL queries. It also produces a prettified query.
+Usage     To use this tool, simply paste the content of your query in the following text area. Then, click on the “Parse” button.
+You can click on the following button to load a PromQL query:
+Load sample Security and privacy     The input is parsed in your browser and is not sent to our servers." />
 
 
   <script type="application/ld+json">
@@ -54,8 +63,8 @@
       "name": "PromQL Parser",
       "url" : "/promqlparser/",
       "headline": "PromQL Parser",
-      "description": " Load sample  Loading The application is loading. If this warning does not disappear, please make sure that your browser supports WASM and that javascript is enabled.     if (!WebAssembly.instantiateStreaming) { \/\/ polyfill WebAssembly.instantiateStreaming = async (resp, importObject) = { const source = await (await resp).arrayBuffer(); return await WebAssembly.instantiate(source, importObject); }; } const go = new Go(); WebAssembly.instantiateStreaming(fetch(\u0022\/promqlparser.wasm\u0022), go.importObject).then((result) = { go.run(result.instance); });   Parse  ",
-      "wordCount" : "62",
+      "description": "This tool enables you to validate the format of PromQL queries. It also produces a prettified query.\nUsage     To use this tool, simply paste the content of your query in the following text area. Then, click on the “Parse” button.\nYou can click on the following button to load a PromQL query:\nLoad sample Security and privacy     The input is parsed in your browser and is not sent to our servers.",
+      "wordCount" : "156",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
@@ -243,7 +252,7 @@
         <span>
           <a
             href="
-              https://o11y.eu/support
+              https://o11y.eu/prometheus-support
             "
             class="gdoc-header__link"
           >
@@ -589,7 +598,49 @@
                   href="/pwgen/"
                   class="gdoc-nav__entry"
                 >
-                  password generator
+                  Password generator
+                </a>
+              </span>
+              
+            </label>
+          
+        
+
+        
+      </li>
+    
+      
+      
+
+
+      <li>
+        
+        
+          
+          
+          
+          
+          
+          
+          
+
+          
+            <input
+              type="checkbox"
+              
+                class="hidden"
+              
+            />
+            <label
+              
+            >
+              <span class="flex">
+                
+                <a
+                  href="/promqlparser/"
+                  class="gdoc-nav__entry is-active"
+                >
+                  PromQL parser
                 </a>
               </span>
               
@@ -681,10 +732,53 @@
     class="gdoc-markdown gdoc-markdown__align--left"
   >
     <h1>PromQL Parser</h1>
-    
+    <p>This tool enables you to validate the format of PromQL queries. It also produces
+a prettified query.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="usage">
+        Usage
+        <a data-clipboard-text="/promqlparser/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>To use this tool, simply paste the content of your query in the
+following text area.
+Then, click on the &ldquo;Parse&rdquo; button.</p>
+<p>You can click on the following button to load a PromQL query:</p>
+
 <button onClick="loadexample();" id="exampleButton" disabled>Load sample</button>
 
 
+<div class="gdoc-page__anchorwrap">
+    <h2 id="security-and-privacy">
+        Security and privacy
+        <a data-clipboard-text="/promqlparser/#security-and-privacy" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Security and privacy" aria-label="Anchor to: Security and privacy" href="#security-and-privacy">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>The input is parsed in your browser and is not sent to our servers. This tool is
+based on the official
+<a
+  class="gdoc-markdown__link"
+  href="https://pkg.go.dev/github.com/prometheus/prometheus@main/promql/parser#Prettify"
+  
+>prometheus</a> library and is
+cross compiled to <a
+  class="gdoc-markdown__link"
+  href="https://webassembly.org/"
+  
+>WASM</a>, so that it runs natively in
+your browser.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="promql-input">
+        PromQL input
+        <a data-clipboard-text="/promqlparser/#promql-input" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: PromQL input" aria-label="Anchor to: PromQL input" href="#promql-input">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
 
 <div id="loadingWarning">
 
@@ -902,6 +996,33 @@ WebAssembly.instantiateStreaming(fetch("/promqlparser.wasm"),
     
     
   
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
+        
+        
+      
+
+      
+    
+
+    
+    
+  
 
     
   
@@ -912,6 +1033,15 @@ WebAssembly.instantiateStreaming(fetch("/promqlparser.wasm"),
 
 
   <span class="gdoc-page__nav">
+    
+      <a
+        class="gdoc-page__nav--prev flex align-center"
+        href="/pwgen/"
+        title="Password generator"
+      >
+        <i class="gdoc-icon">gdoc_arrow_left_alt</i>
+        Password generator
+      </a>
     
   </span>
   <span class="gdoc-page__nav">

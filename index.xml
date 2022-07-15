@@ -63,7 +63,10 @@ Once the file is generated, you can optionally append your TLS server configurat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/promqlparser/</guid>
-      <description> Load sample  Loading The application is loading. If this warning does not disappear, please make sure that your browser supports WASM and that javascript is enabled.     if (!WebAssembly.instantiateStreaming) { // polyfill WebAssembly.instantiateStreaming = async (resp, importObject) = { const source = await (await resp).arrayBuffer(); return await WebAssembly.instantiate(source, importObject); }; } const go = new Go(); WebAssembly.instantiateStreaming(fetch(&#34;/promqlparser.wasm&#34;), go.importObject).then((result) = { go.run(result.instance); });   Parse  </description>
+      <description>This tool enables you to validate the format of PromQL queries. It also produces a prettified query.
+Usage     To use this tool, simply paste the content of your query in the following text area. Then, click on the &amp;ldquo;Parse&amp;rdquo; button.
+You can click on the following button to load a PromQL query:
+Load sample Security and privacy     The input is parsed in your browser and is not sent to our servers.</description>
     </item>
     
   </channel>

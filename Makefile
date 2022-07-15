@@ -43,7 +43,7 @@ oy-%: rebuild
 
 .PHONY: tidy
 tidy:
-	@go mod tidy
+	@go mod tidy -compat=1.17 -go=1.17
 
 # Shortcut to force running go build each time.
 .PHONY: rebuild
@@ -71,6 +71,7 @@ packages:
 
 .PHONY: vendorhash
 vendorhash:
+	@go mod tidy -compat=1.17 -go=1.17
 	@sed -i '/vendorSha256/s@".*"@"$(shell go mod vendor && nix hash path vendor)"@' packages.nix
 	@rm -r vendor
 

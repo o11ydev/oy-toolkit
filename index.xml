@@ -17,18 +17,6 @@ Prometheus supports two exposition formats: the Prometheus text-based exposition
     </item>
     
     <item>
-      <title>HTTP configuration</title>
-      <link>/httpclient/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/httpclient/</guid>
-      <description>Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
-The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
-Generic placeholders are defined as follows:
- &amp;lt;bool&amp;gt;: a boolean that can take the values true or false &amp;lt;filename&amp;gt;: a valid path in the current working directory &amp;lt;secret&amp;gt;: a regular string that is a secret, such as a password &amp;lt;string&amp;gt;: a regular string  The other placeholders are specified separately.</description>
-    </item>
-    
-    <item>
       <title>oy-expose</title>
       <link>/oy-expose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -55,6 +43,18 @@ Generic placeholders are defined as follows:
       <description>This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
 Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
 Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.</description>
+    </item>
+    
+    <item>
+      <title>Prometheus client configuration</title>
+      <link>/httpclient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/httpclient/</guid>
+      <description>Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
+The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
+Generic placeholders are defined as follows:
+ &amp;lt;bool&amp;gt;: a boolean that can take the values true or false &amp;lt;filename&amp;gt;: a valid path in the current working directory &amp;lt;secret&amp;gt;: a regular string that is a secret, such as a password &amp;lt;string&amp;gt;: a regular string  The other placeholders are specified separately.</description>
     </item>
     
     <item>

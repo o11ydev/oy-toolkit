@@ -1,5 +1,5 @@
 ---
-title: HTTP client
+title: HTTP configuration
 ---
 
 Command line tools that connect to a Prometheus server can take a file path in

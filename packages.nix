@@ -130,7 +130,7 @@ in
               }) (builtins.attrNames packageList);
             }
             {
-              name = "HTTP client";
+              name = "Configuration";
               ref = "/httpclient";
             }
             {

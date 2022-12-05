@@ -8,11 +8,9 @@
 <meta name="generator" content="Hugo 0.96.0" />
 
 
-  <meta name="description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
+  <meta name="description" content="Usage     usage: oy-csv-to-targets --input.file=input.csv [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --input.file=input.csv Path to a CSV file to use as an input. --output.file=targets.json Path to a json file to use as an output. --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version." />
 
-    <title>Password file generator for Prometheus | O11y toolkit</title>
+    <title>oy-csv-to-targets | O11y toolkit</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -33,23 +31,19 @@ Once the file is generated, you can optionally append your TLS server configurat
     
   <meta
     property="og:title"
-    content="Password file generator for Prometheus"
+    content="oy-csv-to-targets"
   />
   <meta property="og:site_name" content="O11y toolkit" />
-  <meta property="og:description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
+  <meta property="og:description" content="Usage     usage: oy-csv-to-targets --input.file=input.csv [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --input.file=input.csv Path to a CSV file to use as an input. --output.file=targets.json Path to a json file to use as an output. --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/pwgen/" />
+<meta property="og:url" content="/oy-csv-to-targets/" />
 
 <meta property="article:section" content="" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Password file generator for Prometheus" />
-  <meta name="twitter:description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
+<meta name="twitter:title" content="oy-csv-to-targets" />
+  <meta name="twitter:description" content="Usage     usage: oy-csv-to-targets --input.file=input.csv [&lt;flags&gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --input.file=input.csv Path to a CSV file to use as an input. --output.file=targets.json Path to a json file to use as an output. --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version." />
 
 
   <script type="application/ld+json">
@@ -57,17 +51,17 @@ Once the file is generated, you can optionally append your TLS server configurat
       "@context": "http://schema.org",
       "@type": "TechArticle",
       "articleSection": "",
-      "name": "Password file generator for Prometheus",
-      "url" : "/pwgen/",
-      "headline": "Password file generator for Prometheus",
-      "description": "This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.\nPrometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.\nOnce the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.",
-      "wordCount" : "263",
+      "name": "oy-csv-to-targets",
+      "url" : "/oy-csv-to-targets/",
+      "headline": "oy-csv-to-targets",
+      "description": "Usage     usage: oy-csv-to-targets --input.file=input.csv [\u003cflags\u003e] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --input.file=input.csv Path to a CSV file to use as an input. --output.file=targets.json Path to a json file to use as an output. --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version.",
+      "wordCount" : "293",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "/pwgen/"
+          "@id": "/oy-csv-to-targets/"
       },
       "copyrightHolder" : "O11y toolkit",
       "copyrightYear" : "0001",
@@ -149,7 +143,7 @@ Once the file is generated, you can optionally append your TLS server configurat
   href="/custom.css"
   media="all"
 />
-  <link href="/pwgen/" rel="canonical" type="text/html" />
+  <link href="/oy-csv-to-targets/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -402,7 +396,7 @@ Once the file is generated, you can optionally append your TLS server configurat
                 
                 <a
                   href="/oy-csv-to-targets/"
-                  class="gdoc-nav__entry"
+                  class="gdoc-nav__entry is-active"
                 >
                   oy-csv-to-targets
                 </a>
@@ -635,7 +629,7 @@ Once the file is generated, you can optionally append your TLS server configurat
                 
                 <a
                   href="/pwgen/"
-                  class="gdoc-nav__entry is-active"
+                  class="gdoc-nav__entry"
                 >
                   Password generator
                 </a>
@@ -734,7 +728,7 @@ Once the file is generated, you can optionally append your TLS server configurat
   
     justify-between
   
-  hidden-mobile
+  
   "
   itemprop="breadcrumb"
 >
@@ -754,7 +748,7 @@ Once the file is generated, you can optionally append your TLS server configurat
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Password file generator for Prometheus</span><meta itemprop='position' content='2' /></li>
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>oy-csv-to-targets</span><meta itemprop='position' content='2' /></li>
   
 
   
@@ -763,6 +757,17 @@ Once the file is generated, you can optionally append your TLS server configurat
     </div>
   
   
+    <div>
+      <span class="editpage">
+        <svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
+        <a
+          href="https://github.com/o11ydev/oy-toolkit/edit/main/cmd/oy-csv-to-targets/README.md"
+        >
+          Edit page
+        </a>
+      </span>
+    </div>
+  
 </div>
 
 
@@ -770,161 +775,195 @@ Once the file is generated, you can optionally append your TLS server configurat
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>Password file generator for Prometheus</h1>
-    <p>This form enables you to generate a <a
-  class="gdoc-markdown__link"
-  href="https://prometheus.io/docs/prometheus/latest/configuration/https/"
-  
->Prometheus web.yml
-file</a> to
-secure your Prometheus endpoints with basic authentication.</p>
-<p>Prometheus needs passwords hashed with <a
-  class="gdoc-markdown__link"
-  href="https://en.wikipedia.org/wiki/Bcrypt"
-  
->bcrypt</a>.
-This tool hashes the passwords directly in your browser, in such a way that we
-do not receive the passwords you are generating.</p>
-<p>Once the file is generated, you can optionally append your TLS server
-configuration to the file, then start Prometheus with <code>--web.config.file</code>
-pointing to your newly created file.</p>
-<p>This file is also compatible with Alertmanager, Pushgateway, Node Exporter and
-other official exporters.</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="how-to">
-        How to
-        <a data-clipboard-text="/pwgen/#how-to" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: How to" aria-label="Anchor to: How to" href="#how-to">
+    <h1>oy-csv-to-targets</h1>
+    <div class="gdoc-page__anchorwrap">
+    <h2 id="usage">
+        Usage
+        <a data-clipboard-text="/oy-csv-to-targets/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p>Enter the usernames and the passwords, then press the <code>Generate</code> button to
-compute the file.</p>
-<p>You can add and remove users with the <code>Remove</code> and <code>Add user</code> buttons.</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="security-and-privacy">
-        Security and privacy
-        <a data-clipboard-text="/pwgen/#security-and-privacy" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Security and privacy" aria-label="Anchor to: Security and privacy" href="#security-and-privacy">
+<pre tabindex="0"><code>usage: oy-csv-to-targets --input.file=input.csv [&lt;flags&gt;]
+
+Flags:
+  -h, --help                  Show context-sensitive help (also try --help-long
+                              and --help-man).
+      --input.file=input.csv  Path to a CSV file to use as an input.
+      --output.file=targets.json  
+                              Path to a json file to use as an output.
+      --log.level=info        Only log messages with the given severity or
+                              above. One of: [debug, info, warn, error]
+      --log.format=logfmt     Output format of log messages. One of: [logfmt,
+                              json]
+      --version               Show application version.
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h2 id="description">
+        Description
+        <a data-clipboard-text="/oy-csv-to-targets/#description" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Description" aria-label="Anchor to: Description" href="#description">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p>The input is parsed in your browser and is not sent to our servers. This tool is
-cross compiled to <a
-  class="gdoc-markdown__link"
-  href="https://webassembly.org/"
-  
->WASM</a>, so that it runs natively in
-your browser.</p>
+<p><em>oy-csv-to-targets</em> takes a list of Prometheus targets as a CSV file as input
+and produces a JSON file.</p>
+<p>The resulting JSON file can then be used by the <code>file_sd</code> discovery mechanism to
+dynamically discover and scrape the Prometheus targets. This allows the targets
+to be easily managed and updated without having to manually update the
+Prometheus configuration file, if your team is not fluent with JSON.</p>
+<p>If no output file is specified, the output goes to stdout.</p>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="users-list">
-        Users list
-        <a data-clipboard-text="/pwgen/#users-list" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Users list" aria-label="Anchor to: Users list" href="#users-list">
+    <h2 id="example-usage">
+        Example usage
+        <a data-clipboard-text="/oy-csv-to-targets/#example-usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example usage" aria-label="Anchor to: Example usage" href="#example-usage">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>With the following CSV as an input:</p>
+<pre tabindex="0"><code>,datacenter,availability_zone
+prometheus1:9090,dc1,az1
+prometheus2:9090,dc1,az2
+prometheus3:9090,dc2,az1
+</code></pre><p>The following command:</p>
+<pre tabindex="0"><code>./oy-csv-to-targets --input.file targets.csv --output.file targets.json
+</code></pre><p>Would produce the following <code>targets.json</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;labels&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;availability_zone&#34;</span>: <span style="color:#e6db74">&#34;az1&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;datacenter&#34;</span>: <span style="color:#e6db74">&#34;dc1&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;targets&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;prometheus1:9090&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;labels&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;availability_zone&#34;</span>: <span style="color:#e6db74">&#34;az2&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;datacenter&#34;</span>: <span style="color:#e6db74">&#34;dc1&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;targets&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;prometheus2:9090&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;labels&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;availability_zone&#34;</span>: <span style="color:#e6db74">&#34;az1&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;datacenter&#34;</span>: <span style="color:#e6db74">&#34;dc2&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;targets&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;prometheus3:9090&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>You can then configure your Prometheus as follows</p>
+<pre tabindex="0"><code>scrape_configs:
+- job_name: prometheus
+  file_sd_configs:
+    - files: [targets.json]
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h2 id="downloading">
+        Downloading
+        <a data-clipboard-text="/oy-csv-to-targets/#downloading" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Downloading" aria-label="Anchor to: Downloading" href="#downloading">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
 
-<div id="loadingWarning">
 
 
 
 
-
-
-
-<blockquote class="gdoc-hint caution">
-  <div class="gdoc-hint__title flex align-center"><svg class="gdoc-icon gdoc_timer"><use xlink:href="#gdoc_timer"></use></svg>
-      <span>Loading</span></div>
-  <div class="gdoc-hint__text">The application is loading. If this warning does not disappear, please make sure
-that <a
-  class="gdoc-markdown__link"
-  href="https://caniuse.com/wasm"
+<div class="gdoc-tabs">
   
->your browser supports WASM</a> and that javascript
-is enabled.</div>
-</blockquote>
-
-
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-0"
+      checked="checked"
+    />
+    <label for="tabs-usage-0" class="gdoc-tabs__label">
+      linux (wget)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-csv-to-targets</strong> within Linux, run:</p>
+<pre tabindex="0"><code>wget https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-csv-to-targets -O oy-csv-to-targets &amp;&amp; chmod +x oy-csv-to-targets &amp;&amp; ./oy-csv-to-targets --help
+</code></pre>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-1"
+      
+    />
+    <label for="tabs-usage-1" class="gdoc-tabs__label">
+      linux (deb)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <strong>oy-csv-to-targets</strong> is available as a <code>.deb</code> package:
+<a
+  class="gdoc-markdown__link"
+  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-csv-to-targets.deb"
+  
+>https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-csv-to-targets.deb</a>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-2"
+      
+    />
+    <label for="tabs-usage-2" class="gdoc-tabs__label">
+      linux (yum)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <strong>oy-csv-to-targets</strong> is available as a <code>.rpm</code> package:
+<a
+  class="gdoc-markdown__link"
+  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-csv-to-targets.rpm"
+  
+>https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-csv-to-targets.rpm</a>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-3"
+      
+    />
+    <label for="tabs-usage-3" class="gdoc-tabs__label">
+      docker
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-csv-to-targets</strong> with docker, run:</p>
+<pre tabindex="0"><code>docker run quay.io/o11y/oy-toolkit:oy-csv-to-targets --help
+</code></pre>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-4"
+      
+    />
+    <label for="tabs-usage-4" class="gdoc-tabs__label">
+      nix
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-csv-to-targets</strong> with nix, run:</p>
+<pre tabindex="0"><code>nix run github:o11ydev/oy-toolkit#oy-csv-to-targets -- --help
+</code></pre>
+    </div>
+  
 </div>
-
-
-
-<script src="/wasm_exec.js"></script>
-
-<script>
-if (!WebAssembly.instantiateStreaming) {
-    // polyfill
-    WebAssembly.instantiateStreaming = async (resp, importObject) => {
-        const source = await (await resp).arrayBuffer();
-        return await WebAssembly.instantiate(source, importObject);
-    };
-}
-
-const go = new Go();
-WebAssembly.instantiateStreaming(fetch("/pwgen.wasm"),
-        go.importObject).then((result) => {
-           go.run(result.instance);
-});
-
-addUser = function(){
-    tb = document.getElementById('usersTable');
-    newRow = tb.getElementsByTagName('tbody')[0].insertRow();
-     t1=newRow.insertCell();
-     t1.innerHTML='<input type="text" name="username" placeholder="username">';
-     t1.setAttribute("label","Username");
-     t1.setAttribute("class","flext");
-     t2=newRow.insertCell();
-     t2.innerHTML='<input type="password" name="password" placeholder="password">';
-     t2.setAttribute("label","Password");
-     t2.setAttribute("class","flext");
-     t3=newRow.insertCell();
-     t3.innerHTML='<input type="button" value="Remove" onclick="removeUser(this)">';
-};
-
-switchViz = function(t){
-    pw = document.querySelectorAll('[name="password"]');
-    for (i = 0; i < pw.length; ++i) {
-        if (pw[i].type === "password") {
-            t.innerHTML="Hide passwords";
-            pw[i].type = "text";
-        } else {
-            t.innerHTML="Show passwords";
-            pw[i].type = "password";
-        }
-    }
-};
-
-removeUser = function(t) {
-    var p = t.parentNode.parentNode;
-    p.parentNode.removeChild(p);
-};
-
-</script>
-
-<table class="flext" id="usersTable">
-<thead>
-<tr>
-<th>Username</th>
-<th>Password</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-<hr>
-<p>Cost: <input type="number" min="10" max="13" name="cost" value="10"
-/><br/><small>Increasing cost will increase Prometheus server CPU usage and time
-to authenticate users.</small></p>
-<hr>
-
-<button onClick="addUser();" id="addUserButton">New user</button>
-<button onClick="switchViz(this);" id="switchViz">Show passwords</button>
-<button onClick="generateUsers();" id="runButton" disabled>Generate</button>
-<div id="resultDiv"></div>
-
 
 
   </article>
@@ -975,12 +1014,106 @@ to authenticate users.</small></p>
       
 
       
+        
+        
+      
 
       
     
 
     
     
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+        
+        
+      
+
+      
+
+      
+    
+
+    
+    
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
+
+      
+    
+
+    
+    
+  
+
+    
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
+
+      
+    
+
+    
+    
+  
+    
+    
+
+    
+    
+
+    
+    
+      
+  
+  
+
   
     
     
@@ -1030,9 +1163,6 @@ to authenticate users.</small></p>
     
     
   
-
-    
-  
     
     
 
@@ -1047,97 +1177,6 @@ to authenticate users.</small></p>
       
       
 
-      
-
-      
-
-      
-    
-
-    
-    
-  
-    
-    
-
-    
-    
-
-    
-    
-      
-  
-  
-
-  
-    
-    
-
-    
-    
-      
-      
-      
-
-      
-        
-      
-      
-
-      
-
-      
-
-      
-    
-
-    
-    
-  
-    
-    
-
-    
-    
-      
-      
-      
-
-      
-        
-      
-      
-
-      
-
-      
-        
-        
-      
-
-      
-    
-
-    
-    
-  
-    
-    
-
-    
-    
-      
-      
-      
-
-      
-        
-      
-      
-
-      
-        
-        
       
 
       
@@ -1158,25 +1197,16 @@ to authenticate users.</small></p>
 
 
   <span class="gdoc-page__nav">
-    
-      <a
-        class="gdoc-page__nav--prev flex align-center"
-        href="/metricslint/"
-        title="/metrics lint"
-      >
-        <i class="gdoc-icon">gdoc_arrow_left_alt</i>
-        /metrics lint
-      </a>
     
   </span>
   <span class="gdoc-page__nav">
     
       <a
         class="gdoc-page__nav--next flex align-center"
-        href="/promqlparser/"
-        title="PromQL parser"
+        href="/oy-expose/"
+        title="oy-expose"
       >
-        PromQL parser
+        oy-expose
         <i class="gdoc-icon">gdoc_arrow_right_alt</i>
       </a>
     

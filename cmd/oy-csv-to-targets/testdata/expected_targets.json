@@ -1,0 +1,1 @@
+[{"labels":{"availability_zone":"az1","datacenter":"dc1"},"targets":["prometheus1:9090"]},{"labels":{"availability_zone":"az2","datacenter":"dc1"},"targets":["prometheus2:9090"]},{"labels":{"availability_zone":"az1","datacenter":"dc2"},"targets":["prometheus3:9090"]}]

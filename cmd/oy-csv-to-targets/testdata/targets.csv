@@ -1,0 +1,4 @@
+,datacenter,availability_zone
+prometheus1:9090,dc1,az1
+prometheus2:9090,dc1,az2
+prometheus3:9090,dc2,az1

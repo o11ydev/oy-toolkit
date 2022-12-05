@@ -20,7 +20,6 @@ import (
 	"net/http"
 
 	"github.com/go-kit/log"
-	"github.com/go-kit/log/level"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/collectors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -30,15 +29,12 @@ import (
 )
 
 var (
-	webConfig              = webflag.AddFlags(kingpin.CommandLine)
-	listenAddress          = kingpin.Flag("web.listen-address", "Address to listen on for web interface and telemetry.").Default(":9099").String()
+	webConfig              = webflag.AddFlags(kingpin.CommandLine, ":9099")
 	metricsPath            = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
 	disableExporterMetrics = kingpin.Flag("web.disable-exporter-metrics", "Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).").Bool()
 )
 
 func Serve(ctx context.Context, logger log.Logger, r *prometheus.Registry) error {
-	level.Info(logger).Log("msg", "Listening on address", "address", *listenAddress)
-
 	if !*disableExporterMetrics {
 		r.MustRegister(
 			collectors.NewProcessCollector(collectors.ProcessCollectorOpts{}),
@@ -47,10 +43,10 @@ func Serve(ctx context.Context, logger log.Logger, r *prometheus.Registry) error
 	}
 
 	http.Handle(*metricsPath, promhttp.HandlerFor(r, promhttp.HandlerOpts{}))
-	srv := &http.Server{Addr: *listenAddress}
+	srv := &http.Server{}
 	errCh := make(chan error, 1)
 	go func() {
-		errCh <- web.ListenAndServe(srv, *webConfig, logger)
+		errCh <- web.ListenAndServe(srv, webConfig, logger)
 	}()
 
 	select {

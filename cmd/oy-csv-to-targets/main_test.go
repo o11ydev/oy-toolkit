@@ -17,7 +17,7 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"os"
 	"os/exec"
 	"testing"
@@ -51,7 +51,7 @@ func TestCSVToTargets(t *testing.T) {
 	stderr, err := run.StderrPipe()
 	require.NoError(t, err)
 	go func() {
-		slurp, _ := ioutil.ReadAll(stderr)
+		slurp, _ := io.ReadAll(stderr)
 		t.Log(string(slurp))
 	}()
 
@@ -62,10 +62,10 @@ func TestCSVToTargets(t *testing.T) {
 }
 
 func compareJSON(t *testing.T, file1, file2 string) {
-	data1, err := ioutil.ReadFile(file1)
+	data1, err := os.ReadFile(file1)
 	require.NoError(t, err)
 
-	data2, err := ioutil.ReadFile(file2)
+	data2, err := os.ReadFile(file2)
 	require.NoError(t, err)
 
 	var obj1 interface{}

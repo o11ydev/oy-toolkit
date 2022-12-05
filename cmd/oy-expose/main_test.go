@@ -17,7 +17,6 @@ package main
 
 import (
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -65,7 +64,7 @@ func TestExpose(t *testing.T) {
 	stderr, err := run.StderrPipe()
 	require.NoError(t, err)
 	go func() {
-		slurp, _ := ioutil.ReadAll(stderr)
+		slurp, _ := io.ReadAll(stderr)
 		t.Log(string(slurp))
 	}()
 

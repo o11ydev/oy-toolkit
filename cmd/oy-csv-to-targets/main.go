@@ -21,7 +21,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -120,7 +119,7 @@ func csvToJSON(csvFile, jsonFile string) error {
 
 	// Otherwise, output to the file using a temp file.
 	// Create a temp file in the same directory as the destination file.
-	tmpFile, err := ioutil.TempFile(filepath.Dir(jsonFile), "tmp")
+	tmpFile, err := os.CreateTemp(filepath.Dir(jsonFile), "tmp")
 	if err != nil {
 		return fmt.Errorf("failed to create temp file: %w", err)
 	}

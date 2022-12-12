@@ -49,7 +49,7 @@ metrics.
 
 ## Command line tool
 
-This utilise behaves like the `promtool check metrics` command, which is
+This utility behaves like the `promtool check metrics` command, which is
 downloadable with [Prometheus](https://prometheus.io/download).
 
 ## Metrics validation

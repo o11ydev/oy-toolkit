@@ -1,4 +1,4 @@
-// Copyright 2022 The o11y toolkit Authors
+// Copyright The o11y toolkit Authors
 // spdx-license-identifier: apache-2.0
 //
 // Licensed under the Apache License, Version 2.0 (the "License");

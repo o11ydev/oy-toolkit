@@ -31,6 +31,7 @@ import (
 
 func main() {
 	ruleFiles := kingpin.Arg("rule-file", "File to read periodic recording rules from.").Required().Strings()
+	prefetch := kingpin.Flag("prefetch", "Cache metrics before exposing them. Avoid scrape timeout.").Default("true").Bool()
 	c := client.InitCliFlags()
 	logger := cmd.InitCmd("oy-periodic-files")
 
@@ -52,7 +53,27 @@ func main() {
 	}
 
 	r := prometheus.NewRegistry()
-	r.MustRegister(collector)
+	if !*prefetch {
+		r.MustRegister(collector)
+	} else {
+		periodicQueriesReady := prometheus.NewGauge(prometheus.GaugeOpts{
+			Name: "periodic_queries_ready",
+			Help: "Wheter periodic queries have been pre-fetched.",
+		})
+		periodicQueriesReady.Set(0)
+		r.MustRegister(periodicQueriesReady)
+		ch := make(chan prometheus.Metric)
+		go func(ch chan prometheus.Metric) {
+			for range ch {
+			}
+		}(ch)
+		go func() {
+			collector.Collect(ch)
+			close(ch)
+			r.MustRegister(collector)
+			periodicQueriesReady.Set(1)
+		}()
+	}
 	err = http.Serve(context.Background(), logger, r)
 	if err != nil {
 		level.Error(logger).Log("err", err)

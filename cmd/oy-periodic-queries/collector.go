@@ -55,13 +55,20 @@ type groupsCollector struct {
 
 // Collect implements the Collector interface.
 func (c *groupsCollector) Collect(ch chan<- prometheus.Metric) {
-	success := func(val float64) {
+	var lastErr error
+
+	defer func() {
+		var val float64 = 1
+		if lastErr != nil {
+			level.Error(c.logger).Log("err", lastErr)
+			val = 0
+		}
 		ch <- prometheus.MustNewConstMetric(
-			prometheus.NewDesc("periodic_rule_queries_success", "", nil, nil),
+			prometheus.NewDesc("periodic_queries_success", "", nil, nil),
 			prometheus.GaugeValue,
 			val,
 		)
-	}
+	}()
 
 	metrics := []prometheus.Metric{}
 	now := time.Now().Local()
@@ -70,7 +77,7 @@ func (c *groupsCollector) Collect(ch chan<- prometheus.Metric) {
 			for _, r := range g.Rules {
 				m, err := QueryRangeToMetric(c.logger, c.cache, p, r.Expr, c.client, r.Record, r.Labels)
 				if err != nil {
-					success(0)
+					lastErr = err
 					return
 				}
 				metrics = append(metrics, m...)
@@ -80,7 +87,6 @@ func (c *groupsCollector) Collect(ch chan<- prometheus.Metric) {
 	for _, metric := range metrics {
 		ch <- metric
 	}
-	success(1)
 }
 
 func (c *groupsCollector) Describe(ch chan<- *prometheus.Desc) {
@@ -110,7 +116,6 @@ func QueryRangeToMetric(logger log.Logger, c *Cache, p period.Period, query stri
 		}
 		result, _, err = queryAPI.Query(context.Background(), pq, p.End)
 		if err != nil {
-			level.Error(logger).Log("err", err)
 			return nil, err
 		}
 		if p.Complete {

@@ -7,13 +7,17 @@
   usage = pkgs.runCommand "${name} --help" {} "${tool}/bin/${name} --help &> $out";
   documentation = pkgs.writeTextFile {
     name = "${name}-doc.md";
-    text = ''
+    text = let
+      firstParagraphDescription = builtins.elemAt (builtins.split "\n\n" (builtins.readFile description)) 0;
+      frontmatterDescription = pkgs.lib.removePrefix "\n*${name}*" firstParagraphDescription;
+    in ''
       ---
       title: ${name}
       geekdocRepo: "https://github.com/o11ydev/oy-toolkit"
       geekdocEditPath: "edit/main/cmd/${name}"
       geekdocFilePath: "README.md"
       tool: ${name}
+      description: ${assert frontmatterDescription != firstParagraphDescription; builtins.toJSON frontmatterDescription}
       ---
 
       ${builtins.readFile ./docs/tools-top.md}

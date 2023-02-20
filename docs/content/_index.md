@@ -11,10 +11,7 @@ The toolkit is licensed under the Apache 2 license. You can use it for free.
 
 ### Available tools
 
-* [oy-expose](/oy-expose): command line utility to expose a single metrics file
-  to be scraped by Prometheus.
-* [oy-scrape-jitter](/oy-scrape-jitter): command line utility to analyze
-  Prometheus scrape timestamps jitter.
+{{< tools >}}
 
 ### Sponsor
 

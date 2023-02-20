@@ -13,6 +13,7 @@
       geekdocRepo: "https://github.com/o11ydev/oy-toolkit"
       geekdocEditPath: "edit/main/cmd/${name}"
       geekdocFilePath: "README.md"
+      tool: ${name}
       ---
 
       ${builtins.readFile ./docs/tools-top.md}

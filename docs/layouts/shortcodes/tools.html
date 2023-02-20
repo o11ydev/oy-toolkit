@@ -1,5 +1,5 @@
 <ul>
     {{ range where .Site.RegularPages "Params.Tool" "!=" nil }}
     <li><a href="{{ .Permalink }}">{{ .Params.Tool }}</a></li>
-    {{ end }}V
+    {{ end }}
 </ul>

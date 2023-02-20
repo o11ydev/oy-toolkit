@@ -1,6 +1,6 @@
-# oy-periodic-rules
+# oy-periodic-queries
 
-*oy-periodic-rules* is a tool that allows you to evaluate Prometheus
+*oy-periodic-queries* is a tool that allows you to evaluate Prometheus
 recording rules and export the results as metrics, with defined boundaries such
 as monthly or weekly (*Only monthly is implemented at the moment*).
 

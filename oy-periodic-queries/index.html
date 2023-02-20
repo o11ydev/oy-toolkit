@@ -8,7 +8,9 @@
 <meta name="generator" content="Hugo 0.110.0">
 
 
-  <meta name="description" content="Usage usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&#34;&#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&#34;/metrics&#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*)." />
+  <meta name="description" content=" is a tool that allows you to evaluate Prometheus
+recording rules and export the results as metrics, with defined boundaries such
+as monthly or weekly (*Only monthly is implemented at the moment*)." />
 
     <title>oy-periodic-queries | O11y toolkit</title>
 
@@ -34,7 +36,9 @@
     content="oy-periodic-queries"
   />
   <meta property="og:site_name" content="O11y toolkit" />
-  <meta property="og:description" content="Usage usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&#34;&#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&#34;/metrics&#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*)." />
+  <meta property="og:description" content=" is a tool that allows you to evaluate Prometheus
+recording rules and export the results as metrics, with defined boundaries such
+as monthly or weekly (*Only monthly is implemented at the moment*)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/oy-periodic-queries/" />
 
@@ -43,7 +47,9 @@
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="oy-periodic-queries" />
-  <meta name="twitter:description" content="Usage usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&#34;&#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&#34;/metrics&#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*)." />
+  <meta name="twitter:description" content=" is a tool that allows you to evaluate Prometheus
+recording rules and export the results as metrics, with defined boundaries such
+as monthly or weekly (*Only monthly is implemented at the moment*)." />
 
 
   <script type="application/ld+json">
@@ -54,8 +60,8 @@
       "name": "oy-periodic-queries",
       "url" : "/oy-periodic-queries/",
       "headline": "oy-periodic-queries",
-      "description": "Usage usage: oy-periodic-queries [\u003cflags\u003e] \u003crule-file\u003e... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=\u0022\u0022 [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=\u0022\/metrics\u0022 Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).",
-      "wordCount" : "673",
+      "description": " is a tool that allows you to evaluate Prometheus\nrecording rules and export the results as metrics, with defined boundaries such\nas monthly or weekly (*Only monthly is implemented at the moment*).",
+      "wordCount" : "672",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
@@ -865,15 +871,7 @@ Args:
         </a>
     </h2>
 </div>
-<div class="gdoc-page__anchorwrap">
-    <h1 id="oy-periodic-rules">
-        oy-periodic-rules
-        <a data-clipboard-text="/oy-periodic-queries/#oy-periodic-rules" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: oy-periodic-rules" aria-label="Anchor to: oy-periodic-rules" href="#oy-periodic-rules">
-            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
-        </a>
-    </h1>
-</div>
-<p><em>oy-periodic-rules</em> is a tool that allows you to evaluate Prometheus
+<p><em>oy-periodic-queries</em> is a tool that allows you to evaluate Prometheus
 recording rules and export the results as metrics, with defined boundaries such
 as monthly or weekly (<em>Only monthly is implemented at the moment</em>).</p>
 <p>It uses calendar months.</p>

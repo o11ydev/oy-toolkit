@@ -780,13 +780,24 @@ and manage your open source observability stack.</p>
 </div>
 <ul>
     
-    <li><a href="/oy-csv-to-targets/">oy-csv-to-targets</a></li>
+    <li><strong><a href="/oy-csv-to-targets/">oy-csv-to-targets</a></strong> takes a list of Prometheus targets as a CSV file as input
+and produces a JSON file.</li>
     
-    <li><a href="/oy-expose/">oy-expose</a></li>
+    <li><strong><a href="/oy-expose/">oy-expose</a></strong> reads a metrics file and exposes its content to be scraped by a
+Prometheus server.</li>
     
-    <li><a href="/oy-periodic-queries/">oy-periodic-queries</a></li>
+    <li><strong><a href="/oy-periodic-queries/">oy-periodic-queries</a></strong> is a tool that allows you to evaluate Prometheus
+recording rules and export the results as metrics, with defined boundaries such
+as monthly or weekly (<em>Only monthly is implemented at the moment</em>).</li>
     
-    <li><a href="/oy-scrape-jitter/">oy-scrape-jitter</a></li>
+    <li><strong><a href="/oy-scrape-jitter/">oy-scrape-jitter</a></strong> queries a Prometheus server to see how regular scrapes are.
+Perfect scrape alignment happens when the distance between all the scrapes are
+exactly the same. It enables Prometheus <a
+  class="gdoc-markdown__link"
+  href="https://github.com/prometheus/prometheus/blob/main/tsdb/docs/bstream.md"
+  
+>delta-of-delta</a>
+encoding to reduce significantly the size of the blocks.</li>
     
 </ul>
 

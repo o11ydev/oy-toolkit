@@ -33,7 +33,7 @@ func main() {
 	ruleFiles := kingpin.Arg("rule-file", "File to read periodic recording rules from.").Required().Strings()
 	prefetch := kingpin.Flag("prefetch", "Cache metrics before exposing them. Avoid scrape timeout.").Default("true").Bool()
 	c := client.InitCliFlags()
-	logger := cmd.InitCmd("oy-periodic-files")
+	logger := cmd.InitCmd("oy-periodic-queries")
 
 	promClient, err := client.NewClient(c)
 	if err != nil {

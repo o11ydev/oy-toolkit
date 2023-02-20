@@ -12,6 +12,8 @@
   </url><url>
     <loc>/oy-expose/</loc>
   </url><url>
+    <loc>/oy-periodic-queries/</loc>
+  </url><url>
     <loc>/oy-scrape-jitter/</loc>
   </url><url>
     <loc>/pwgen/</loc>

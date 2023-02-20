@@ -8,11 +8,9 @@
 <meta name="generator" content="Hugo 0.110.0">
 
 
-  <meta name="description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
+  <meta name="description" content="Usage usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&#34;&#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&#34;/metrics&#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*)." />
 
-    <title>Password file generator for Prometheus | O11y toolkit</title>
+    <title>oy-periodic-queries | O11y toolkit</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 <link
@@ -33,23 +31,19 @@ Once the file is generated, you can optionally append your TLS server configurat
     
   <meta
     property="og:title"
-    content="Password file generator for Prometheus"
+    content="oy-periodic-queries"
   />
   <meta property="og:site_name" content="O11y toolkit" />
-  <meta property="og:description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
+  <meta property="og:description" content="Usage usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&#34;&#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&#34;/metrics&#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/pwgen/" />
+<meta property="og:url" content="/oy-periodic-queries/" />
 
 <meta property="article:section" content="" />
 
 
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Password file generator for Prometheus" />
-  <meta name="twitter:description" content="This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file." />
+<meta name="twitter:title" content="oy-periodic-queries" />
+  <meta name="twitter:description" content="Usage usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&#34;&#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&#34;/metrics&#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*)." />
 
 
   <script type="application/ld+json">
@@ -57,17 +51,17 @@ Once the file is generated, you can optionally append your TLS server configurat
       "@context": "http://schema.org",
       "@type": "TechArticle",
       "articleSection": "",
-      "name": "Password file generator for Prometheus",
-      "url" : "/pwgen/",
-      "headline": "Password file generator for Prometheus",
-      "description": "This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.\nPrometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.\nOnce the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.",
-      "wordCount" : "197",
+      "name": "oy-periodic-queries",
+      "url" : "/oy-periodic-queries/",
+      "headline": "oy-periodic-queries",
+      "description": "Usage usage: oy-periodic-queries [\u003cflags\u003e] \u003crule-file\u003e... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=\u0022\u0022 [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=\u0022\/metrics\u0022 Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).",
+      "wordCount" : "673",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "/pwgen/"
+          "@id": "/oy-periodic-queries/"
       },
       "copyrightHolder" : "O11y toolkit",
       "copyrightYear" : "0001",
@@ -149,7 +143,7 @@ Once the file is generated, you can optionally append your TLS server configurat
   href="/custom.css"
   media="all"
 />
-  <link href="/pwgen/" rel="canonical" type="text/html" />
+  <link href="/oy-periodic-queries/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -486,7 +480,7 @@ Once the file is generated, you can optionally append your TLS server configurat
                 
                 <a
                   href="/oy-periodic-queries/"
-                  class="gdoc-nav__entry"
+                  class="gdoc-nav__entry is-active"
                 >
                   oy-periodic-queries
                 </a>
@@ -677,7 +671,7 @@ Once the file is generated, you can optionally append your TLS server configurat
                 
                 <a
                   href="/pwgen/"
-                  class="gdoc-nav__entry is-active"
+                  class="gdoc-nav__entry"
                 >
                   Password generator
                 </a>
@@ -776,7 +770,7 @@ Once the file is generated, you can optionally append your TLS server configurat
   
     justify-between
   
-  hidden-mobile
+  
   "
   itemprop="breadcrumb"
 >
@@ -796,7 +790,7 @@ Once the file is generated, you can optionally append your TLS server configurat
     
   
   
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Password file generator for Prometheus</span><meta itemprop='position' content='2' /></li>
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'>O11y toolkit</span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>oy-periodic-queries</span><meta itemprop='position' content='2' /></li>
   
 
   
@@ -805,6 +799,17 @@ Once the file is generated, you can optionally append your TLS server configurat
     </div>
   
   
+    <div>
+      <span class="editpage">
+        <svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
+        <a
+          href="https://github.com/o11ydev/oy-toolkit/edit/main/cmd/oy-periodic-queries/README.md"
+        >
+          Edit page
+        </a>
+      </span>
+    </div>
+  
 </div>
 
 
@@ -812,161 +817,319 @@ Once the file is generated, you can optionally append your TLS server configurat
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>Password file generator for Prometheus</h1>
-    <p>This form enables you to generate a <a
-  class="gdoc-markdown__link"
-  href="https://prometheus.io/docs/prometheus/latest/configuration/https/"
-  
->Prometheus web.yml
-file</a> to
-secure your Prometheus endpoints with basic authentication.</p>
-<p>Prometheus needs passwords hashed with <a
-  class="gdoc-markdown__link"
-  href="https://en.wikipedia.org/wiki/Bcrypt"
-  
->bcrypt</a>.
-This tool hashes the passwords directly in your browser, in such a way that we
-do not receive the passwords you are generating.</p>
-<p>Once the file is generated, you can optionally append your TLS server
-configuration to the file, then start Prometheus with <code>--web.config.file</code>
-pointing to your newly created file.</p>
-<p>This file is also compatible with Alertmanager, Pushgateway, Node Exporter and
-other official exporters.</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="how-to">
-        How to
-        <a data-clipboard-text="/pwgen/#how-to" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: How to" aria-label="Anchor to: How to" href="#how-to">
+    <h1>oy-periodic-queries</h1>
+    <div class="gdoc-page__anchorwrap">
+    <h2 id="usage">
+        Usage
+        <a data-clipboard-text="/oy-periodic-queries/#usage" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Usage" aria-label="Anchor to: Usage" href="#usage">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p>Enter the usernames and the passwords, then press the <code>Generate</code> button to
-compute the file.</p>
-<p>You can add and remove users with the <code>Remove</code> and <code>Add user</code> buttons.</p>
-<div class="gdoc-page__anchorwrap">
-    <h2 id="security-and-privacy">
-        Security and privacy
-        <a data-clipboard-text="/pwgen/#security-and-privacy" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Security and privacy" aria-label="Anchor to: Security and privacy" href="#security-and-privacy">
+<pre tabindex="0"><code>usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;...
+
+Flags:
+  -h, --help                Show context-sensitive help (also try --help-long
+                            and --help-man).
+      --web.systemd-socket  Use systemd socket activation listeners instead of
+                            port listeners (Linux only).
+      --web.listen-address=:9099 ...  
+                            Addresses on which to expose metrics and web
+                            interface. Repeatable for multiple addresses.
+      --web.config.file=&#34;&#34;  [EXPERIMENTAL] Path to configuration file that can
+                            enable TLS or authentication.
+      --web.telemetry-path=&#34;/metrics&#34;  
+                            Path under which to expose metrics.
+      --web.disable-exporter-metrics  
+                            Exclude metrics about the exporter itself
+                            (promhttp_*, process_*, go_*).
+      --prefetch            Cache metrics before exposing them. Avoid scrape
+                            timeout.
+      --prometheus.url=&#34;http://127.0.0.1:9090&#34;  
+                            URL of the Prometheus server.
+      --client.config=CLIENT.CONFIG  
+                            Path to a HTTP client configuration.
+      --log.level=info      Only log messages with the given severity or above.
+                            One of: [debug, info, warn, error]
+      --log.format=logfmt   Output format of log messages. One of: [logfmt,
+                            json]
+      --version             Show application version.
+
+Args:
+  &lt;rule-file&gt;  File to read periodic recording rules from.
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h2 id="description">
+        Description
+        <a data-clipboard-text="/oy-periodic-queries/#description" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Description" aria-label="Anchor to: Description" href="#description">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p>The input is parsed in your browser and is not sent to our servers. This tool is
-cross compiled to <a
-  class="gdoc-markdown__link"
-  href="https://webassembly.org/"
-  
->WASM</a>, so that it runs natively in
-your browser.</p>
 <div class="gdoc-page__anchorwrap">
-    <h2 id="users-list">
-        Users list
-        <a data-clipboard-text="/pwgen/#users-list" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Users list" aria-label="Anchor to: Users list" href="#users-list">
+    <h1 id="oy-periodic-rules">
+        oy-periodic-rules
+        <a data-clipboard-text="/oy-periodic-queries/#oy-periodic-rules" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: oy-periodic-rules" aria-label="Anchor to: oy-periodic-rules" href="#oy-periodic-rules">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
-    </h2>
+    </h1>
 </div>
-
-<div id="loadingWarning">
-
-
-
-
-
-
-
-<blockquote class="gdoc-hint caution">
-  <div class="gdoc-hint__title flex align-center"><svg class="gdoc-icon gdoc_timer"><use xlink:href="#gdoc_timer"></use></svg>
-      <span>Loading</span></div>
-  <div class="gdoc-hint__text">The application is loading. If this warning does not disappear, please make sure
-that <a
-  class="gdoc-markdown__link"
-  href="https://caniuse.com/wasm"
-  
->your browser supports WASM</a> and that javascript
-is enabled.</div>
-</blockquote>
-
-
-</div>
-
-
-
-<script src="/wasm_exec.js"></script>
-
-<script>
-if (!WebAssembly.instantiateStreaming) {
-    // polyfill
-    WebAssembly.instantiateStreaming = async (resp, importObject) => {
-        const source = await (await resp).arrayBuffer();
-        return await WebAssembly.instantiate(source, importObject);
-    };
-}
-
-const go = new Go();
-WebAssembly.instantiateStreaming(fetch("/pwgen.wasm"),
-        go.importObject).then((result) => {
-           go.run(result.instance);
-});
-
-addUser = function(){
-    tb = document.getElementById('usersTable');
-    newRow = tb.getElementsByTagName('tbody')[0].insertRow();
-     t1=newRow.insertCell();
-     t1.innerHTML='<input type="text" name="username" placeholder="username">';
-     t1.setAttribute("label","Username");
-     t1.setAttribute("class","flext");
-     t2=newRow.insertCell();
-     t2.innerHTML='<input type="password" name="password" placeholder="password">';
-     t2.setAttribute("label","Password");
-     t2.setAttribute("class","flext");
-     t3=newRow.insertCell();
-     t3.innerHTML='<input type="button" value="Remove" onclick="removeUser(this)">';
-};
-
-switchViz = function(t){
-    pw = document.querySelectorAll('[name="password"]');
-    for (i = 0; i < pw.length; ++i) {
-        if (pw[i].type === "password") {
-            t.innerHTML="Hide passwords";
-            pw[i].type = "text";
-        } else {
-            t.innerHTML="Show passwords";
-            pw[i].type = "password";
-        }
-    }
-};
-
-removeUser = function(t) {
-    var p = t.parentNode.parentNode;
-    p.parentNode.removeChild(p);
-};
-
-</script>
-
-<table class="flext" id="usersTable">
+<p><em>oy-periodic-rules</em> is a tool that allows you to evaluate Prometheus
+recording rules and export the results as metrics, with defined boundaries such
+as monthly or weekly (<em>Only monthly is implemented at the moment</em>).</p>
+<p>It uses calendar months.</p>
+<p>With this exporter, you can easily calculate monthly resource usage, or any
+other metric that requires periodic evaluation. Simply specify the recording
+rule and time boundaries, and the exporter will run the rule and provide you
+with accurate, timely metrics.</p>
+<p>In the recording rule and labels, you have access to the following variables, that will be
+replaced:</p>
+<div class=table-wrap> <table>
 <thead>
 <tr>
-<th>Username</th>
-<th>Password</th>
-<th></th>
+<th>Variable</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>$RANGE</td>
+<td>The range of the query, in duration</td>
+</tr>
+<tr>
+<td>$0_PC_TIMESTAMP</td>
+<td>The start time of the query, in unix timestamp</td>
+</tr>
+<tr>
+<td>$x_PC_TIMESTAMP</td>
+<td>The time located a x % of the range, in unix timestamp, x</td>
+</tr>
+<tr>
+<td>between 0 and 100</td>
+<td></td>
+</tr>
+<tr>
+<td>$100_PC_TIMESTAMP</td>
+<td>The end time of the query, in unix timestamp</td>
+</tr>
+<tr>
+<td>$x_PC_RANGE</td>
+<td>A duration that represents x % of the current range, x between 0</td>
+</tr>
+<tr>
+<td>and 100</td>
+<td></td>
+</tr>
 </tbody>
-</table>
+</table> </div>
+<p>Other values in <code>${}</code> are formatted with <a
+  class="gdoc-markdown__link"
+  href="https://pkg.go.dev/time#Time.Format"
+  
+>Go&rsquo;s
+Time.Format</a>, e.g. <code>&quot;${2006-01}&quot;</code> is turned
+into the month and day of the end of the range. Prepend <code>_</code> to have it relative
+to the start of the range: <code>&quot;${_2006-01}&quot;</code>.</p>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="configuration">
+        Configuration
+        <a data-clipboard-text="/oy-periodic-queries/#configuration" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Configuration" aria-label="Anchor to: Configuration" href="#configuration">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>The syntax of a rule file is:</p>
+<pre tabindex="0"><code>groups:
+  [ - &lt;rule_group&gt; ]
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h3 id="rule_group">
+        <code>&lt;rule_group&gt;</code>
+        <a data-clipboard-text="/oy-periodic-queries/#rule_group" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: &lt;rule_group&gt;" aria-label="Anchor to: &lt;rule_group&gt;" href="#rule_group">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<pre tabindex="0"><code># The name of the group. Must be unique within a file.
+name: &lt;string&gt;
 
-<hr>
-<p>Cost: <input type="number" min="10" max="13" name="cost" value="10"
-/><br/><small>Increasing cost will increase Prometheus server CPU usage and time
-to authenticate users.</small></p>
-<hr>
+# The time period covered by the metrics.
+time_period: [ &lt;string&gt; | default = &#34;monthly&#34; ]
 
-<button onClick="addUser();" id="addUserButton">New user</button>
-<button onClick="switchViz(this);" id="switchViz">Show passwords</button>
-<button onClick="generateUsers();" id="runButton" disabled>Generate</button>
-<div id="resultDiv"></div>
+# The maximum time to look back.
+lookback: [ &lt;duration&gt; | default = &#34;12w&#34; ]
 
+rules:
+  [ - &lt;rule&gt; ... ]
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h3 id="rule">
+        <code>&lt;rule&gt;</code>
+        <a data-clipboard-text="/oy-periodic-queries/#rule" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: &lt;rule&gt;" aria-label="Anchor to: &lt;rule&gt;" href="#rule">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>The syntax for recording rules is:</p>
+<pre tabindex="0"><code># The name of the time series to output to. Must be a valid metric name.
+record: &lt;string&gt;
+
+# The PromQL expression to evaluate. Every evaluation cycle this is
+# evaluated at the current time, and the result recorded as a new set of
+# time series with the metric name as given by &#39;record&#39;.
+expr: &lt;string&gt;
+
+# Labels to add or overwrite before storing the result.
+labels:
+  [ &lt;labelname&gt;: &lt;labelvalue&gt; ]
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h2 id="example-rule-file">
+        Example rule file
+        <a data-clipboard-text="/oy-periodic-queries/#example-rule-file" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Example rule file" aria-label="Anchor to: Example rule file" href="#example-rule-file">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p>A simple example rules file would be:</p>
+<pre tabindex="0"><code>groups:
+- name: prometheus network usage
+  time_period: monthly
+  lookback: 365d
+  include_incomplete_ranges: true
+  rules:
+    - expr: |
+        increase(node_network_receive_bytes_total{instance=~&#34;prometheus.*&#34;}[$RANGE])
+        and last_over_time(node_network_receive_bytes_total{instance=~&#34;prometheus.*&#34;}[${1_PC_RANGE}] @ ${1_PC_TIMESTAMP})
+        and last_over_time(node_network_receive_bytes_total{instance=~&#34;prometheus.*&#34;}[${1_PC_RANGE}] @ ${100_PC_TIMESTAMP})
+      record: prometheus:node_network_receive_bytes_total:monthly
+      labels:
+        month: &#34;${2006-01}&#34;
+    - expr: |
+        increase(node_network_transmit_bytes_total{instance=~&#34;prometheus.*&#34;}[$RANGE])
+        and last_over_time(node_network_transmit_bytes_total{instance=~&#34;prometheus.*&#34;}[${1_PC_RANGE}] @ ${1_PC_TIMESTAMP})
+        and last_over_time(node_network_transmit_bytes_total{instance=~&#34;prometheus.*&#34;}[${1_PC_RANGE}] @ ${100_PC_TIMESTAMP})
+      record: prometheus:node_network_transmit_bytes_total:monthly
+      labels:
+        month: &#34;${2006-01}&#34;
+</code></pre><p>In the queries, the following part is used to only select the metrics that
+existed in the beginning and the end of the different months.</p>
+<pre tabindex="0"><code>        and last_over_time(node_network_transmit_bytes_total{instance=~&#34;prometheus.*&#34;}[${1_PC_RANGE}] @ ${1_PC_TIMESTAMP})
+        and last_over_time(node_network_transmit_bytes_total{instance=~&#34;prometheus.*&#34;}[${1_PC_RANGE}] @ ${100_PC_TIMESTAMP})
+</code></pre><p>Output of /metrics, when launched with <code>--web.disable-exporter-metrics</code>:</p>
+<pre tabindex="0"><code># HELP periodic_rule_queries_success 
+# TYPE periodic_rule_queries_success gauge
+periodic_rule_queries_success 1
+# HELP prometheus:node_network_receive_bytes_total:monthly 
+# TYPE prometheus:node_network_receive_bytes_total:monthly untyped
+prometheus:node_network_receive_bytes_total:monthly{device=&#34;ens3&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus02.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 2.2096172024710458e+11
+prometheus:node_network_receive_bytes_total:monthly{device=&#34;ens3&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus11.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 1.4455463702554254e+11
+prometheus:node_network_receive_bytes_total:monthly{device=&#34;lo&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus02.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 9.635369117702129e+08
+prometheus:node_network_receive_bytes_total:monthly{device=&#34;lo&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus11.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 2.4574080228794675e+09
+# HELP prometheus:node_network_transmit_bytes_total:monthly 
+# TYPE prometheus:node_network_transmit_bytes_total:monthly untyped
+prometheus:node_network_transmit_bytes_total:monthly{device=&#34;ens3&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus02.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 1.8763866363794147e+11
+prometheus:node_network_transmit_bytes_total:monthly{device=&#34;ens3&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus11.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 3.813239344424051e+11
+prometheus:node_network_transmit_bytes_total:monthly{device=&#34;lo&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus02.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 9.635369117702129e+08
+prometheus:node_network_transmit_bytes_total:monthly{device=&#34;lo&#34;,environment=&#34;o11ylab&#34;,instance=&#34;prometheus11.example.com&#34;,job=&#34;node&#34;,month=&#34;2023-01&#34;} 2.4574080228794675e+09
+</code></pre><div class="gdoc-page__anchorwrap">
+    <h2 id="downloading">
+        Downloading
+        <a data-clipboard-text="/oy-periodic-queries/#downloading" class="gdoc-page__anchor gdoc-page__anchor--right clip" title="Anchor to: Downloading" aria-label="Anchor to: Downloading" href="#downloading">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+
+
+
+
+<div class="gdoc-tabs">
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-0"
+      checked="checked"
+    />
+    <label for="tabs-usage-0" class="gdoc-tabs__label">
+      linux (wget)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-periodic-queries</strong> within Linux, run:</p>
+<pre tabindex="0"><code>wget https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-periodic-queries -O oy-periodic-queries &amp;&amp; chmod +x oy-periodic-queries &amp;&amp; ./oy-periodic-queries --help
+</code></pre>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-1"
+      
+    />
+    <label for="tabs-usage-1" class="gdoc-tabs__label">
+      linux (deb)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <strong>oy-periodic-queries</strong> is available as a <code>.deb</code> package:
+<a
+  class="gdoc-markdown__link"
+  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-periodic-queries.deb"
+  
+>https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-periodic-queries.deb</a>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-2"
+      
+    />
+    <label for="tabs-usage-2" class="gdoc-tabs__label">
+      linux (yum)
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <strong>oy-periodic-queries</strong> is available as a <code>.rpm</code> package:
+<a
+  class="gdoc-markdown__link"
+  href="https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-periodic-queries.rpm"
+  
+>https://github.com/o11ydev/oy-toolkit/releases/download/main/oy-periodic-queries.rpm</a>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-3"
+      
+    />
+    <label for="tabs-usage-3" class="gdoc-tabs__label">
+      docker
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-periodic-queries</strong> with docker, run:</p>
+<pre tabindex="0"><code>docker run quay.io/o11y/oy-toolkit:oy-periodic-queries --help
+</code></pre>
+    </div>
+  
+    <input
+      type="radio"
+      class="gdoc-tabs__control hidden"
+      name="tabs-usage"
+      id="tabs-usage-4"
+      
+    />
+    <label for="tabs-usage-4" class="gdoc-tabs__label">
+      nix
+    </label>
+    <div class="gdoc-markdown--nested gdoc-tabs__content">
+      <p>To execute <strong>oy-periodic-queries</strong> with nix, run:</p>
+<pre tabindex="0"><code>nix run github:o11ydev/oy-toolkit#oy-periodic-queries -- --help
+</code></pre>
+    </div>
+  
+</div>
 
 
   </article>
@@ -1065,6 +1228,100 @@ to authenticate users.</small></p>
       
 
       
+        
+        
+      
+
+      
+    
+
+    
+    
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+        
+        
+      
+
+      
+
+      
+    
+
+    
+    
+  
+
+    
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
+
+      
+    
+
+    
+    
+  
+    
+    
+
+    
+    
+
+    
+    
+      
+  
+  
+
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
 
       
     
@@ -1096,9 +1353,6 @@ to authenticate users.</small></p>
     
     
   
-
-    
-  
     
     
 
@@ -1113,97 +1367,6 @@ to authenticate users.</small></p>
       
       
 
-      
-
-      
-
-      
-    
-
-    
-    
-  
-    
-    
-
-    
-    
-
-    
-    
-      
-  
-  
-
-  
-    
-    
-
-    
-    
-      
-      
-      
-
-      
-        
-      
-      
-
-      
-
-      
-
-      
-    
-
-    
-    
-  
-    
-    
-
-    
-    
-      
-      
-      
-
-      
-        
-      
-      
-
-      
-
-      
-        
-        
-      
-
-      
-    
-
-    
-    
-  
-    
-    
-
-    
-    
-      
-      
-      
-
-      
-        
-      
-      
-
-      
-        
-        
       
 
       
@@ -1227,11 +1390,11 @@ to authenticate users.</small></p>
     
       <a
         class="gdoc-page__nav--prev flex align-center"
-        href="/metricslint/"
-        title="/metrics lint"
+        href="/oy-expose/"
+        title="oy-expose"
       >
         <i class="gdoc-icon">gdoc_arrow_left_alt</i>
-        /metrics lint
+        oy-expose
       </a>
     
   </span>
@@ -1239,10 +1402,10 @@ to authenticate users.</small></p>
     
       <a
         class="gdoc-page__nav--next flex align-center"
-        href="/promqlparser/"
-        title="PromQL parser"
+        href="/oy-scrape-jitter/"
+        title="oy-scrape-jitter"
       >
-        PromQL parser
+        oy-scrape-jitter
         <i class="gdoc-icon">gdoc_arrow_right_alt</i>
       </a>
     

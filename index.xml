@@ -35,6 +35,15 @@ Prometheus supports two exposition formats: the Prometheus text-based exposition
     </item>
     
     <item>
+      <title>oy-periodic-queries</title>
+      <link>/oy-periodic-queries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/oy-periodic-queries/</guid>
+      <description>Usage usage: oy-periodic-queries [&amp;lt;flags&amp;gt;] &amp;lt;rule-file&amp;gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&amp;#34;&amp;#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).</description>
+    </item>
+    
+    <item>
       <title>oy-scrape-jitter</title>
       <link>/oy-scrape-jitter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

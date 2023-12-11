@@ -148,6 +148,10 @@ in
                   name = "PromQL parser";
                   ref = "/promqlparser";
                 }
+                {
+                  name = "Mimir resources";
+                  ref = "/mimircalc";
+                }
               ];
             }
           ];

@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.4.0
     - uses: cachix/install-nix-action@v15
-    - uses: cachix/cachix-action@v10
+    - uses: cachix/cachix-action@v12
       with:
         name: oy-toolkit
     - run: nix show-derivation

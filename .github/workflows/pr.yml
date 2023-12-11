@@ -7,7 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2.4.0
     - uses: cachix/install-nix-action@v15
-    - uses: cachix/cachix-action@v10
+      with:
+        install_url: https://releases.nixos.org/nix/nix-2.13.3/install
+    - uses: cachix/cachix-action@v12
       with:
         name: oy-toolkit
     - run: nix show-derivation

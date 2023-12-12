@@ -2,8 +2,10 @@
 title: Mimir resources
 ---
 
-This tool enables you to compute mimir resources based on [Grafana's Planning
-Grafana Mimir capacity
+This tool helps estimate the necessary CPU, memory, and disk space for Grafana
+Mimir setups. Input details like the number of active series and queries per
+second, and the calculator provides resource requirements for each system
+component.  It is based on [Grafana's Planning Grafana Mimir capacity
 requirements](https://grafana.com/docs/mimir/latest/manage/run-production-environment/planning-capacity).
 
 {{< unsafe >}}

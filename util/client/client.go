@@ -21,7 +21,7 @@ import (
 
 	"github.com/prometheus/client_golang/api"
 	"github.com/prometheus/common/config"
-	"gopkg.in/alecthomas/kingpin.v2"
+	"github.com/alecthomas/kingpin/v2"
 	"gopkg.in/yaml.v2"
 )
 

@@ -30,7 +30,7 @@ import (
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
-	"gopkg.in/alecthomas/kingpin.v2"
+	"github.com/alecthomas/kingpin/v2"
 
 	"github.com/o11ydev/oy-toolkit/util/client"
 	"github.com/o11ydev/oy-toolkit/util/cmd"

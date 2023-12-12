@@ -89,7 +89,7 @@ func (c *groupsCollector) Collect(ch chan<- prometheus.Metric) {
 	}
 }
 
-func (c *groupsCollector) Describe(ch chan<- *prometheus.Desc) {
+func (c *groupsCollector) Describe(chan<- *prometheus.Desc) {
 }
 
 func QueryRangeToMetric(logger log.Logger, c *Cache, p period.Period, query string, client api.Client, metricName string, additionalLabels map[string]string) ([]prometheus.Metric, error) {

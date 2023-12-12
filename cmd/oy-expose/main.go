@@ -26,7 +26,7 @@ import (
 	"github.com/o11ydev/oy-toolkit/util/collectors"
 	"github.com/o11ydev/oy-toolkit/util/http"
 
-	kingpin "gopkg.in/alecthomas/kingpin.v2"
+	kingpin "github.com/alecthomas/kingpin/v2"
 )
 
 func main() {

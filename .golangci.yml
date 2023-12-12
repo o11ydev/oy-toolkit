@@ -14,11 +14,13 @@ linters:
 
 linters-settings:
   depguard:
-    list-type: blacklist
-    include-go-root: true
-    packages-with-error-message:
-      - sync/atomic: "Use go.uber.org/atomic instead of sync/atomic"
-      - github.com/go-kit/kit/log: "Use github.com/go-kit/log instead of github.com/go-kit/kit/log"
+    rules:
+      main:
+        deny:
+          - pkg: sync/atomic
+            desc: "Use go.uber.org/atomic instead of sync/atomic"
+          - pkg: github.com/go-kit/kit/log
+            desc: "Use github.com/go-kit/log instead of github.com/go-kit/kit/log"
   goimports:
     local-prefixes: github.com/o11ydev/oy-toolkit
   gofumpt:

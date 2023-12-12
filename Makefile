@@ -71,7 +71,7 @@ packages:
 
 .PHONY: vendorhash
 vendorhash:
-	@go mod tidy -compat=1.17 -go=1.17
+	@go mod tidy -compat=1.21 -go=1.21
 	@sed -i '/vendorSha256/s@".*"@"$(shell go mod vendor && nix hash path vendor)"@' packages.nix
 	@rm -r vendor
 

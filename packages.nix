@@ -17,7 +17,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-GeXd3tWWkdnM96RDYpt7hhitzai1IJoKg6EMDy3bzBA=";
+      vendorSha256 = "sha256-LprSLtEiRffPdgnmAzCkh8SMNzua2Z3uuLw5F1S0M9c=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages =
         if name == "oy-toolkit"
@@ -56,7 +56,7 @@ with pkgs; let
         '';
       };
       CGO_ENABLED = 0;
-      vendorSha256 = "sha256-GeXd3tWWkdnM96RDYpt7hhitzai1IJoKg6EMDy3bzBA=";
+      vendorSha256 = "sha256-LprSLtEiRffPdgnmAzCkh8SMNzua2Z3uuLw5F1S0M9c=";
       #vendorSha256 = pkgs.lib.fakeSha256;
       subPackages = ["wasm/${name}"];
       preBuild = ''
@@ -216,7 +216,7 @@ in
           buildPhase = pkgs.writeShellScript "hugo" ''
             set -e
             cp ${wasmFiles}/* static/
-            cp ${pkgs.go_1_18}/share/go/misc/wasm/wasm_exec.js static
+            cp ${pkgs.go_1_21}/share/go/misc/wasm/wasm_exec.js static
 
             mkdir -p data/menu
             cp ${menuFile} data/menu/main.yml

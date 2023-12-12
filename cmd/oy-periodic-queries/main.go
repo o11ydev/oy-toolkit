@@ -26,7 +26,7 @@ import (
 	"github.com/o11ydev/oy-toolkit/util/cmd"
 	"github.com/o11ydev/oy-toolkit/util/http"
 
-	kingpin "gopkg.in/alecthomas/kingpin.v2"
+	kingpin "github.com/alecthomas/kingpin/v2"
 )
 
 func main() {
@@ -64,7 +64,8 @@ func main() {
 		r.MustRegister(periodicQueriesReady)
 		ch := make(chan prometheus.Metric)
 		go func(ch chan prometheus.Metric) {
-			for range ch {
+			for i := range ch {
+				_ = i
 			}
 		}(ch)
 		go func() {

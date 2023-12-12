@@ -175,7 +175,7 @@ func (c *textFileCollector) exportMTimes(mtimes map[string]time.Time, ch chan<- 
 	}
 }
 
-func (c *textFileCollector) Describe(ch chan<- *prometheus.Desc) {
+func (c *textFileCollector) Describe(chan<- *prometheus.Desc) {
 }
 
 // Collect implements the Collector interface.

@@ -64,7 +64,8 @@ func main() {
 		r.MustRegister(periodicQueriesReady)
 		ch := make(chan prometheus.Metric)
 		go func(ch chan prometheus.Metric) {
-			for range ch {
+			for i := range ch {
+				_ = i
 			}
 		}(ch)
 		go func() {

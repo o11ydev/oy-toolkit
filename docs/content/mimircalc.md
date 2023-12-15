@@ -135,7 +135,7 @@ requirements](https://grafana.com/docs/mimir/latest/manage/run-production-enviro
         <input type="number" id="activeSeries" name="activeSeries" value="1000000"><br><br>
 
         <label for="seriesInMemory">Series in memory (Active series*Replication factor):</label>
-        <input type="number" id="seriesInMemory" name="seriesInMemory" value="300000"><br><br>
+        <input type="number" id="seriesInMemory" name="seriesInMemory" value="3000000"><br><br>
 
         <label for="seriesInMemory">Samples per second:</label>
         <input type="number" id="samplesPerSecond" name="samplesPerSecond" value="25000"><br><br>

@@ -5,7 +5,7 @@
 <meta name="referrer" content="no-referrer" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
-<meta name="generator" content="Hugo 0.110.0">
+<meta name="generator" content="Hugo 0.121.1">
 
 
   <meta name="description" content=" is a tool that allows you to evaluate Prometheus
@@ -61,7 +61,7 @@ as monthly or weekly (*Only monthly is implemented at the moment*)." />
       "url" : "/oy-periodic-queries/",
       "headline": "oy-periodic-queries",
       "description": " is a tool that allows you to evaluate Prometheus\nrecording rules and export the results as metrics, with defined boundaries such\nas monthly or weekly (*Only monthly is implemented at the moment*).",
-      "wordCount" : "672",
+      "wordCount" : "673",
       "license": "CC BY-SA 4.0",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
@@ -732,6 +732,48 @@ as monthly or weekly (*Only monthly is implemented at the moment*)." />
         
       </li>
     
+      
+      
+
+
+      <li>
+        
+        
+          
+          
+          
+          
+          
+          
+          
+
+          
+            <input
+              type="checkbox"
+              
+                class="hidden"
+              
+            />
+            <label
+              
+            >
+              <span class="flex">
+                
+                <a
+                  href="/mimircalc/"
+                  class="gdoc-nav__entry"
+                >
+                  Mimir resources
+                </a>
+              </span>
+              
+            </label>
+          
+        
+
+        
+      </li>
+    
   </ul>
 
         
@@ -834,32 +876,34 @@ as monthly or weekly (*Only monthly is implemented at the moment*)." />
 </div>
 <pre tabindex="0"><code>usage: oy-periodic-queries [&lt;flags&gt;] &lt;rule-file&gt;...
 
+
 Flags:
-  -h, --help                Show context-sensitive help (also try --help-long
-                            and --help-man).
-      --web.systemd-socket  Use systemd socket activation listeners instead of
-                            port listeners (Linux only).
+  -h, --[no-]help                Show context-sensitive help (also try
+                                 --help-long and --help-man).
+      --[no-]web.systemd-socket  Use systemd socket activation listeners instead
+                                 of port listeners (Linux only).
       --web.listen-address=:9099 ...  
-                            Addresses on which to expose metrics and web
-                            interface. Repeatable for multiple addresses.
-      --web.config.file=&#34;&#34;  [EXPERIMENTAL] Path to configuration file that can
-                            enable TLS or authentication.
+                                 Addresses on which to expose metrics and web
+                                 interface. Repeatable for multiple addresses.
+      --web.config.file=&#34;&#34;       Path to configuration file that can
+                                 enable TLS or authentication. See:
+                                 https://github.com/prometheus/exporter-toolkit/blob/master/docs/web-configuration.md
       --web.telemetry-path=&#34;/metrics&#34;  
-                            Path under which to expose metrics.
-      --web.disable-exporter-metrics  
-                            Exclude metrics about the exporter itself
-                            (promhttp_*, process_*, go_*).
-      --prefetch            Cache metrics before exposing them. Avoid scrape
-                            timeout.
+                                 Path under which to expose metrics.
+      --[no-]web.disable-exporter-metrics  
+                                 Exclude metrics about the exporter itself
+                                 (promhttp_*, process_*, go_*).
+      --[no-]prefetch            Cache metrics before exposing them. Avoid
+                                 scrape timeout.
       --prometheus.url=&#34;http://127.0.0.1:9090&#34;  
-                            URL of the Prometheus server.
+                                 URL of the Prometheus server.
       --client.config=CLIENT.CONFIG  
-                            Path to a HTTP client configuration.
-      --log.level=info      Only log messages with the given severity or above.
-                            One of: [debug, info, warn, error]
-      --log.format=logfmt   Output format of log messages. One of: [logfmt,
-                            json]
-      --version             Show application version.
+                                 Path to a HTTP client configuration.
+      --log.level=info           Only log messages with the given severity or
+                                 above. One of: [debug, info, warn, error]
+      --log.format=logfmt        Output format of log messages. One of: [logfmt,
+                                 json]
+      --[no-]version             Show application version.
 
 Args:
   &lt;rule-file&gt;  File to read periodic recording rules from.
@@ -1302,6 +1346,30 @@ prometheus:node_network_transmit_bytes_total:monthly{device=&#34;lo&#34;,environ
   
   
 
+  
+    
+    
+
+    
+    
+      
+      
+      
+
+      
+        
+      
+      
+
+      
+
+      
+
+      
+    
+
+    
+    
   
     
     

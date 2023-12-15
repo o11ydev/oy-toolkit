@@ -5,87 +5,70 @@
     <link>/</link>
     <description>Recent content on O11y toolkit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>/metrics lint</title>
       <link>/metricslint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/metricslint/</guid>
-      <description>This tool enables you to validate the format of Prometheus metrics, and make sure they can be scraped by a Prometheus server.
-Prometheus supports two exposition formats: the Prometheus text-based exposition format and OpenMetrics. The text-based exposition format is widespread, and many applications and client libraries supports it. Additionally, it can be used from scripts, to push metrics to the Pushgateway or written to *.prom files, to be collected by the textfile collectors (available in both the Node Exporter and the Windows Exporter).</description>
+      <description>This tool enables you to validate the format of Prometheus metrics, and make sure they can be scraped by a Prometheus server.&#xA;Prometheus supports two exposition formats: the Prometheus text-based exposition format and OpenMetrics. The text-based exposition format is widespread, and many applications and client libraries supports it. Additionally, it can be used from scripts, to push metrics to the Pushgateway or written to *.prom files, to be collected by the textfile collectors (available in both the Node Exporter and the Windows Exporter).</description>
     </item>
-    
+    <item>
+      <title>Mimir resources</title>
+      <link>/mimircalc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/mimircalc/</guid>
+      <description>This tool helps estimate the necessary CPU, memory, and disk space for Grafana Mimir setups. Input details like the number of active series and queries per second, and the calculator provides resource requirements for each system component. It is based on Grafana&amp;rsquo;s Planning Grafana Mimir capacity requirements.&#xA;Active series: Series in memory (Active series*Replication factor): Samples per second: Queries per second: Firing alert notifications: Firing alerts: Total Resource Requirements Total Resources CPU: N/A cores Memory: N/A GB Disk: N/A GB Calculated Requirements Distributor CPU: N/A cores Memory: N/A GB Ingester CPU: N/A cores Memory: N/A GB Disk: N/A GB Query-frontend CPU: N/A cores Memory: N/A GB Query-scheduler CPU: N/A cores Memory: N/A GB Querier CPU: N/A cores Memory: N/A GB Store-gateway CPU: N/A cores Memory: N/A GB Disk: N/A GB Ruler CPU: N/A cores Memory: N/A GB Compactor CPU: N/A cores Memory: N/A GB Disk: N/A GB Alertmanager CPU: N/A cores Memory: N/A GB </description>
+    </item>
     <item>
       <title>oy-csv-to-targets</title>
       <link>/oy-csv-to-targets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/oy-csv-to-targets/</guid>
-      <description>Usage usage: oy-csv-to-targets --input.file=input.csv [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --input.file=input.csv Path to a CSV file to use as an input. --output.file=targets.json Path to a json file to use as an output. --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --version Show application version. Description oy-csv-to-targets takes a list of Prometheus targets as a CSV file as input and produces a JSON file.</description>
+      <description>Usage usage: oy-csv-to-targets --input.file=input.csv [&amp;lt;flags&amp;gt;] Flags: -h, --[no-]help Show context-sensitive help (also try --help-long and --help-man). --input.file=input.csv Path to a CSV file to use as an input. --output.file=targets.json Path to a json file to use as an output. --log.level=info Only log messages with the given severity or above. One of: [debug, info, warn, error] --log.format=logfmt Output format of log messages. One of: [logfmt, json] --[no-]version Show application version. Description oy-csv-to-targets takes a list of Prometheus targets as a CSV file as input and produces a JSON file.</description>
     </item>
-    
     <item>
       <title>oy-expose</title>
       <link>/oy-expose/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/oy-expose/</guid>
-      <description>Usage usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&amp;#34;&amp;#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).</description>
+      <description>Usage usage: oy-expose [&amp;lt;flags&amp;gt;] [&amp;lt;metrics-file&amp;gt;] Flags: -h, --[no-]help Show context-sensitive help (also try --help-long and --help-man). --[no-]web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&amp;#34;&amp;#34; Path to configuration file that can enable TLS or authentication. See: https://github.com/prometheus/exporter-toolkit/blob/master/docs/web-configuration.md --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics. --[no-]web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).</description>
     </item>
-    
     <item>
       <title>oy-periodic-queries</title>
       <link>/oy-periodic-queries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/oy-periodic-queries/</guid>
-      <description>Usage usage: oy-periodic-queries [&amp;lt;flags&amp;gt;] &amp;lt;rule-file&amp;gt;... Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&amp;#34;&amp;#34; [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication. --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics. --web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).</description>
+      <description>Usage usage: oy-periodic-queries [&amp;lt;flags&amp;gt;] &amp;lt;rule-file&amp;gt;... Flags: -h, --[no-]help Show context-sensitive help (also try --help-long and --help-man). --[no-]web.systemd-socket Use systemd socket activation listeners instead of port listeners (Linux only). --web.listen-address=:9099 ... Addresses on which to expose metrics and web interface. Repeatable for multiple addresses. --web.config.file=&amp;#34;&amp;#34; Path to configuration file that can enable TLS or authentication. See: https://github.com/prometheus/exporter-toolkit/blob/master/docs/web-configuration.md --web.telemetry-path=&amp;#34;/metrics&amp;#34; Path under which to expose metrics. --[no-]web.disable-exporter-metrics Exclude metrics about the exporter itself (promhttp_*, process_*, go_*).</description>
     </item>
-    
     <item>
       <title>oy-scrape-jitter</title>
       <link>/oy-scrape-jitter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/oy-scrape-jitter/</guid>
-      <description>Usage usage: oy-scrape-jitter [&amp;lt;flags&amp;gt;] Flags: -h, --help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --log.unaligned-only Only take unaligned targets in logging.</description>
+      <description>Usage usage: oy-scrape-jitter [&amp;lt;flags&amp;gt;] Flags: -h, --[no-]help Show context-sensitive help (also try --help-long and --help-man). --metric=&amp;#34;up&amp;#34; Metric to use to determine jitter. --query.timestamp=QUERY.TIMESTAMP Timestamp of the query. --plot.file=file.png Path to a file to write an image of the results. --[no-]plot.log-y Use logarithmic Y axis. --lookback=1h How much time to look in the past for scrapes. --divisor=1s Divisor to use to determine if a scrape is aligned. --[no-]log.unaligned-only Only take unaligned targets in logging.</description>
     </item>
-    
     <item>
       <title>Password file generator for Prometheus</title>
       <link>/pwgen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/pwgen/</guid>
-      <description>This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.
-Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.
-Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.</description>
+      <description>This form enables you to generate a Prometheus web.yml file to secure your Prometheus endpoints with basic authentication.&#xA;Prometheus needs passwords hashed with bcrypt. This tool hashes the passwords directly in your browser, in such a way that we do not receive the passwords you are generating.&#xA;Once the file is generated, you can optionally append your TLS server configuration to the file, then start Prometheus with --web.config.file pointing to your newly created file.</description>
     </item>
-    
     <item>
       <title>Prometheus client configuration</title>
       <link>/httpclient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/httpclient/</guid>
-      <description>Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.
-The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.
-Generic placeholders are defined as follows:
-&amp;lt;bool&amp;gt;: a boolean that can take the values true or false &amp;lt;filename&amp;gt;: a valid path in the current working directory &amp;lt;secret&amp;gt;: a regular string that is a secret, such as a password &amp;lt;string&amp;gt;: a regular string The other placeholders are specified separately.</description>
+      <description>Command line tools that connect to a Prometheus server can take a file path in a --client.config parameter. This is useful to connect to a Prometheus server with authentication or self-signed certificates.&#xA;The file is written in YAML format, defined by the scheme described below. Brackets indicate that a parameter is optional. For non-list parameters the value is set to the specified default.&#xA;Generic placeholders are defined as follows:&#xA;&amp;lt;bool&amp;gt;: a boolean that can take the values true or false &amp;lt;filename&amp;gt;: a valid path in the current working directory &amp;lt;secret&amp;gt;: a regular string that is a secret, such as a password &amp;lt;string&amp;gt;: a regular string The other placeholders are specified separately.</description>
     </item>
-    
     <item>
       <title>PromQL Parser</title>
       <link>/promqlparser/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/promqlparser/</guid>
-      <description>This tool enables you to validate the format of PromQL queries. It also produces a prettified query.
-Usage To use this tool, simply paste the content of your query in the following text area. Then, click on the &amp;ldquo;Parse&amp;rdquo; button.
-You can click on the following button to load a PromQL query:
-Load sample Security and privacy The input is parsed in your browser and is not sent to our servers.</description>
+      <description>This tool enables you to validate the format of PromQL queries. It also produces a prettified query.&#xA;Usage To use this tool, simply paste the content of your query in the following text area. Then, click on the &amp;ldquo;Parse&amp;rdquo; button.&#xA;You can click on the following button to load a PromQL query:&#xA;Load sample Security and privacy The input is parsed in your browser and is not sent to our servers.</description>
     </item>
-    
   </channel>
 </rss>
